@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Bilgi_Otel
+namespace BilgiOtel
 {
-    public partial class UserControl1 : UserControl
+    public partial class FrmLogin : Form
     {
-        public UserControl1()
+        public FrmLogin()
         {
             InitializeComponent();
         }

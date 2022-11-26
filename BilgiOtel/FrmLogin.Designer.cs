@@ -1,6 +1,6 @@
-﻿namespace Bilgi_Otel
+﻿namespace BilgiOtel
 {
-    partial class FrmMain
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // FrmMain
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmMain";
-            this.Text = "FrmMain";
-            this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.Name = "FrmLogin";
+            this.Text = "Login";
             this.ResumeLayout(false);
 
         }
@@ -45,3 +44,4 @@
         #endregion
     }
 }
+

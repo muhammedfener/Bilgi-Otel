@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BilgiOtelDAL
 {
-    public class DataConnections
+    public static class DataConnections
     {
         public static string MsSQLConnectionString
         {
