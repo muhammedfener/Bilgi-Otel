@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -25,7 +26,7 @@ namespace BilgiOtelDAL
 
         private SqlConnection GetConnection()
         {
-            return new SqlConnection(DataConnections.MsSQLConnectionString);
+            return new SqlConnection(DataConnections.Get_MsSQLConnectionString);
         }
 
         private SqlCommand GetCommand()
@@ -162,5 +163,6 @@ namespace BilgiOtelDAL
 
             return returnTable;
         }
+
     }
 }

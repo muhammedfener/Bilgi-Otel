@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BilgiOtel
 {
-    public partial class FrmLogin : Form
+    public partial class FrmMain : Form
     {
-        public FrmLogin()
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -22,22 +22,19 @@ namespace BilgiOtel
             if (pnlMenu.Width == 200)
             {
                 pnlMenu.Width = 80;
-                pnlMenuHeader.Width = 80;
                 lblLogo.Visible = false;
                 btnMenu.Dock = DockStyle.Top;
                 btnMenu.Padding = new Padding(0, 0, 0, 0);
-                btnMenu.Height = 60;
+                btnMenu.Height = 80;
                 foreach (Button button in pnlMenu.Controls.OfType<Button>())
                 {
                     button.Text = "";
                     button.ImageAlign = ContentAlignment.MiddleCenter;
-                    button.Padding = new Padding(0);
                 }
             }
             else
             {
                 pnlMenu.Width = 200;
-                pnlMenuHeader.Width = 200;
                 lblLogo.Visible = true;
                 btnMenu.Dock = DockStyle.None;
                 btnMenu.Padding = new Padding(0);
@@ -45,8 +42,6 @@ namespace BilgiOtel
                 foreach (Button button in pnlMenu.Controls.OfType<Button>())
                 {
                     button.Text = button.Tag.ToString();
-                    button.ImageAlign = ContentAlignment.MiddleCenter;
-                    button.Padding = new Padding(0);
                 }
             }
         }
