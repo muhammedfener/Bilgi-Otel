@@ -34,7 +34,7 @@ namespace BilgiOtelDAL
         //Hepsini Getir
         public List<CalismaSaatleriEntity> getCalisanlar()
         {
-            SqlDataReader calismaSaatleri = SQLHelper.ExecuteReader("SELECT * FROM calismaSaatleri WHERE");
+            SqlDataReader calismaSaatleri = SQLHelper.ExecuteReader("SELECT * FROM calismaSaatleri");
 
             List<CalismaSaatleriEntity> CalismaSaatleri = new List<CalismaSaatleriEntity>();
 
@@ -61,10 +61,10 @@ namespace BilgiOtelDAL
                 new SqlParameter { ParameterName = "calisanID", Value = calismaSaati.CalisanID},
                 new SqlParameter { ParameterName = "vardiyaID", Value = calismaSaati.VardiyaID},
                 new SqlParameter { ParameterName = "calismaBaslangicTarihi", Value = calismaSaati.CalismaBaslangicTarihi},
-                new SqlParameter { ParameterName = "calismaBitisTarihi", Value = calismaSaati.CalismaBitisTarihi},
+                new SqlParameter { ParameterName = "calismaBitisTarihi", Value = calismaSaati.CalismaBitisTarihi}
             };
 
-            int eklenenCalismaSaatiSayisi = SQLHelper.ExecuteNonQuery("INSERT INTO calismaSaatleri (calisanID,vardiyaID,calismaBaslangicTarihi,calismaBitisTarihi) VALUES (@calisanID, @vardiyaID,@calismaBaslangicTarihi,@calismaBitisTarihi)", System.Data.CommandType.Text, parametreler);
+            int eklenenCalismaSaatiSayisi = SQLHelper.ExecuteNonQuery("INSERT INTO calismaSaatleri (calisanID,vardiyaID,calismaBaslangicTarihi,calismaBitisTarihi) VALUES (@calisanID, @vardiyaID,@calismaBaslangicTarihi,@calismaBitisTarihi)", parametreler);
 
 
             return eklenenCalismaSaatiSayisi;
@@ -79,16 +79,16 @@ namespace BilgiOtelDAL
                 new SqlParameter { ParameterName = "calisanID", Value = calismaSaati.CalisanID},
                 new SqlParameter { ParameterName = "vardiyaID", Value = calismaSaati.VardiyaID},
                 new SqlParameter { ParameterName = "calismaBaslangicTarihi", Value = calismaSaati.CalismaBaslangicTarihi},
-                new SqlParameter { ParameterName = "calismaBitisTarihi", Value = calismaSaati.CalismaBitisTarihi},
+                new SqlParameter { ParameterName = "calismaBitisTarihi", Value = calismaSaati.CalismaBitisTarihi}
             };
 
-            int guncellenenCalismaSaatiSayisi = SQLHelper.ExecuteNonQuery("UPDATE calismaSaatleri SET calisanID = @calisanID, vardiyaID = @vardiyaID, calismaBaslangicTarihi = @calismaBaslangicTarihi, calismaBitisTarihi = @calismaBitisTarihi WHERE calismaSaatleriID = @calismaSaatleriID", System.Data.CommandType.Text, parametreler);
+            int guncellenenCalismaSaatiSayisi = SQLHelper.ExecuteNonQuery("UPDATE calismaSaatleri SET calisanID = @calisanID, vardiyaID = @vardiyaID, calismaBaslangicTarihi = @calismaBaslangicTarihi, calismaBitisTarihi = @calismaBitisTarihi WHERE calismaSaatleriID = @calismaSaatleriID", parametreler);
 
             return guncellenenCalismaSaatiSayisi;
         }
 
         //Delete
-        public int deleteCalisan(int id)
+        public int deleteCalismaSaati(int id)
         {
             int silinenCalismaSaatiSayisi = SQLHelper.ExecuteNonQuery($"DELETE FROM calismaSaatleri WHERE calismaSaatleriID = {id}");
 

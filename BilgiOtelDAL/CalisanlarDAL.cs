@@ -39,25 +39,25 @@ namespace BilgiOtelDAL
         //Hepsini Getir
         public List<CalisanlarEntity> getCalisanlar()
         {
-            SqlDataReader calisan = SQLHelper.ExecuteReader("SELECT * FROM calisanlar WHERE calisanAktifMi = 1");
+            SqlDataReader calisanlar = SQLHelper.ExecuteReader("SELECT * FROM calisanlar WHERE calisanAktifMi = 1");
 
             List<CalisanlarEntity> Calisanlar = new List<CalisanlarEntity>();
 
-            while (calisan.Read())
+            while (calisanlar.Read())
             {
                 CalisanlarEntity Calisan = new CalisanlarEntity();
-                Calisan.CalisanID = (int)calisan[0];
-                Calisan.CalisanAd = (string)calisan[1];
-                Calisan.CalisanSoyad = (string)calisan[2];
-                Calisan.CalisanTelefon = (string)calisan[3];
-                Calisan.CalisanTCKimlik = (string)calisan[4];
-                Calisan.CalisanAdres = (string)calisan[5];
-                Calisan.CalisanIrtibatTelefon = (string)calisan[6];
-                Calisan.CalisanIseBaslamaTarihi = (DateTime)calisan[7];
-                Calisan.CalisanIstenAyrilmaTarihi = (DateTime)calisan[8];
-                Calisan.CalisanMeslekID = (int)calisan[9];
-                Calisan.CalisanSaatlikUcret = (decimal)calisan[10];
-                Calisan.CalisanAktifMi = (bool)calisan[11];
+                Calisan.CalisanID = (int)calisanlar[0];
+                Calisan.CalisanAd = (string)calisanlar[1];
+                Calisan.CalisanSoyad = (string)calisanlar[2];
+                Calisan.CalisanTelefon = (string)calisanlar[3];
+                Calisan.CalisanTCKimlik = (string)calisanlar[4];
+                Calisan.CalisanAdres = (string)calisanlar[5];
+                Calisan.CalisanIrtibatTelefon = (string)calisanlar[6];
+                Calisan.CalisanIseBaslamaTarihi = (DateTime)calisanlar[7];
+                Calisan.CalisanIstenAyrilmaTarihi = (DateTime)calisanlar[8];
+                Calisan.CalisanMeslekID = (int)calisanlar[9];
+                Calisan.CalisanSaatlikUcret = (decimal)calisanlar[10];
+                Calisan.CalisanAktifMi = (bool)calisanlar[11];
 
                 Calisanlar.Add(Calisan);
             }
@@ -83,7 +83,7 @@ namespace BilgiOtelDAL
                 new SqlParameter { ParameterName = "calisanAktifMi", Value = calisan.CalisanAktifMi}
             };
 
-            int eklenenCalisanSayisi = SQLHelper.ExecuteNonQuery("INSERT INTO calisanlar (calisanAd,calisanSoyad,calisanTelefon,calisanTCKimlik,calisanAdres,calisanIrtibatTelefon,calisanIseBaslamaTarihi,calisanIstenAyrilmaTarihi,calisanMeslekID,calisanSaatlikUcret,calisanAktifMi) VALUES (@calisanAd,@calisanSoyad,@calisanTelefon,@calisanTCKimlik,@calisanAdres,@calisanIrtibatTelefon,@calisanIseBaslamaTarihi,@calisanIstenAyrilmaTarihi,@calisanMeslekID,@calisanSaatlikUcret,@calisanAktifMi)", System.Data.CommandType.Text,parametreler);
+            int eklenenCalisanSayisi = SQLHelper.ExecuteNonQuery("INSERT INTO calisanlar (calisanAd,calisanSoyad,calisanTelefon,calisanTCKimlik,calisanAdres,calisanIrtibatTelefon,calisanIseBaslamaTarihi,calisanIstenAyrilmaTarihi,calisanMeslekID,calisanSaatlikUcret,calisanAktifMi) VALUES (@calisanAd,@calisanSoyad,@calisanTelefon,@calisanTCKimlik,@calisanAdres,@calisanIrtibatTelefon,@calisanIseBaslamaTarihi,@calisanIstenAyrilmaTarihi,@calisanMeslekID,@calisanSaatlikUcret,@calisanAktifMi)",parametreler);
 
 
             return eklenenCalisanSayisi;
@@ -108,7 +108,7 @@ namespace BilgiOtelDAL
                 new SqlParameter { ParameterName = "calisanAktifMi", Value = calisan.CalisanAktifMi}
             };
 
-            int guncellenenCalisanSayisi = SQLHelper.ExecuteNonQuery("UPDATE calisanlar SET calisanAd = @calisanAd, calisanSoyad = @calisanSoyad, calisanTelefon = @calisanTelefon,calisanTCKimlik = @calisanTCKimlik, calisanAdres = @calisanAdres, calisanIrtibatTelefon=@calisanIrtibatTelefon, calisanIseBaslamaTarihi=@calisanIseBaslamaTarihi, calisanIstenAyrilmaTarihi = @calisanIstenAyrilmaTarihi, calisanMeslekID=@calisanMeslekID, calisanSaatlikUcret = @calisanSaatlikUcret, calisanAktifMi=@calisanAktifMi WHERE calisanID = @calisanID", System.Data.CommandType.Text, parametreler);
+            int guncellenenCalisanSayisi = SQLHelper.ExecuteNonQuery("UPDATE calisanlar SET calisanAd = @calisanAd, calisanSoyad = @calisanSoyad, calisanTelefon = @calisanTelefon,calisanTCKimlik = @calisanTCKimlik, calisanAdres = @calisanAdres, calisanIrtibatTelefon=@calisanIrtibatTelefon, calisanIseBaslamaTarihi=@calisanIseBaslamaTarihi, calisanIstenAyrilmaTarihi = @calisanIstenAyrilmaTarihi, calisanMeslekID=@calisanMeslekID, calisanSaatlikUcret = @calisanSaatlikUcret, calisanAktifMi=@calisanAktifMi WHERE calisanID = @calisanID", parametreler);
 
             return guncellenenCalisanSayisi;
         }

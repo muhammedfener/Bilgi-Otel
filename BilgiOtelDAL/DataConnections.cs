@@ -14,6 +14,7 @@ namespace BilgiOtelDAL
     public static class DataConnections
     {
         private static string ConnectionString = ConfigurationManager.ConnectionStrings["DbConnect"].ConnectionString;
+
         public static string Get_MsSQLConnectionString
         {
             get { return ConnectionString; }

@@ -55,6 +55,23 @@ namespace BilgiOtelDAL
             return rows;
         }
 
+        public static int ExecuteNonQuery(string commandText, SqlParameter[] parameters)
+        {
+            SqlCommand cmd = GetCommand();
+            cmd.CommandText = commandText;
+
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
+
+            GetConnection().Open();
+            int rows = cmd.ExecuteNonQuery();
+            GetConnection().Close();
+
+            return rows;
+        }
+
         public static int ExecuteNonQuery(string commandText)
         {
             SqlCommand cmd = GetCommand();
@@ -72,6 +89,23 @@ namespace BilgiOtelDAL
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
             cmd.CommandType = type;
+
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
+
+            GetConnection().Open();
+            object result = cmd.ExecuteScalar();
+            GetConnection().Close();
+
+            return result;
+        }
+
+        public static object ExecuteScalar(string commandText, SqlParameter[] parameters)
+        {
+            SqlCommand cmd = GetCommand();
+            cmd.CommandText = commandText;
 
             if (parameters != null)
             {
@@ -115,6 +149,23 @@ namespace BilgiOtelDAL
             return reader;
         }
 
+        public static SqlDataReader ExecuteReader(string commandText, SqlParameter[] parameters)
+        {
+            SqlCommand cmd = GetCommand();
+            cmd.CommandText = commandText;
+
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
+
+            GetConnection().Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            GetConnection().Close();
+
+            return reader;
+        }
+
         public static SqlDataReader ExecuteReader(string commandText)
         {
             SqlCommand cmd = GetCommand();
@@ -133,6 +184,26 @@ namespace BilgiOtelDAL
             cmd.CommandText = commandText;
             cmd.CommandText = commandText;
             cmd.CommandType = type;
+
+            if (parameters != null)
+            {
+                cmd.Parameters.AddRange(parameters);
+            }
+
+            GetConnection().Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            GetConnection().Close();
+
+            DataTable returnTable = new DataTable();
+            returnTable.Load(reader);
+
+            return returnTable;
+        }
+
+        public static DataTable GetDataTable(string commandText, SqlParameter[] parameters)
+        {
+            SqlCommand cmd = GetCommand();
+            cmd.CommandText = commandText;
 
             if (parameters != null)
             {
