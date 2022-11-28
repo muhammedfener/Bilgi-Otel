@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BilgiOtelDAL
 {
-    public class SQLHelper
+    public static class SQLHelper
     {
         /*public SQLHelper()
         {
@@ -24,12 +24,12 @@ namespace BilgiOtelDAL
             }
         }*/
 
-        private SqlConnection GetConnection()
+        private static SqlConnection GetConnection()
         {
             return new SqlConnection(DataConnections.Get_MsSQLConnectionString);
         }
 
-        private SqlCommand GetCommand()
+        private static SqlCommand GetCommand()
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = GetConnection();
@@ -37,7 +37,7 @@ namespace BilgiOtelDAL
             return cmd;
         }
 
-        public int ExecuteNonQuery(string commandText, CommandType type, SqlParameter[] parameters)
+        public static int ExecuteNonQuery(string commandText, CommandType type, SqlParameter[] parameters)
         {
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
@@ -55,7 +55,7 @@ namespace BilgiOtelDAL
             return rows;
         }
 
-        public int ExecuteNonQuery(string commandText)
+        public static int ExecuteNonQuery(string commandText)
         {
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
@@ -67,7 +67,7 @@ namespace BilgiOtelDAL
             return rows;
         }
 
-        public object ExecuteScalar(string commandText, CommandType type, SqlParameter[] parameters)
+        public static object ExecuteScalar(string commandText, CommandType type, SqlParameter[] parameters)
         {
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
@@ -85,7 +85,7 @@ namespace BilgiOtelDAL
             return result;
         }
 
-        public object ExecuteScalar(string commandText)
+        public static object ExecuteScalar(string commandText)
         {
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
@@ -97,7 +97,7 @@ namespace BilgiOtelDAL
             return result;
         }
 
-        public SqlDataReader ExecuteReader(string commandText, CommandType type, SqlParameter[] parameters)
+        public static SqlDataReader ExecuteReader(string commandText, CommandType type, SqlParameter[] parameters)
         {
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
@@ -115,7 +115,7 @@ namespace BilgiOtelDAL
             return reader;
         }
 
-        public SqlDataReader ExecuteReader(string commandText)
+        public static SqlDataReader ExecuteReader(string commandText)
         {
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
@@ -127,7 +127,7 @@ namespace BilgiOtelDAL
             return reader;
         }
 
-        public DataTable GetDataTable(string commandText, CommandType type, SqlParameter[] parameters)
+        public static DataTable GetDataTable(string commandText, CommandType type, SqlParameter[] parameters)
         {
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
@@ -149,7 +149,7 @@ namespace BilgiOtelDAL
             return returnTable;
         }
 
-        public DataTable GetDataTable(string commandText)
+        public static DataTable GetDataTable(string commandText)
         {
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
