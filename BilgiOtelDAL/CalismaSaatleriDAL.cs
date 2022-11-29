@@ -5,7 +5,6 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entity;
 
 namespace BilgiOtelDAL
 {
@@ -15,7 +14,7 @@ namespace BilgiOtelDAL
 
         public CalismaSaatleriEntity getCalismaSaati(int id)
         {
-            SqlDataReader calismaSaati = SQLHelper.ExecuteReader($"SELECT * FROM calismaSaatleri WHERE id = {id}");
+            SqlDataReader calismaSaati = SQLHelper.ExecuteReader($"SELECT * FROM calismaSaatleri WHERE calismaSaatiID = {id}");
 
             CalismaSaatleriEntity CalismaSaati = new CalismaSaatleriEntity();
 

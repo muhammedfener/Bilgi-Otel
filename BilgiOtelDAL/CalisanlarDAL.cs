@@ -13,7 +13,7 @@ namespace BilgiOtelDAL
 
         public CalisanlarEntity getCalisan(int id)
         {
-            SqlDataReader calisan = SQLHelper.ExecuteReader($"SELECT * FROM calisanlar WHERE id = {id}");
+            SqlDataReader calisan = SQLHelper.ExecuteReader($"SELECT * FROM calisanlar WHERE calisanID = {id}");
 
             CalisanlarEntity Calisan = new CalisanlarEntity();
 

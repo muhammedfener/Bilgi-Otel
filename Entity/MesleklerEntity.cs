@@ -11,5 +11,6 @@ namespace Entity
         public int MeslekID { get; set; }
         public string MeslekAd { get; set; }
         public string MeslekAciklama { get; set; }
+        public bool MeslekAktifMi { get; set; }
     }
 }

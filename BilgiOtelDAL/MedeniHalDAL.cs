@@ -14,7 +14,7 @@ namespace BilgiOtelDAL
 
         public MedeniHalEntity getMedeniHal(int id)
         {
-            SqlDataReader medeniHal = SQLHelper.ExecuteReader($"SELECT * FROM medeniHal WHERE id = {id}");
+            SqlDataReader medeniHal = SQLHelper.ExecuteReader($"SELECT * FROM medeniHal WHERE medeniHalID = {id}");
 
             MedeniHalEntity MedeniHal = new MedeniHalEntity();
 

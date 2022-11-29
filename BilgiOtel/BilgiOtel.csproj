@@ -113,5 +113,15 @@
   <ItemGroup>
     <None Include="Resources\account-group %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BilgiOtelDAL\BilgiOtelDAL.csproj">
+      <Project>{f8120a0d-45de-47b2-b371-f29094471b1b}</Project>
+      <Name>BilgiOtelDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{54a5b4e0-3103-40ee-a1a5-2d801cf43101}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

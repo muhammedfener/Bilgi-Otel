@@ -14,7 +14,7 @@ namespace BilgiOtelDAL
 
         public KampanyalarEntity getKampanya(int id)
         {
-            SqlDataReader kampanya = SQLHelper.ExecuteReader($"SELECT * FROM kampanyalar WHERE id = {id}");
+            SqlDataReader kampanya = SQLHelper.ExecuteReader($"SELECT * FROM kampanyalar WHERE kampanyaID = {id}");
 
             KampanyalarEntity Kampanya = new KampanyalarEntity();
 

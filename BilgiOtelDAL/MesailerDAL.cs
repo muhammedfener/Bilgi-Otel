@@ -14,7 +14,7 @@ namespace BilgiOtelDAL
 
         public MesailerEntity getMesai(int id)
         {
-            SqlDataReader mesai = SQLHelper.ExecuteReader($"SELECT * FROM mesailer WHERE id = {id}");
+            SqlDataReader mesai = SQLHelper.ExecuteReader($"SELECT * FROM mesailer WHERE mesaiID = {id}");
 
             MesailerEntity Mesai = new MesailerEntity();
 

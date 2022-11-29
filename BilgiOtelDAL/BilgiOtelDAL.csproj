@@ -48,6 +48,8 @@
     <Compile Include="KampanyalarDAL.cs" />
     <Compile Include="MedeniHalDAL.cs" />
     <Compile Include="MesailerDAL.cs" />
+    <Compile Include="MesleklerDAL.cs" />
+    <Compile Include="MusteriHarcamalarDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLHelper.cs" />
   </ItemGroup>

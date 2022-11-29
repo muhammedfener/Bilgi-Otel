@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlMenuHeader = new System.Windows.Forms.Panel();
-            this.lblLogo = new System.Windows.Forms.Label();
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.pnlForm = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pnlMenuHeader = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.lblLogo = new System.Windows.Forms.Label();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.pnlForm = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.pnlMenuHeader.SuspendLayout();
             this.SuspendLayout();
@@ -53,43 +53,6 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(200, 511);
             this.pnlMenu.TabIndex = 0;
-            // 
-            // pnlMenuHeader
-            // 
-            this.pnlMenuHeader.Controls.Add(this.btnMenu);
-            this.pnlMenuHeader.Controls.Add(this.lblLogo);
-            this.pnlMenuHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMenuHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenuHeader.Name = "pnlMenuHeader";
-            this.pnlMenuHeader.Size = new System.Drawing.Size(200, 80);
-            this.pnlMenuHeader.TabIndex = 0;
-            // 
-            // lblLogo
-            // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(162)))), ((int)(((byte)(97)))));
-            this.lblLogo.Location = new System.Drawing.Point(22, 27);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(108, 25);
-            this.lblLogo.TabIndex = 1;
-            this.lblLogo.Text = "Bilgi Otel";
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(200, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(674, 80);
-            this.pnlHeader.TabIndex = 1;
-            // 
-            // pnlForm
-            // 
-            this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlForm.Location = new System.Drawing.Point(200, 80);
-            this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(674, 431);
-            this.pnlForm.TabIndex = 2;
             // 
             // button3
             // 
@@ -148,6 +111,16 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // pnlMenuHeader
+            // 
+            this.pnlMenuHeader.Controls.Add(this.btnMenu);
+            this.pnlMenuHeader.Controls.Add(this.lblLogo);
+            this.pnlMenuHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMenuHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenuHeader.Name = "pnlMenuHeader";
+            this.pnlMenuHeader.Size = new System.Drawing.Size(200, 80);
+            this.pnlMenuHeader.TabIndex = 0;
+            // 
             // btnMenu
             // 
             this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -168,7 +141,34 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // FrmLogin
+            // lblLogo
+            // 
+            this.lblLogo.AutoSize = true;
+            this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(162)))), ((int)(((byte)(97)))));
+            this.lblLogo.Location = new System.Drawing.Point(22, 27);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(108, 25);
+            this.lblLogo.TabIndex = 1;
+            this.lblLogo.Text = "Bilgi Otel";
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(200, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(674, 80);
+            this.pnlHeader.TabIndex = 1;
+            // 
+            // pnlForm
+            // 
+            this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlForm.Location = new System.Drawing.Point(200, 80);
+            this.pnlForm.Name = "pnlForm";
+            this.pnlForm.Size = new System.Drawing.Size(674, 431);
+            this.pnlForm.TabIndex = 2;
+            // 
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -177,7 +177,7 @@
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pnlMenu);
-            this.Name = "FrmLogin";
+            this.Name = "FrmMain";
             this.Text = "Login";
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenuHeader.ResumeLayout(false);

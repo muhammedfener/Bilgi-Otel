@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BilgiOtelDAL;
+using Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,6 +46,15 @@ namespace BilgiOtel
                     button.Text = button.Tag.ToString();
                 }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MesleklerDAL mesleklerDAL = new MesleklerDAL();
+            MesleklerEntity meslekler = new MesleklerEntity();
+            meslekler.MeslekID = 1;
+            meslekler.MeslekAciklama = "Tekniker";
+
         }
     }
 }
