@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,11 @@ namespace BilgiOtel
 {
     public partial class FrmMain : Form
     {
+        private Button currentButton;
+        private Random random;
+        private int tempIndex;
+        private Form activeForm;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -21,7 +27,7 @@ namespace BilgiOtel
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if (pnlMenu.Width == 200)
+            if (pnlMenu.Width == 240)
             {
                 pnlMenu.Width = 80;
                 lblLogo.Visible = false;
@@ -36,7 +42,7 @@ namespace BilgiOtel
             }
             else
             {
-                pnlMenu.Width = 200;
+                pnlMenu.Width = 240;
                 lblLogo.Visible = true;
                 btnMenu.Dock = DockStyle.None;
                 btnMenu.Padding = new Padding(0);
@@ -48,13 +54,13 @@ namespace BilgiOtel
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnOdaEkleDuzenle_Click(object sender, EventArgs e)
         {
-            MesleklerDAL mesleklerDAL = new MesleklerDAL();
-            MesleklerEntity meslekler = new MesleklerEntity();
-            meslekler.MeslekID = 1;
-            meslekler.MeslekAciklama = "Tekniker";
 
+        }
+
+        private void btnCalisanEkleDuzenle_Click(object sender, EventArgs e)
+        {
         }
     }
 }

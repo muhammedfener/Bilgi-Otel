@@ -85,7 +85,7 @@ namespace BilgiOtelDAL
         }
 
         //Delete
-        public int deleteOda(int id)
+        public int deletePaket(int id)
         {
             int silinenPaketSayisi = SQLHelper.ExecuteNonQuery($"UPDATE paketler SET paketAktifMi = 0 WHERE paketID = {id}");
 
