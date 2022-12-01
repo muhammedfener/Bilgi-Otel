@@ -1,4 +1,5 @@
-﻿using BilgiOtelDAL;
+﻿using BilgiOtel.Properties;
+using BilgiOtelDAL;
 using Entity;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,7 @@ namespace BilgiOtel
 {
     public partial class FrmMain : Form
     {
-        private Button currentButton;
-        private Random random;
-        private int tempIndex;
-        private Form activeForm;
+        private Form AktifForm;
 
         public FrmMain()
         {
@@ -46,7 +44,7 @@ namespace BilgiOtel
                 lblLogo.Visible = true;
                 btnMenu.Dock = DockStyle.None;
                 btnMenu.Padding = new Padding(0);
-                btnMenu.Height = 25;
+                btnMenu.Height = 50;
                 foreach (Button button in pnlMenu.Controls.OfType<Button>())
                 {
                     button.Text = button.Tag.ToString();
@@ -54,13 +52,32 @@ namespace BilgiOtel
             }
         }
 
+        private void OpenForm(Form form)
+        {
+            if (AktifForm != null)
+                AktifForm.Close();
+
+            AktifForm = form;
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            this.pnlForm.Controls.Add(form);
+            this.pnlForm.Tag = form;
+            this.Width = form.Width + pnlMenu.Width + 20;
+            this.Height = form.Height + pnlHeader.Height + 30;
+            form.BringToFront();
+            form.Show();
+            lblHeader.Text = form.Text;
+        }
+
         private void btnOdaEkleDuzenle_Click(object sender, EventArgs e)
         {
-
+            OpenForm(new FrmOdalar());
         }
 
         private void btnCalisanEkleDuzenle_Click(object sender, EventArgs e)
         {
+            OpenForm(new FrmCalisanlar());
         }
     }
 }

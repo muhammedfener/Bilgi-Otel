@@ -117,38 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnKampanyaEkleDuzenle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA90lEQVRIS92UsQ6CMBRF2dUvc1ATNcZo
-        QnHzD9RvcWjZ/CvRSUeoCyT4mrRJbV5LW5m4yR3g9Z5LgDYZjnh+mFaMPMGtw48PzRYyEiYRNmA2NyVL
-        NzLmLw1watl+xPP0rN0zHV6iwq/bcSyu39dsogExh5WooHhyUcIZuWgwm/1LkLCvm4qSncTYhQRD3F2C
-        hELtLkECMbaXwNB3H3S5QTcjp2QGw9pYHOtCYn9V5tkahn2U4AVCPZTU4m1IHK6SkqVYaAR9DB853UqM
-        WxEl/nClgJJwuJJHSTxcyVHyP1wJTs0VAPWS/uBKcJTPAVyA752/4kCUJF+jpiXlGyKrlQAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
-  <data name="btnCalisanEkleDuzenle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABoElEQVRIS+1Tv0vDQBg9FRz8GxRUcHbw
-        PxFd7X2hdlN0EhysTirVVXHR3sUuTuKq/02ri3aQJA2KEL93vcRcaTCi4NIHj+Te974fd5eIEUbIELdo
-        PtJUA2NdnbPy3yD0iUJNMTOx5HdP2vDvgMkHimdNfrST5GZ1kpOOQy2f+NkNfW8NOo4kV9RhpOU6PPDy
-        uhsqemQeoRZ0Bwg4BRQ1oJdscOrEuBZ0B6Z73qTpHnqZIwqV9+DEuBZ0B0MafLy25IKJ8YXy2r1kRRXE
-        4IE3Fyts4B4RM/Llrg0LTIsjAeMrOWtlAc9gHt/joQ1/wVwymvR38szPxtDLGoD9OE6YLya36JKLkNTr
-        41GzsoTJQ1/ugJFPVWiIWdv34K4T/DUs9i5pJl0HmjZ5sk5/20PZDpTcgBc5vevqNGqkawNMwcZtezTt
-        5KI2ZZppurNFviUPcos6yOV1p1/L20oSMSYCLc8zs09NNA0UrWRaSXKdZeTyu0q1SNEZhPdU4EkOYOKf
-        ay/VyhI5yEWNnP6GBpkpUN6+MfEzr5dhUS60Ef4TQnwCqod4pL452NkAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnOdaEkleDuzenle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAtklEQVRIS2MYBSMEfFmU+B+EoVzqA7pa
-        8H9VKBuQ3fllUcKzLwsTnwJxB0gMWR0e/OnzoqT1nxYnqYPUwwFMAZgNNBBJAwQDxZDVEYHffZuXKAvS
-        AwYwCTAb5GpUxSALniKrIxKvAukBA5ggmE09Cz6C9IABTBDMxhZEixLakdURi0F6wABZABzJIEsgEUxq
-        JKNgkB4wwBDAAZA1E4Oh2kjXSCyGGj+cLIByKQbD0IJRMICAgQEACtZxzpPNbq8AAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

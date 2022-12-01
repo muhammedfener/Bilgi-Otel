@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComboBoxDoldur.cs" />
+    <Compile Include="FrmCalisanlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCalisanlar.Designer.cs">
+      <DependentUpon>FrmCalisanlar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +70,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCalisanlar.resx">
+      <DependentUpon>FrmCalisanlar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOdalar.resx">
+      <DependentUpon>FrmOdalar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,31 +106,10 @@
     <None Include="Resources\bed.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bed %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bed %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\menu %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\indir.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LogoMakr-6fAYwI.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lanVHYtnZ2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\account-group.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\account-group %281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BilgiOtelDAL\BilgiOtelDAL.csproj">
@@ -129,6 +120,18 @@
       <Project>{54a5b4e0-3103-40ee-a1a5-2d801cf43101}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
