@@ -14,11 +14,11 @@ using System.Windows.Forms;
 
 namespace BilgiOtel
 {
-    public partial class FrmMain : Form
+    public partial class FrmYonetici : Form
     {
         private Form AktifForm;
 
-        public FrmMain()
+        public FrmYonetici()
         {
             InitializeComponent();
         }
@@ -64,7 +64,7 @@ namespace BilgiOtel
             this.pnlForm.Controls.Add(form);
             this.pnlForm.Tag = form;
             this.Width = form.Width + pnlMenu.Width + 20;
-            this.Height = form.Height + pnlHeader.Height + 30;
+            this.Height = form.Height + pnlHeader.Height;
             form.BringToFront();
             form.Show();
             lblHeader.Text = form.Text;

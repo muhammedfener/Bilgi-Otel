@@ -56,11 +56,11 @@
     <Compile Include="FrmCalisanlar.Designer.cs">
       <DependentUpon>FrmCalisanlar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
+    <Compile Include="FrmYonetici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <Compile Include="FrmYonetici.Designer.cs">
+      <DependentUpon>FrmYonetici.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOdalar.cs">
       <SubType>Form</SubType>
@@ -73,8 +73,8 @@
     <EmbeddedResource Include="FrmCalisanlar.resx">
       <DependentUpon>FrmCalisanlar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
+    <EmbeddedResource Include="FrmYonetici.resx">
+      <DependentUpon>FrmYonetici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOdalar.resx">
       <DependentUpon>FrmOdalar.cs</DependentUpon>

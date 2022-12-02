@@ -1,6 +1,6 @@
 ﻿namespace BilgiOtel
 {
-    partial class FrmMain
+    partial class FrmYonetici
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmYonetici));
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.pnlMenuHeader = new System.Windows.Forms.Panel();
-            this.lblLogo = new System.Windows.Forms.Label();
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.pnlForm = new System.Windows.Forms.Panel();
             this.btnMesaiEkleDuzenle = new System.Windows.Forms.Button();
             this.btnCalismaEkleDuzenle = new System.Windows.Forms.Button();
             this.btnKullaniciEkleDuzenle = new System.Windows.Forms.Button();
             this.btnKampanyaEkleDuzenle = new System.Windows.Forms.Button();
             this.btnCalisanEkleDuzenle = new System.Windows.Forms.Button();
             this.btnOdaEkleDuzenle = new System.Windows.Forms.Button();
+            this.pnlMenuHeader = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.lblLogo = new System.Windows.Forms.Label();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblHeader = new System.Windows.Forms.Label();
+            this.pnlForm = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlMenuHeader.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -62,54 +63,6 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(240, 557);
             this.pnlMenu.TabIndex = 0;
-            // 
-            // pnlMenuHeader
-            // 
-            this.pnlMenuHeader.Controls.Add(this.btnMenu);
-            this.pnlMenuHeader.Controls.Add(this.lblLogo);
-            this.pnlMenuHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMenuHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenuHeader.Name = "pnlMenuHeader";
-            this.pnlMenuHeader.Size = new System.Drawing.Size(240, 80);
-            this.pnlMenuHeader.TabIndex = 0;
-            // 
-            // lblLogo
-            // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(162)))), ((int)(((byte)(97)))));
-            this.lblLogo.Location = new System.Drawing.Point(22, 27);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(108, 25);
-            this.lblLogo.TabIndex = 1;
-            this.lblLogo.Text = "Bilgi Otel";
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.Controls.Add(this.lblHeader);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(240, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(735, 80);
-            this.pnlHeader.TabIndex = 1;
-            // 
-            // lblHeader
-            // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblHeader.Location = new System.Drawing.Point(252, 31);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(83, 20);
-            this.lblHeader.TabIndex = 0;
-            this.lblHeader.Text = "Ana Sayfa";
-            // 
-            // pnlForm
-            // 
-            this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlForm.Location = new System.Drawing.Point(240, 80);
-            this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(735, 477);
-            this.pnlForm.TabIndex = 2;
             // 
             // btnMesaiEkleDuzenle
             // 
@@ -227,6 +180,16 @@
             this.btnOdaEkleDuzenle.UseVisualStyleBackColor = false;
             this.btnOdaEkleDuzenle.Click += new System.EventHandler(this.btnOdaEkleDuzenle_Click);
             // 
+            // pnlMenuHeader
+            // 
+            this.pnlMenuHeader.Controls.Add(this.btnMenu);
+            this.pnlMenuHeader.Controls.Add(this.lblLogo);
+            this.pnlMenuHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMenuHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenuHeader.Name = "pnlMenuHeader";
+            this.pnlMenuHeader.Size = new System.Drawing.Size(240, 80);
+            this.pnlMenuHeader.TabIndex = 0;
+            // 
             // btnMenu
             // 
             this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -247,6 +210,53 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // lblLogo
+            // 
+            this.lblLogo.AutoSize = true;
+            this.lblLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(162)))), ((int)(((byte)(97)))));
+            this.lblLogo.Location = new System.Drawing.Point(22, 27);
+            this.lblLogo.Name = "lblLogo";
+            this.lblLogo.Size = new System.Drawing.Size(108, 25);
+            this.lblLogo.TabIndex = 1;
+            this.lblLogo.Text = "Bilgi Otel";
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.Controls.Add(this.label1);
+            this.pnlHeader.Controls.Add(this.lblHeader);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(240, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(735, 80);
+            this.pnlHeader.TabIndex = 1;
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblHeader.Location = new System.Drawing.Point(252, 31);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(83, 20);
+            this.lblHeader.TabIndex = 0;
+            this.lblHeader.Text = "Ana Sayfa";
+            // 
+            // pnlForm
+            // 
+            this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlForm.Location = new System.Drawing.Point(240, 80);
+            this.pnlForm.Name = "pnlForm";
+            this.pnlForm.Size = new System.Drawing.Size(735, 477);
+            this.pnlForm.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(3, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(729, 3);
+            this.label1.TabIndex = 0;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,7 +270,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmMain";
-            this.Text = "Login";
+            this.Text = "Yönetici Paneli";
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenuHeader.ResumeLayout(false);
             this.pnlMenuHeader.PerformLayout();
@@ -285,6 +295,7 @@
         private System.Windows.Forms.Button btnMesaiEkleDuzenle;
         private System.Windows.Forms.Button btnCalismaEkleDuzenle;
         private System.Windows.Forms.Button btnKullaniciEkleDuzenle;
+        private System.Windows.Forms.Label label1;
     }
 }
 
