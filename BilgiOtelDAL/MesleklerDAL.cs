@@ -1,6 +1,7 @@
 ﻿using Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,16 +15,16 @@ namespace BilgiOtelDAL
 
         public MesleklerEntity getMeslek(int id)
         {
-            SqlDataReader meslek = SQLHelper.ExecuteReader($"SELECT * FROM meslekler WHERE meslekID = {id}");
+            DataTable meslek = SQLHelper.GetDataTable($"SELECT * FROM meslekler WHERE meslekID = {id}");
 
             MesleklerEntity Meslek = new MesleklerEntity();
 
-            while (meslek.Read())
+            foreach (DataRow dr in meslek.Rows)
             {
-                Meslek.MeslekID = (int)meslek[0];
-                Meslek.MeslekAd = (string)meslek[1];
-                Meslek.MeslekAciklama = (string)meslek[2];
-                Meslek.MeslekAktifMi = (bool)meslek[3];
+                Meslek.MeslekID = (int)dr[0];
+                Meslek.MeslekAd = (string)dr[1];
+                Meslek.MeslekAciklama = (string)dr[2];
+                Meslek.MeslekAktifMi = (bool)dr[3];
             }
 
             return Meslek;
@@ -32,17 +33,17 @@ namespace BilgiOtelDAL
         //Hepsini Getir
         public List<MesleklerEntity> getMeslekler()
         {
-            SqlDataReader meslekler = SQLHelper.ExecuteReader("SELECT * FROM meslekler");
+            DataTable meslekler = SQLHelper.GetDataTable("SELECT * FROM meslekler");
 
             List<MesleklerEntity> Meslekler = new List<MesleklerEntity>();
 
-            while (meslekler.Read())
+            foreach (DataRow dr in meslekler.Rows)
             {
                 MesleklerEntity meslek = new MesleklerEntity();
-                meslek.MeslekID = (int)meslekler[0];
-                meslek.MeslekAd = (string)meslekler[1];
-                meslek.MeslekAciklama = (string)meslekler[2];
-                meslek.MeslekAktifMi = (bool)meslekler[3];
+                meslek.MeslekID = (int)dr[0];
+                meslek.MeslekAd = (string)dr[1];
+                meslek.MeslekAciklama = (string)dr[2];
+                meslek.MeslekAktifMi = (bool)dr[3];
 
                 Meslekler.Add(meslek);
             }

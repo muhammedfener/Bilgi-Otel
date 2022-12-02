@@ -49,12 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComboBoxDoldur.cs" />
     <Compile Include="FrmCalisanlar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCalisanlar.Designer.cs">
       <DependentUpon>FrmCalisanlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKampanyalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKampanyalar.Designer.cs">
+      <DependentUpon>FrmKampanyalar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmYonetici.cs">
       <SubType>Form</SubType>
@@ -68,10 +73,14 @@
     <Compile Include="FrmOdalar.Designer.cs">
       <DependentUpon>FrmOdalar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Islemler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCalisanlar.resx">
       <DependentUpon>FrmCalisanlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKampanyalar.resx">
+      <DependentUpon>FrmKampanyalar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmYonetici.resx">
       <DependentUpon>FrmYonetici.cs</DependentUpon>

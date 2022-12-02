@@ -13,14 +13,14 @@ namespace BilgiOtelDAL
 {
     public static class DataConnections
     {
-        private static string ConnectionString = ConfigurationManager.ConnectionStrings["DbConnect"].ConnectionString;
+        //private static string ConnectionString = ConfigurationManager.ConnectionStrings["DbConnect"].ConnectionString;
 
         public static string Get_MsSQLConnectionString
         {
-            get { return ConnectionString; }
+            get { return "Server=.;Database=MyBilgiHotel;Trusted_Connection=True"; }
         }
         
-        public static string Set_MsSQLConnectionString
+        /*public static string Set_MsSQLConnectionString
         {
             set
             {
@@ -37,6 +37,6 @@ namespace BilgiOtelDAL
                     throw new Exception("Kaydedilmek İstenen Sunucuya Bağlanılamadı!");
                 }
             }
-        }
+        }*/
     }
 }

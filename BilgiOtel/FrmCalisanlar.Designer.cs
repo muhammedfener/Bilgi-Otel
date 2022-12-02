@@ -313,7 +313,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 397);
+            this.ClientSize = new System.Drawing.Size(755, 386);
             this.Controls.Add(this.btnCalisanSec);
             this.Controls.Add(this.lvwCalisanListesi);
             this.Controls.Add(this.btnCalisanTemizle);
@@ -340,7 +340,9 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label9);
             this.Name = "FrmCalisanlar";
-            this.Text = "FrmCalisanlar";
+            this.Tag = "Çalışan Ekle&&Düzenle";
+            this.Text = "Çalışanlar";
+            this.Load += new System.EventHandler(this.FrmCalisanlar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudSaatlikUcret)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

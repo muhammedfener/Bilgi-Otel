@@ -30,19 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmYonetici));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlMenuHeader = new System.Windows.Forms.Panel();
+            this.lblLogo = new System.Windows.Forms.Label();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblHeader = new System.Windows.Forms.Label();
+            this.pnlForm = new System.Windows.Forms.Panel();
             this.btnMesaiEkleDuzenle = new System.Windows.Forms.Button();
             this.btnCalismaEkleDuzenle = new System.Windows.Forms.Button();
             this.btnKullaniciEkleDuzenle = new System.Windows.Forms.Button();
             this.btnKampanyaEkleDuzenle = new System.Windows.Forms.Button();
             this.btnCalisanEkleDuzenle = new System.Windows.Forms.Button();
             this.btnOdaEkleDuzenle = new System.Windows.Forms.Button();
-            this.pnlMenuHeader = new System.Windows.Forms.Panel();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.lblLogo = new System.Windows.Forms.Label();
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.lblHeader = new System.Windows.Forms.Label();
-            this.pnlForm = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.pnlMenuHeader.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -64,122 +63,6 @@
             this.pnlMenu.Size = new System.Drawing.Size(240, 557);
             this.pnlMenu.TabIndex = 0;
             // 
-            // btnMesaiEkleDuzenle
-            // 
-            this.btnMesaiEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMesaiEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
-            this.btnMesaiEkleDuzenle.FlatAppearance.BorderSize = 0;
-            this.btnMesaiEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesaiEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMesaiEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-            this.btnMesaiEkleDuzenle.Image = global::BilgiOtel.Properties.Resources.calendar_plus;
-            this.btnMesaiEkleDuzenle.Location = new System.Drawing.Point(3, 276);
-            this.btnMesaiEkleDuzenle.Name = "btnMesaiEkleDuzenle";
-            this.btnMesaiEkleDuzenle.Size = new System.Drawing.Size(234, 32);
-            this.btnMesaiEkleDuzenle.TabIndex = 1;
-            this.btnMesaiEkleDuzenle.Tag = "Mesai Ekle&&Düzenle";
-            this.btnMesaiEkleDuzenle.Text = "Mesai Ekle&&Düzenle";
-            this.btnMesaiEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMesaiEkleDuzenle.UseVisualStyleBackColor = false;
-            // 
-            // btnCalismaEkleDuzenle
-            // 
-            this.btnCalismaEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCalismaEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
-            this.btnCalismaEkleDuzenle.FlatAppearance.BorderSize = 0;
-            this.btnCalismaEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalismaEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCalismaEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-            this.btnCalismaEkleDuzenle.Image = global::BilgiOtel.Properties.Resources.calendar;
-            this.btnCalismaEkleDuzenle.Location = new System.Drawing.Point(3, 238);
-            this.btnCalismaEkleDuzenle.Name = "btnCalismaEkleDuzenle";
-            this.btnCalismaEkleDuzenle.Size = new System.Drawing.Size(234, 32);
-            this.btnCalismaEkleDuzenle.TabIndex = 1;
-            this.btnCalismaEkleDuzenle.Tag = "Çalışma Saati Ekle&&Düzenle";
-            this.btnCalismaEkleDuzenle.Text = "Çalışma Saati Ekle&&Düzenle";
-            this.btnCalismaEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCalismaEkleDuzenle.UseVisualStyleBackColor = false;
-            // 
-            // btnKullaniciEkleDuzenle
-            // 
-            this.btnKullaniciEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKullaniciEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
-            this.btnKullaniciEkleDuzenle.FlatAppearance.BorderSize = 0;
-            this.btnKullaniciEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKullaniciEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKullaniciEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-            this.btnKullaniciEkleDuzenle.Image = global::BilgiOtel.Properties.Resources.account;
-            this.btnKullaniciEkleDuzenle.Location = new System.Drawing.Point(3, 200);
-            this.btnKullaniciEkleDuzenle.Name = "btnKullaniciEkleDuzenle";
-            this.btnKullaniciEkleDuzenle.Size = new System.Drawing.Size(234, 32);
-            this.btnKullaniciEkleDuzenle.TabIndex = 1;
-            this.btnKullaniciEkleDuzenle.Tag = "Kullanıcı Ekle&&Düzenle";
-            this.btnKullaniciEkleDuzenle.Text = "Kullanıcı Ekle&&Düzenle";
-            this.btnKullaniciEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKullaniciEkleDuzenle.UseVisualStyleBackColor = false;
-            // 
-            // btnKampanyaEkleDuzenle
-            // 
-            this.btnKampanyaEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnKampanyaEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
-            this.btnKampanyaEkleDuzenle.FlatAppearance.BorderSize = 0;
-            this.btnKampanyaEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKampanyaEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKampanyaEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-            this.btnKampanyaEkleDuzenle.Image = ((System.Drawing.Image)(resources.GetObject("btnKampanyaEkleDuzenle.Image")));
-            this.btnKampanyaEkleDuzenle.Location = new System.Drawing.Point(3, 162);
-            this.btnKampanyaEkleDuzenle.Name = "btnKampanyaEkleDuzenle";
-            this.btnKampanyaEkleDuzenle.Size = new System.Drawing.Size(234, 32);
-            this.btnKampanyaEkleDuzenle.TabIndex = 1;
-            this.btnKampanyaEkleDuzenle.Tag = "Kampanya Ekle&&Düzenle";
-            this.btnKampanyaEkleDuzenle.Text = "Kampanya Ekle&&Düzenle";
-            this.btnKampanyaEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnKampanyaEkleDuzenle.UseVisualStyleBackColor = false;
-            // 
-            // btnCalisanEkleDuzenle
-            // 
-            this.btnCalisanEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCalisanEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
-            this.btnCalisanEkleDuzenle.FlatAppearance.BorderSize = 0;
-            this.btnCalisanEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalisanEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCalisanEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-            this.btnCalisanEkleDuzenle.Image = ((System.Drawing.Image)(resources.GetObject("btnCalisanEkleDuzenle.Image")));
-            this.btnCalisanEkleDuzenle.Location = new System.Drawing.Point(3, 124);
-            this.btnCalisanEkleDuzenle.Name = "btnCalisanEkleDuzenle";
-            this.btnCalisanEkleDuzenle.Size = new System.Drawing.Size(234, 32);
-            this.btnCalisanEkleDuzenle.TabIndex = 1;
-            this.btnCalisanEkleDuzenle.Tag = "Çalışan Ekle&&Düzenle";
-            this.btnCalisanEkleDuzenle.Text = "Çalışan Ekle&&Düzenle";
-            this.btnCalisanEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCalisanEkleDuzenle.UseVisualStyleBackColor = false;
-            this.btnCalisanEkleDuzenle.Click += new System.EventHandler(this.btnCalisanEkleDuzenle_Click);
-            // 
-            // btnOdaEkleDuzenle
-            // 
-            this.btnOdaEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOdaEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
-            this.btnOdaEkleDuzenle.FlatAppearance.BorderSize = 0;
-            this.btnOdaEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOdaEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOdaEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-            this.btnOdaEkleDuzenle.Image = ((System.Drawing.Image)(resources.GetObject("btnOdaEkleDuzenle.Image")));
-            this.btnOdaEkleDuzenle.Location = new System.Drawing.Point(3, 86);
-            this.btnOdaEkleDuzenle.Name = "btnOdaEkleDuzenle";
-            this.btnOdaEkleDuzenle.Size = new System.Drawing.Size(234, 32);
-            this.btnOdaEkleDuzenle.TabIndex = 1;
-            this.btnOdaEkleDuzenle.Tag = "Oda Ekle&&Düzenle";
-            this.btnOdaEkleDuzenle.Text = "Oda Ekle&&Düzenle";
-            this.btnOdaEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOdaEkleDuzenle.UseVisualStyleBackColor = false;
-            this.btnOdaEkleDuzenle.Click += new System.EventHandler(this.btnOdaEkleDuzenle_Click);
-            // 
             // pnlMenuHeader
             // 
             this.pnlMenuHeader.Controls.Add(this.btnMenu);
@@ -189,26 +72,6 @@
             this.pnlMenuHeader.Name = "pnlMenuHeader";
             this.pnlMenuHeader.Size = new System.Drawing.Size(240, 80);
             this.pnlMenuHeader.TabIndex = 0;
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(114)))), ((int)(((byte)(135)))));
-            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(114)))), ((int)(((byte)(135)))));
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
-            this.btnMenu.Image = global::BilgiOtel.Properties.Resources.menu;
-            this.btnMenu.Location = new System.Drawing.Point(162, 17);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(72, 50);
-            this.btnMenu.TabIndex = 1;
-            this.btnMenu.Tag = "";
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // lblLogo
             // 
@@ -223,7 +86,6 @@
             // 
             // pnlHeader
             // 
-            this.pnlHeader.Controls.Add(this.label1);
             this.pnlHeader.Controls.Add(this.lblHeader);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(240, 0);
@@ -249,15 +111,150 @@
             this.pnlForm.Size = new System.Drawing.Size(735, 477);
             this.pnlForm.TabIndex = 2;
             // 
-            // label1
+            // btnMesaiEkleDuzenle
             // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(3, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(729, 3);
-            this.label1.TabIndex = 0;
+            this.btnMesaiEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMesaiEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
+            this.btnMesaiEkleDuzenle.FlatAppearance.BorderSize = 0;
+            this.btnMesaiEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesaiEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMesaiEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+            this.btnMesaiEkleDuzenle.Image = global::BilgiOtel.Properties.Resources.calendar_plus;
+            this.btnMesaiEkleDuzenle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMesaiEkleDuzenle.Location = new System.Drawing.Point(3, 276);
+            this.btnMesaiEkleDuzenle.Name = "btnMesaiEkleDuzenle";
+            this.btnMesaiEkleDuzenle.Size = new System.Drawing.Size(234, 32);
+            this.btnMesaiEkleDuzenle.TabIndex = 1;
+            this.btnMesaiEkleDuzenle.Tag = "Mesai Ekle&&Düzenle";
+            this.btnMesaiEkleDuzenle.Text = "Mesai Ekle&&Düzenle";
+            this.btnMesaiEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMesaiEkleDuzenle.UseVisualStyleBackColor = false;
             // 
-            // FrmMain
+            // btnCalismaEkleDuzenle
+            // 
+            this.btnCalismaEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCalismaEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
+            this.btnCalismaEkleDuzenle.FlatAppearance.BorderSize = 0;
+            this.btnCalismaEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalismaEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCalismaEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+            this.btnCalismaEkleDuzenle.Image = global::BilgiOtel.Properties.Resources.calendar;
+            this.btnCalismaEkleDuzenle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalismaEkleDuzenle.Location = new System.Drawing.Point(3, 238);
+            this.btnCalismaEkleDuzenle.Name = "btnCalismaEkleDuzenle";
+            this.btnCalismaEkleDuzenle.Size = new System.Drawing.Size(234, 32);
+            this.btnCalismaEkleDuzenle.TabIndex = 1;
+            this.btnCalismaEkleDuzenle.Tag = "Çalışma Saati Ekle&&Düzenle";
+            this.btnCalismaEkleDuzenle.Text = "Çalışma Saati Ekle&&Düzenle";
+            this.btnCalismaEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCalismaEkleDuzenle.UseVisualStyleBackColor = false;
+            // 
+            // btnKullaniciEkleDuzenle
+            // 
+            this.btnKullaniciEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKullaniciEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
+            this.btnKullaniciEkleDuzenle.FlatAppearance.BorderSize = 0;
+            this.btnKullaniciEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKullaniciEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKullaniciEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+            this.btnKullaniciEkleDuzenle.Image = global::BilgiOtel.Properties.Resources.account;
+            this.btnKullaniciEkleDuzenle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKullaniciEkleDuzenle.Location = new System.Drawing.Point(3, 200);
+            this.btnKullaniciEkleDuzenle.Name = "btnKullaniciEkleDuzenle";
+            this.btnKullaniciEkleDuzenle.Size = new System.Drawing.Size(234, 32);
+            this.btnKullaniciEkleDuzenle.TabIndex = 1;
+            this.btnKullaniciEkleDuzenle.Tag = "Kullanıcı Ekle&&Düzenle";
+            this.btnKullaniciEkleDuzenle.Text = "Kullanıcı Ekle&&Düzenle";
+            this.btnKullaniciEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKullaniciEkleDuzenle.UseVisualStyleBackColor = false;
+            // 
+            // btnKampanyaEkleDuzenle
+            // 
+            this.btnKampanyaEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnKampanyaEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
+            this.btnKampanyaEkleDuzenle.FlatAppearance.BorderSize = 0;
+            this.btnKampanyaEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKampanyaEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKampanyaEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+            this.btnKampanyaEkleDuzenle.Image = ((System.Drawing.Image)(resources.GetObject("btnKampanyaEkleDuzenle.Image")));
+            this.btnKampanyaEkleDuzenle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKampanyaEkleDuzenle.Location = new System.Drawing.Point(3, 162);
+            this.btnKampanyaEkleDuzenle.Name = "btnKampanyaEkleDuzenle";
+            this.btnKampanyaEkleDuzenle.Size = new System.Drawing.Size(234, 32);
+            this.btnKampanyaEkleDuzenle.TabIndex = 1;
+            this.btnKampanyaEkleDuzenle.Tag = "Kampanya Ekle&&Düzenle";
+            this.btnKampanyaEkleDuzenle.Text = "Kampanya Ekle&&Düzenle";
+            this.btnKampanyaEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKampanyaEkleDuzenle.UseVisualStyleBackColor = false;
+            this.btnKampanyaEkleDuzenle.Click += new System.EventHandler(this.btnKampanyaEkleDuzenle_Click);
+            // 
+            // btnCalisanEkleDuzenle
+            // 
+            this.btnCalisanEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCalisanEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
+            this.btnCalisanEkleDuzenle.FlatAppearance.BorderSize = 0;
+            this.btnCalisanEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalisanEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCalisanEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+            this.btnCalisanEkleDuzenle.Image = ((System.Drawing.Image)(resources.GetObject("btnCalisanEkleDuzenle.Image")));
+            this.btnCalisanEkleDuzenle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalisanEkleDuzenle.Location = new System.Drawing.Point(3, 124);
+            this.btnCalisanEkleDuzenle.Name = "btnCalisanEkleDuzenle";
+            this.btnCalisanEkleDuzenle.Size = new System.Drawing.Size(234, 32);
+            this.btnCalisanEkleDuzenle.TabIndex = 1;
+            this.btnCalisanEkleDuzenle.Tag = "Çalışan Ekle&&Düzenle";
+            this.btnCalisanEkleDuzenle.Text = "Çalışan Ekle&&Düzenle";
+            this.btnCalisanEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCalisanEkleDuzenle.UseVisualStyleBackColor = false;
+            this.btnCalisanEkleDuzenle.Click += new System.EventHandler(this.btnCalisanEkleDuzenle_Click);
+            // 
+            // btnOdaEkleDuzenle
+            // 
+            this.btnOdaEkleDuzenle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOdaEkleDuzenle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(157)))), ((int)(((byte)(143)))));
+            this.btnOdaEkleDuzenle.FlatAppearance.BorderSize = 0;
+            this.btnOdaEkleDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOdaEkleDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOdaEkleDuzenle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+            this.btnOdaEkleDuzenle.Image = ((System.Drawing.Image)(resources.GetObject("btnOdaEkleDuzenle.Image")));
+            this.btnOdaEkleDuzenle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOdaEkleDuzenle.Location = new System.Drawing.Point(3, 86);
+            this.btnOdaEkleDuzenle.Name = "btnOdaEkleDuzenle";
+            this.btnOdaEkleDuzenle.Size = new System.Drawing.Size(234, 32);
+            this.btnOdaEkleDuzenle.TabIndex = 1;
+            this.btnOdaEkleDuzenle.Tag = "Oda Ekle&&Düzenle";
+            this.btnOdaEkleDuzenle.Text = "Oda Ekle&&Düzenle";
+            this.btnOdaEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOdaEkleDuzenle.UseVisualStyleBackColor = false;
+            this.btnOdaEkleDuzenle.Click += new System.EventHandler(this.btnOdaEkleDuzenle_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenu.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(114)))), ((int)(((byte)(135)))));
+            this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(114)))), ((int)(((byte)(135)))));
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(196)))), ((int)(((byte)(106)))));
+            this.btnMenu.Image = global::BilgiOtel.Properties.Resources.menu;
+            this.btnMenu.Location = new System.Drawing.Point(162, 17);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(72, 50);
+            this.btnMenu.TabIndex = 1;
+            this.btnMenu.Tag = "";
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // FrmYonetici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -269,7 +266,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmMain";
+            this.Name = "FrmYonetici";
             this.Text = "Yönetici Paneli";
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenuHeader.ResumeLayout(false);
@@ -295,7 +292,6 @@
         private System.Windows.Forms.Button btnMesaiEkleDuzenle;
         private System.Windows.Forms.Button btnCalismaEkleDuzenle;
         private System.Windows.Forms.Button btnKullaniciEkleDuzenle;
-        private System.Windows.Forms.Label label1;
     }
 }
 

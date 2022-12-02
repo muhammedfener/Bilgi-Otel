@@ -16,5 +16,12 @@ namespace BilgiOtel
         {
             InitializeComponent();
         }
+
+        private void FrmCalisanlar_Load(object sender, EventArgs e)
+        {
+            ComboBox[] MeslekCmbler = { cmbMeslek };
+            Islemler.CmbDoldur(MeslekCmbler,Islemler.Meslekler);
+            Islemler.LvDoldur(lvwCalisanListesi, "Calisanlar");
+        }
     }
 }

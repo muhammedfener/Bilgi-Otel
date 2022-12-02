@@ -11,19 +11,6 @@ namespace BilgiOtelDAL
 {
     public static class SQLHelper
     {
-        /*public SQLHelper()
-        {
-            try
-            {
-                GetConnection().Open();
-                GetConnection().Close();
-            }
-            catch
-            {
-                throw new Exception("SQL Sunucusuna Bağlanılamadı!");
-            }
-        }*/
-
         private static SqlConnection GetConnection()
         {
             return new SqlConnection(DataConnections.Get_MsSQLConnectionString);
@@ -48,9 +35,9 @@ namespace BilgiOtelDAL
                 cmd.Parameters.AddRange(parameters);
             }
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             int rows = cmd.ExecuteNonQuery();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             return rows;
         }
@@ -65,9 +52,9 @@ namespace BilgiOtelDAL
                 cmd.Parameters.AddRange(parameters);
             }
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             int rows = cmd.ExecuteNonQuery();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             return rows;
         }
@@ -76,10 +63,10 @@ namespace BilgiOtelDAL
         {
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
-            
-            GetConnection().Open();
+
+            cmd.Connection.Open();
             int rows = cmd.ExecuteNonQuery();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             return rows;
         }
@@ -95,9 +82,9 @@ namespace BilgiOtelDAL
                 cmd.Parameters.AddRange(parameters);
             }
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             object result = cmd.ExecuteScalar();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             return result;
         }
@@ -112,9 +99,9 @@ namespace BilgiOtelDAL
                 cmd.Parameters.AddRange(parameters);
             }
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             object result = cmd.ExecuteScalar();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             return result;
         }
@@ -124,9 +111,9 @@ namespace BilgiOtelDAL
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             object result = cmd.ExecuteScalar();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             return result;
         }
@@ -142,9 +129,9 @@ namespace BilgiOtelDAL
                 cmd.Parameters.AddRange(parameters);
             }
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             return reader;
         }
@@ -159,9 +146,9 @@ namespace BilgiOtelDAL
                 cmd.Parameters.AddRange(parameters);
             }
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             return reader;
         }
@@ -171,10 +158,9 @@ namespace BilgiOtelDAL
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            GetConnection().Close();
-
+            cmd.Connection.Open();
             return reader;
         }
 
@@ -190,9 +176,9 @@ namespace BilgiOtelDAL
                 cmd.Parameters.AddRange(parameters);
             }
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             DataTable returnTable = new DataTable();
             returnTable.Load(reader);
@@ -210,9 +196,9 @@ namespace BilgiOtelDAL
                 cmd.Parameters.AddRange(parameters);
             }
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            GetConnection().Close();
+            cmd.Connection.Close();
 
             DataTable returnTable = new DataTable();
             returnTable.Load(reader);
@@ -225,15 +211,15 @@ namespace BilgiOtelDAL
             SqlCommand cmd = GetCommand();
             cmd.CommandText = commandText;
 
-            GetConnection().Open();
+            cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            GetConnection().Close();
 
             DataTable returnTable = new DataTable();
             returnTable.Load(reader);
+            reader.Close();
 
+            cmd.Connection.Close();
             return returnTable;
         }
-
     }
 }

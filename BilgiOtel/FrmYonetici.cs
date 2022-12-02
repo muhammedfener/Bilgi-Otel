@@ -48,6 +48,7 @@ namespace BilgiOtel
                 foreach (Button button in pnlMenu.Controls.OfType<Button>())
                 {
                     button.Text = button.Tag.ToString();
+                    button.ImageAlign = ContentAlignment.MiddleLeft;
                 }
             }
         }
@@ -63,11 +64,11 @@ namespace BilgiOtel
             form.Dock = DockStyle.Fill;
             this.pnlForm.Controls.Add(form);
             this.pnlForm.Tag = form;
-            this.Width = form.Width + pnlMenu.Width + 20;
-            this.Height = form.Height + pnlHeader.Height;
+            this.Width = form.Width + pnlMenu.Width + 6;
+            this.Height = form.Height + pnlHeader.Height+35;
             form.BringToFront();
             form.Show();
-            lblHeader.Text = form.Text;
+            lblHeader.Text = (string)form.Tag;
         }
 
         private void btnOdaEkleDuzenle_Click(object sender, EventArgs e)
@@ -78,6 +79,11 @@ namespace BilgiOtel
         private void btnCalisanEkleDuzenle_Click(object sender, EventArgs e)
         {
             OpenForm(new FrmCalisanlar());
+        }
+
+        private void btnKampanyaEkleDuzenle_Click(object sender, EventArgs e)
+        {
+            OpenForm(new FrmKampanyalar());
         }
     }
 }
