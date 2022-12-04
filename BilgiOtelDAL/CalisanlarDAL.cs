@@ -137,10 +137,18 @@ namespace BilgiOtelDAL
             return guncellenenCalisanSayisi;
         }
 
-        //Delete
-        public int deleteCalisan(int id)
+        //DeleteID
+        public int deleteCalisanID(int id)
         {
             int silinenCalisanSayisi = SQLHelper.ExecuteNonQuery($"UPDATE calisanlar SET calisanAktifMi=0 WHERE calisanID = {id}");
+
+            return silinenCalisanSayisi;
+        }
+
+        //DeleteTC
+        public int deleteCalisanTC(string calisanTC)
+        {
+            int silinenCalisanSayisi = SQLHelper.ExecuteNonQuery($"UPDATE calisanlar SET calisanAktifMi=0 WHERE calisanTCKimlik = {calisanTC}");
 
             return silinenCalisanSayisi;
         }

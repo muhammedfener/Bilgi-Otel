@@ -55,11 +55,29 @@
     <Compile Include="FrmCalisanlar.Designer.cs">
       <DependentUpon>FrmCalisanlar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCalismaSaatleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCalismaSaatleri.Designer.cs">
+      <DependentUpon>FrmCalismaSaatleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmKampanyalar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmKampanyalar.Designer.cs">
       <DependentUpon>FrmKampanyalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKullanicilar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKullanicilar.Designer.cs">
+      <DependentUpon>FrmKullanicilar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMesailer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMesailer.Designer.cs">
+      <DependentUpon>FrmMesailer.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmYonetici.cs">
       <SubType>Form</SubType>

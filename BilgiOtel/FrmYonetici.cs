@@ -120,5 +120,10 @@ namespace BilgiOtel
                 MessageBox.Show("Yedek Yüklenirken Hata Oluştu!");
             }
         }
+
+        private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //var test = (ListView)sender;
+        }
     }
 }
