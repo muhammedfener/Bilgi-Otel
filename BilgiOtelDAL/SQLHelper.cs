@@ -160,7 +160,7 @@ namespace BilgiOtelDAL
 
             cmd.Connection.Open();
             SqlDataReader reader = cmd.ExecuteReader();
-            cmd.Connection.Open();
+            cmd.Connection.Close();
             return reader;
         }
 
@@ -177,11 +177,13 @@ namespace BilgiOtelDAL
             }
 
             cmd.Connection.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            cmd.Connection.Close();
 
+            SqlDataReader reader = cmd.ExecuteReader();
             DataTable returnTable = new DataTable();
             returnTable.Load(reader);
+
+            reader.Close();
+            cmd.Connection.Close();
 
             return returnTable;
         }
@@ -197,11 +199,13 @@ namespace BilgiOtelDAL
             }
 
             cmd.Connection.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
-            cmd.Connection.Close();
 
+            SqlDataReader reader = cmd.ExecuteReader();
             DataTable returnTable = new DataTable();
             returnTable.Load(reader);
+
+            reader.Close();
+            cmd.Connection.Close();
 
             return returnTable;
         }
@@ -212,13 +216,14 @@ namespace BilgiOtelDAL
             cmd.CommandText = commandText;
 
             cmd.Connection.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
 
+            SqlDataReader reader = cmd.ExecuteReader();
             DataTable returnTable = new DataTable();
             returnTable.Load(reader);
-            reader.Close();
 
+            reader.Close();
             cmd.Connection.Close();
+
             return returnTable;
         }
     }

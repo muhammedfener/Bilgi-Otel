@@ -64,12 +64,13 @@
             // 
             // btnCalisanSec
             // 
-            this.btnCalisanSec.Location = new System.Drawing.Point(661, 202);
+            this.btnCalisanSec.Location = new System.Drawing.Point(661, 351);
             this.btnCalisanSec.Name = "btnCalisanSec";
             this.btnCalisanSec.Size = new System.Drawing.Size(82, 23);
             this.btnCalisanSec.TabIndex = 35;
             this.btnCalisanSec.Text = "Çalışan Seç";
             this.btnCalisanSec.UseVisualStyleBackColor = true;
+            this.btnCalisanSec.Click += new System.EventHandler(this.btnCalisanSec_Click);
             // 
             // lvwCalisanListesi
             // 
@@ -85,10 +86,11 @@
             this.lvwCalisanListesi.Location = new System.Drawing.Point(269, 12);
             this.lvwCalisanListesi.MultiSelect = false;
             this.lvwCalisanListesi.Name = "lvwCalisanListesi";
-            this.lvwCalisanListesi.Size = new System.Drawing.Size(474, 184);
+            this.lvwCalisanListesi.Size = new System.Drawing.Size(474, 333);
             this.lvwCalisanListesi.TabIndex = 34;
             this.lvwCalisanListesi.UseCompatibleStateImageBehavior = false;
             this.lvwCalisanListesi.View = System.Windows.Forms.View.Details;
+            this.lvwCalisanListesi.DoubleClick += new System.EventHandler(this.lvwCalisanListesi_DoubleClick);
             // 
             // calisanAdSoyad
             // 
@@ -127,6 +129,7 @@
             this.btnCalisanTemizle.TabIndex = 33;
             this.btnCalisanTemizle.Text = "Temizle";
             this.btnCalisanTemizle.UseVisualStyleBackColor = true;
+            this.btnCalisanTemizle.Click += new System.EventHandler(this.btnCalisanTemizle_Click);
             // 
             // btnCalisanDuzenle
             // 
@@ -136,6 +139,7 @@
             this.btnCalisanDuzenle.TabIndex = 32;
             this.btnCalisanDuzenle.Text = "Çalışan Düzenle";
             this.btnCalisanDuzenle.UseVisualStyleBackColor = true;
+            this.btnCalisanDuzenle.Click += new System.EventHandler(this.btnCalisanDuzenle_Click);
             // 
             // btnCalisanKaydet
             // 
@@ -145,11 +149,17 @@
             this.btnCalisanKaydet.TabIndex = 31;
             this.btnCalisanKaydet.Text = "Çalışan Ekle";
             this.btnCalisanKaydet.UseVisualStyleBackColor = true;
+            this.btnCalisanKaydet.Click += new System.EventHandler(this.btnCalisanKaydet_Click);
             // 
             // nudSaatlikUcret
             // 
             this.nudSaatlikUcret.DecimalPlaces = 2;
             this.nudSaatlikUcret.Location = new System.Drawing.Point(137, 323);
+            this.nudSaatlikUcret.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
             this.nudSaatlikUcret.Name = "nudSaatlikUcret";
             this.nudSaatlikUcret.Size = new System.Drawing.Size(112, 20);
             this.nudSaatlikUcret.TabIndex = 30;
@@ -179,6 +189,7 @@
             // rtxAdres
             // 
             this.rtxAdres.Location = new System.Drawing.Point(137, 116);
+            this.rtxAdres.MaxLength = 200;
             this.rtxAdres.Name = "rtxAdres";
             this.rtxAdres.Size = new System.Drawing.Size(112, 96);
             this.rtxAdres.TabIndex = 26;
@@ -187,6 +198,7 @@
             // txtIrtibat
             // 
             this.txtIrtibat.Location = new System.Drawing.Point(137, 218);
+            this.txtIrtibat.MaxLength = 15;
             this.txtIrtibat.Name = "txtIrtibat";
             this.txtIrtibat.Size = new System.Drawing.Size(112, 20);
             this.txtIrtibat.TabIndex = 24;
@@ -194,6 +206,7 @@
             // txtTC
             // 
             this.txtTC.Location = new System.Drawing.Point(137, 90);
+            this.txtTC.MaxLength = 80;
             this.txtTC.Name = "txtTC";
             this.txtTC.Size = new System.Drawing.Size(112, 20);
             this.txtTC.TabIndex = 25;
@@ -201,6 +214,7 @@
             // txtTel
             // 
             this.txtTel.Location = new System.Drawing.Point(137, 64);
+            this.txtTel.MaxLength = 15;
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(112, 20);
             this.txtTel.TabIndex = 23;
@@ -235,6 +249,7 @@
             // txtSoyad
             // 
             this.txtSoyad.Location = new System.Drawing.Point(137, 38);
+            this.txtSoyad.MaxLength = 80;
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(112, 20);
             this.txtSoyad.TabIndex = 22;
@@ -260,6 +275,7 @@
             // txtAd
             // 
             this.txtAd.Location = new System.Drawing.Point(137, 12);
+            this.txtAd.MaxLength = 80;
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(112, 20);
             this.txtAd.TabIndex = 21;

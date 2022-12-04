@@ -45,6 +45,7 @@
     <Compile Include="CalisanlarDAL.cs" />
     <Compile Include="CalismaSaatleriDAL.cs" />
     <Compile Include="DataConnections.cs" />
+    <Compile Include="GenelIslemler.cs" />
     <Compile Include="KampanyalarDAL.cs" />
     <Compile Include="MedeniHalDAL.cs" />
     <Compile Include="MesailerDAL.cs" />

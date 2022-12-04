@@ -17,7 +17,8 @@ namespace BilgiOtelDAL
 
         public static string Get_MsSQLConnectionString
         {
-            get { return "Server=.;Database=MyBilgiHotel;Trusted_Connection=True"; }
+            //get { return "Server=.;Database=MyBilgiHotel;Trusted_Connection=True"; }
+            get { return "Server=DESKTOP-RN1H7KK\\SQLEXPRESS;Database=MyBilgiHotel;Trusted_Connection=True;"; }
         }
         
         /*public static string Set_MsSQLConnectionString

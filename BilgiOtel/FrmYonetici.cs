@@ -5,10 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -84,6 +87,38 @@ namespace BilgiOtel
         private void btnKampanyaEkleDuzenle_Click(object sender, EventArgs e)
         {
             OpenForm(new FrmKampanyalar());
+        }
+
+        private void btnYedekAl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQLHelper.ExecuteNonQuery($"BACKUP DATABASE MyBilgiHotel TO DISK = 'MyBilgiHotel.bak' WITH INIT");
+                string dosyaKonumu = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\MyBilgiHotel.bak"));
+                Thread.Sleep(2000);
+                File.Delete(dosyaKonumu);
+                File.Move("C:\\Program Files\\Microsoft SQL Server\\MSSQL15.SQLEXPRESS\\MSSQL\\Backup\\MyBilgiHotel.bak", dosyaKonumu);
+                MessageBox.Show("Yedek Başarıyla Oluşturuldu!");
+            }
+            catch
+            {
+                MessageBox.Show("Yedek Alınırken Hata Oluştu!");
+            }
+        }
+
+        private void btnYedekYukle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQLHelper.ExecuteNonQuery("DROP DATABASE MyBilgiHotel");
+                string dosyaKonumu = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\MyBilgiHotel.bak"));
+                SQLHelper.ExecuteNonQuery($"RESTORE DATABASE MyBilgiHotel FROM DISK = '{dosyaKonumu}';");
+                MessageBox.Show("Yedek Başarıyla Geri Yüklendi!");
+            }
+            catch
+            {
+                MessageBox.Show("Yedek Yüklenirken Hata Oluştu!");
+            }
         }
     }
 }
