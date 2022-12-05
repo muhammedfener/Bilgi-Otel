@@ -75,7 +75,7 @@
             // btnOdaTemizle
             // 
             this.btnOdaTemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOdaTemizle.Location = new System.Drawing.Point(21, 371);
+            this.btnOdaTemizle.Location = new System.Drawing.Point(12, 371);
             this.btnOdaTemizle.Name = "btnOdaTemizle";
             this.btnOdaTemizle.Size = new System.Drawing.Size(73, 24);
             this.btnOdaTemizle.TabIndex = 76;
@@ -203,9 +203,9 @@
             // btnOdaDuzenle
             // 
             this.btnOdaDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOdaDuzenle.Location = new System.Drawing.Point(100, 371);
+            this.btnOdaDuzenle.Location = new System.Drawing.Point(91, 371);
             this.btnOdaDuzenle.Name = "btnOdaDuzenle";
-            this.btnOdaDuzenle.Size = new System.Drawing.Size(97, 24);
+            this.btnOdaDuzenle.Size = new System.Drawing.Size(108, 24);
             this.btnOdaDuzenle.TabIndex = 71;
             this.btnOdaDuzenle.Text = "Odayı Düzenle";
             this.btnOdaDuzenle.UseVisualStyleBackColor = true;
@@ -223,9 +223,9 @@
             // btnOdaEkle
             // 
             this.btnOdaEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOdaEkle.Location = new System.Drawing.Point(214, 371);
+            this.btnOdaEkle.Location = new System.Drawing.Point(205, 371);
             this.btnOdaEkle.Name = "btnOdaEkle";
-            this.btnOdaEkle.Size = new System.Drawing.Size(65, 24);
+            this.btnOdaEkle.Size = new System.Drawing.Size(74, 24);
             this.btnOdaEkle.TabIndex = 70;
             this.btnOdaEkle.Text = "Oda Ekle";
             this.btnOdaEkle.UseVisualStyleBackColor = true;
