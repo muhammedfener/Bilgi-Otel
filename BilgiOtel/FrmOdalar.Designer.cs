@@ -354,6 +354,7 @@
             this.Name = "FrmOdalar";
             this.Tag = "Oda Ekle&&Düzenle";
             this.Text = "Odalar";
+            this.Load += new System.EventHandler(this.FrmOdalar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNumara)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKisi)).EndInit();

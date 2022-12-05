@@ -16,5 +16,11 @@ namespace BilgiOtel
         {
             InitializeComponent();
         }
+
+        private void FrmOdalar_Load(object sender, EventArgs e)
+        {
+            Islemler.DataTableDoldur("SELECT odaNumara, odaKat, odaKisiSayisi, odaFiyat FROM odalar","Odalar");
+            Islemler.LvDoldur(lvwOdaListesi, "Odalar");
+        }
     }
 }
