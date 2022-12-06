@@ -1,6 +1,7 @@
 ﻿using Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,19 +14,19 @@ namespace BilgiOtelDAL
         //odaID'ye Göre Getir
         public OdalarEntity getOda(int odaid)
         {
-            SqlDataReader oda = SQLHelper.ExecuteReader($"SELECT * FROM odalar WHERE odaNumara = {odaid}");
+            DataTable oda = SQLHelper.GetDataTable($"SELECT * FROM odalar WHERE odaNumara = {odaid}");
 
             OdalarEntity Oda = new OdalarEntity();
 
-            while (oda.Read())
+            foreach (DataRow dr in oda.Rows)
             {
-                Oda.OdaNumara = (int)oda[0];
-                Oda.OdaKat = (int)oda[1];
-                Oda.OdaKisiSayisi = (int)oda[2];
-                Oda.OdaFiyat = (decimal)oda[3];
-                Oda.OdaAciklama = (string)oda[4];
-                Oda.OdaDoluMu = (bool)oda[5];
-                Oda.OdaAktifMi = (bool)oda[6];
+                Oda.OdaNumara = (int)dr[0];
+                Oda.OdaKat = (int)dr[1];
+                Oda.OdaKisiSayisi = (int)dr[2];
+                Oda.OdaFiyat = (decimal)dr[3];
+                Oda.OdaAciklama = (string)dr[4];
+                Oda.OdaDoluMu = (bool)dr[5];
+                Oda.OdaAktifMi = (bool)dr[6];
             }
 
             return Oda;
@@ -34,22 +35,22 @@ namespace BilgiOtelDAL
         //Hepsini Getir
         public List<OdalarEntity> getOdalar()
         {
-            SqlDataReader odalar = SQLHelper.ExecuteReader("SELECT * FROM odalar");
+            DataTable odalar = SQLHelper.GetDataTable("SELECT * FROM odalar");
 
             List<OdalarEntity> Odalar = new List<OdalarEntity>();
 
-            while (odalar.Read())
+            foreach (DataRow dr in odalar.Rows)
             {
-                OdalarEntity oda = new OdalarEntity();
-                oda.OdaNumara = (int)odalar[0];
-                oda.OdaKat = (int)odalar[1];
-                oda.OdaKisiSayisi = (int)odalar[2];
-                oda.OdaFiyat = (decimal)odalar[3];
-                oda.OdaAciklama = (string)odalar[4];
-                oda.OdaDoluMu = (bool)odalar[5];
-                oda.OdaAktifMi = (bool)odalar[6];
+                OdalarEntity Oda = new OdalarEntity();
+                Oda.OdaNumara = (int)dr[0];
+                Oda.OdaKat = (int)dr[1];
+                Oda.OdaKisiSayisi = (int)dr[2];
+                Oda.OdaFiyat = (decimal)dr[3];
+                Oda.OdaAciklama = (string)dr[4];
+                Oda.OdaDoluMu = (bool)dr[5];
+                Oda.OdaAktifMi = (bool)dr[6];
 
-                Odalar.Add(oda);
+                Odalar.Add(Oda);
             }
 
             return Odalar;

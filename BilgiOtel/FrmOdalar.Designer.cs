@@ -75,12 +75,13 @@
             // btnOdaTemizle
             // 
             this.btnOdaTemizle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOdaTemizle.Location = new System.Drawing.Point(12, 371);
+            this.btnOdaTemizle.Location = new System.Drawing.Point(12, 384);
             this.btnOdaTemizle.Name = "btnOdaTemizle";
             this.btnOdaTemizle.Size = new System.Drawing.Size(73, 24);
             this.btnOdaTemizle.TabIndex = 76;
             this.btnOdaTemizle.Text = "Temizle";
             this.btnOdaTemizle.UseVisualStyleBackColor = true;
+            this.btnOdaTemizle.Click += new System.EventHandler(this.btnOdaTemizle_Click);
             // 
             // nudOdaNumara
             // 
@@ -97,7 +98,7 @@
             // chkKralOdasi
             // 
             this.chkKralOdasi.AutoSize = true;
-            this.chkKralOdasi.Location = new System.Drawing.Point(136, 257);
+            this.chkKralOdasi.Location = new System.Drawing.Point(136, 270);
             this.chkKralOdasi.Name = "chkKralOdasi";
             this.chkKralOdasi.Size = new System.Drawing.Size(74, 17);
             this.chkKralOdasi.TabIndex = 75;
@@ -116,7 +117,7 @@
             // 
             // rtxOdaAciklama
             // 
-            this.rtxOdaAciklama.Location = new System.Drawing.Point(23, 280);
+            this.rtxOdaAciklama.Location = new System.Drawing.Point(23, 293);
             this.rtxOdaAciklama.Name = "rtxOdaAciklama";
             this.rtxOdaAciklama.Size = new System.Drawing.Size(256, 85);
             this.rtxOdaAciklama.TabIndex = 74;
@@ -141,6 +142,7 @@
             this.btnOdaSec.TabIndex = 73;
             this.btnOdaSec.Text = "Oda Seç";
             this.btnOdaSec.UseVisualStyleBackColor = true;
+            this.btnOdaSec.Click += new System.EventHandler(this.btnOdaSec_Click);
             // 
             // label4
             // 
@@ -203,7 +205,7 @@
             // btnOdaDuzenle
             // 
             this.btnOdaDuzenle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOdaDuzenle.Location = new System.Drawing.Point(91, 371);
+            this.btnOdaDuzenle.Location = new System.Drawing.Point(91, 384);
             this.btnOdaDuzenle.Name = "btnOdaDuzenle";
             this.btnOdaDuzenle.Size = new System.Drawing.Size(108, 24);
             this.btnOdaDuzenle.TabIndex = 71;
@@ -223,7 +225,7 @@
             // btnOdaEkle
             // 
             this.btnOdaEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOdaEkle.Location = new System.Drawing.Point(205, 371);
+            this.btnOdaEkle.Location = new System.Drawing.Point(205, 384);
             this.btnOdaEkle.Name = "btnOdaEkle";
             this.btnOdaEkle.Size = new System.Drawing.Size(74, 24);
             this.btnOdaEkle.TabIndex = 70;
@@ -255,7 +257,7 @@
             "Balkon"});
             this.cklOzellikler.Location = new System.Drawing.Point(136, 168);
             this.cklOzellikler.Name = "cklOzellikler";
-            this.cklOzellikler.Size = new System.Drawing.Size(143, 79);
+            this.cklOzellikler.Size = new System.Drawing.Size(143, 94);
             this.cklOzellikler.TabIndex = 69;
             // 
             // label6
@@ -305,7 +307,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 261);
+            this.label8.Location = new System.Drawing.Point(20, 274);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 63;
