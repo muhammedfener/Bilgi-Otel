@@ -90,7 +90,7 @@ namespace BilgiOtelDAL
                 new SqlParameter { ParameterName = "eskiOdaNumara", Value = EskiOdaNo}
             };
 
-            int guncellenenOdaSayisi = SQLHelper.ExecuteNonQuery("UPDATE odalar SET odaNumara = @odaNumara, odaKat = @odaKat, odaKisiSayisi = @odaKisiSayisi, odaFiyat = @odaFiyat, odaAciklama = @odaAciklama, odaDoluMu = @odaDoluMu, odaAktifMi = @odaAktifMi  WHERE odaNumara = @eskiOdaNumara)", parametreler);
+            int guncellenenOdaSayisi = SQLHelper.ExecuteNonQuery("UPDATE odalar SET odaNumara = @odaNumara, odaKat = @odaKat, odaKisiSayisi = @odaKisiSayisi, odaFiyat = @odaFiyat, odaAciklama = @odaAciklama, odaDoluMu = @odaDoluMu, odaAktifMi = @odaAktifMi  WHERE odaNumara = @eskiOdaNumara", parametreler);
 
             return guncellenenOdaSayisi;
         }

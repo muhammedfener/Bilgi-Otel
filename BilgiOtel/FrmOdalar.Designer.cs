@@ -169,6 +169,7 @@
             this.lvwOdaListesi.TabIndex = 72;
             this.lvwOdaListesi.UseCompatibleStateImageBehavior = false;
             this.lvwOdaListesi.View = System.Windows.Forms.View.Details;
+            this.lvwOdaListesi.DoubleClick += new System.EventHandler(this.lvwOdaListesi_DoubleClick);
             // 
             // columnHeader1
             // 
@@ -211,6 +212,7 @@
             this.btnOdaDuzenle.TabIndex = 71;
             this.btnOdaDuzenle.Text = "Odayı Düzenle";
             this.btnOdaDuzenle.UseVisualStyleBackColor = true;
+            this.btnOdaDuzenle.Click += new System.EventHandler(this.btnOdaDuzenle_Click);
             // 
             // label5
             // 
@@ -231,6 +233,7 @@
             this.btnOdaEkle.TabIndex = 70;
             this.btnOdaEkle.Text = "Oda Ekle";
             this.btnOdaEkle.UseVisualStyleBackColor = true;
+            this.btnOdaEkle.Click += new System.EventHandler(this.btnOdaEkle_Click);
             // 
             // nudOdaKisi
             // 

@@ -25,7 +25,7 @@ namespace BilgiOtel
         {
             Islemler.DataTableDoldur("SELECT (calisanAd + ' ' + calisanSoyad) as [Ad Soyad], calisanTCKimlik, calisanTelefon, meslekAd, calisanAdres, calisanSaatlikUcret FROM calisanlar JOIN meslekler ON meslekler.meslekID = calisanlar.calisanMeslekID WHERE calisanAktifMi=1", "Calisanlar");
             ComboBox[] MeslekCmbler = { cmbMeslek };
-            Islemler.CmbDoldur(MeslekCmbler,Islemler.Meslekler);
+            //Islemler.CmbDoldur(MeslekCmbler,Islemler.Meslekler);
             Islemler.LvDoldur(lvwCalisanListesi, "Calisanlar");
         }
 

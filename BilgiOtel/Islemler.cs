@@ -32,9 +32,10 @@ namespace BilgiOtel
             Listviewdata.Tables.Add(dt);
         }
 
-        public static void MeslekListeDoldur()
+        public static void MeslekListeDoldur(string listeAdi,string sqlCommand)
         {
-            Meslekler.Clear();
+
+            //Listeler.Contains();
 
             MesleklerDAL mesleklerDAL = new MesleklerDAL();
             List<MesleklerEntity> meslekler = mesleklerDAL.getMeslekler();
@@ -44,13 +45,13 @@ namespace BilgiOtel
             }
         }
 
-        public static void CmbDoldur(ComboBox[] comboboxlar,Dictionary<int,string> Dictionary)
+        public static void CmbDoldur(ComboBox[] comboboxlar,string listeAdi,string sqlCommand)
         {
-            MeslekListeDoldur();
+            MeslekListeDoldur(listeAdi,sqlCommand);
 
             foreach (ComboBox combobox in comboboxlar)
             {
-                combobox.DataSource = Dictionary.ToList();
+                //combobox.DataSource = .ToList();
                 combobox.ValueMember = "Key";
                 combobox.DisplayMember = "Value";
             }

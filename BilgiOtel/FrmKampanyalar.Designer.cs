@@ -232,6 +232,7 @@
             this.Controls.Add(this.lvwKampanyalar);
             this.Name = "FrmKampanyalar";
             this.Text = "FrmKampanyalar";
+            this.Load += new System.EventHandler(this.FrmKampanyalar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

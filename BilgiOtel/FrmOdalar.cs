@@ -91,5 +91,119 @@ namespace BilgiOtel
         {
             Islemler.FormTemizle(this);
         }
+
+        private void btnOdaDuzenle_Click(object sender, EventArgs e)
+        {
+            OdalarEntity oda = new OdalarEntity();
+            oda.OdaNumara = nudOdaNumara.Value.ToInt32();
+            oda.OdaKat = nudOdaKat.Value.ToInt32();
+            oda.OdaKisiSayisi = nudOdaKisi.Value.ToInt32();
+            oda.OdaFiyat = nudOdaFiyat.Value;
+            oda.OdaAciklama = rtxOdaAciklama.Text;
+            oda.OdaDoluMu = false;
+            oda.OdaAktifMi = true;
+
+            odalarDAL.updateOda(oda,SeciliOda.OdaNumara);
+
+            string commandstring = $"DELETE FROM odalar_odaYataklar WHERE odaNumara = {SeciliOda.OdaNumara}";
+            SQLHelper.ExecuteNonQuery(commandstring);
+
+            if (chkKralOdasi.Checked)
+            {
+                commandstring = $"INSERT INTO odalar_odaYataklar (odaNumara,yatakID,yatakAdet) VALUES ({oda.OdaNumara},3,1)";
+            }
+            else
+            {
+                commandstring = $"INSERT INTO odalar_odaYataklar (odaNumara,yatakID,yatakAdet) VALUES({oda.OdaNumara},1,{nudTekKisilikYatak.Value.ToInt32()}),({oda.OdaNumara},2,{nudCiftKisilikYatak.Value.ToInt32()})";
+            }
+            SQLHelper.ExecuteNonQuery(commandstring);
+
+            commandstring = $"DELETE FROM odalar_odaOzellik WHERE odaNumara ={SeciliOda.OdaNumara};";
+            SQLHelper.ExecuteNonQuery(commandstring);
+
+            List<int> ozellikler = new List<int>();
+            foreach (int itemIndices in cklOzellikler.CheckedIndices)
+            {
+                ozellikler.Add(itemIndices + 1);
+            }
+
+            commandstring = "INSERT INTO odalar_odaOzellik (odaNumara,ozellikID) VALUES";
+            int sonozellik = ozellikler.Last();
+            foreach (int ozellik in ozellikler)
+            {
+                if (ozellik.Equals(sonozellik))
+                {
+                    commandstring += $"({oda.OdaNumara},{ozellik})";
+                }
+                else
+                {
+                    commandstring += $"({oda.OdaNumara},{ozellik}),";
+                }
+            }
+            commandstring += ";";
+
+            SQLHelper.ExecuteNonQuery(commandstring);
+        }
+
+        private void btnOdaEkle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OdalarEntity oda = new OdalarEntity();
+                oda.OdaNumara = nudOdaNumara.Value.ToInt32();
+                oda.OdaKat = nudOdaKat.Value.ToInt32();
+                oda.OdaKisiSayisi = nudOdaKisi.Value.ToInt32();
+                oda.OdaFiyat = nudOdaFiyat.Value;
+                oda.OdaAciklama = rtxOdaAciklama.Text;
+                oda.OdaDoluMu = false;
+                oda.OdaAktifMi = true;
+
+                odalarDAL.insertOda(oda);
+
+                string commandstring;
+
+                if (chkKralOdasi.Checked)
+                {
+                    commandstring = $"INSERT INTO odalar_odaYataklar (odaNumara,yatakID,yatakAdet) VALUES ({oda.OdaNumara},3,1)";
+                }
+                else
+                {
+                    commandstring = $"INSERT INTO odalar_odaYataklar (odaNumara,yatakID,yatakAdet) VALUES({oda.OdaNumara},1,{nudTekKisilikYatak.Value.ToInt32()}),({oda.OdaNumara},2,{nudCiftKisilikYatak.Value.ToInt32()})";
+                }
+                SQLHelper.ExecuteNonQuery(commandstring);
+
+                List<int> ozellikler = new List<int>();
+                foreach (int itemIndices in cklOzellikler.CheckedIndices)
+                {
+                    ozellikler.Add(itemIndices + 1);
+                }
+
+                commandstring = "INSERT INTO odalar_odaOzellik (odaNumara,ozellikID) VALUES";
+                int sonozellik = ozellikler.Last();
+                foreach (int ozellik in ozellikler)
+                {
+                    if (ozellik.Equals(sonozellik))
+                    {
+                        commandstring += $"({oda.OdaNumara},{ozellik})";
+                    }
+                    else
+                    {
+                        commandstring += $"({oda.OdaNumara},{ozellik}),";
+                    }
+                }
+                commandstring += ";";
+
+                SQLHelper.ExecuteNonQuery(commandstring);
+            }
+            catch
+            {
+                MessageBox.Show("Oda Eklenirken Hata Oluştu!");
+            }
+        }
+
+        private void lvwOdaListesi_DoubleClick(object sender, EventArgs e)
+        {
+            btnOdaSec.PerformClick();
+        }
     }
 }

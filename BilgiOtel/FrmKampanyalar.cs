@@ -16,5 +16,10 @@ namespace BilgiOtel
         {
             InitializeComponent();
         }
+
+        private void FrmKampanyalar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
