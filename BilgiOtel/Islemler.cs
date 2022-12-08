@@ -34,15 +34,20 @@ namespace BilgiOtel
 
         public static void MeslekListeDoldur(string listeAdi,string sqlCommand)
         {
-
-            //Listeler.Contains();
-
-            MesleklerDAL mesleklerDAL = new MesleklerDAL();
-            List<MesleklerEntity> meslekler = mesleklerDAL.getMeslekler();
-            foreach(MesleklerEntity meslek in meslekler)
+            if(!Listeler.FirstOrDefault(x=> x.Key == listeAdi).Equals(default(KeyValuePair<string, Dictionary<int, string>>)))
             {
-                Meslekler.Add(meslek.MeslekID, meslek.MeslekAd);
+                Listeler.Remove(Listeler.First(x => x.Key == listeAdi));
             }
+
+            DataTable dt = SQLHelper.GetDataTable(sqlCommand);
+            Dictionary<int,string> dict = new Dictionary<int, string>();
+
+            foreach(DataRow dr in dt.Rows)
+            {
+                dict.Add(dr[0].ToInt32(), dr[1].ToString());
+            }
+            Listeler.Add(new KeyValuePair<string,Dictionary<int,string>>(listeAdi, dict));
+
         }
 
         public static void CmbDoldur(ComboBox[] comboboxlar,string listeAdi,string sqlCommand)
@@ -51,7 +56,7 @@ namespace BilgiOtel
 
             foreach (ComboBox combobox in comboboxlar)
             {
-                //combobox.DataSource = .ToList();
+                combobox.DataSource = Listeler.First(x=> x.Key == listeAdi).Value.ToList();
                 combobox.ValueMember = "Key";
                 combobox.DisplayMember = "Value";
             }

@@ -32,6 +32,26 @@ namespace BilgiOtelDAL
             return Kampanya;
         }
 
+        public KampanyalarEntity getKampanya(string kampanyaAd)
+        {
+            SqlDataReader kampanya = SQLHelper.ExecuteReader($"SELECT * FROM kampanyalar WHERE kampanyaAd = '{kampanyaAd}'");
+
+            KampanyalarEntity Kampanya = new KampanyalarEntity();
+
+            while (kampanya.Read())
+            {
+                Kampanya.KampanyaID = (int)kampanya[0];
+                Kampanya.KampanyaAd = (string)kampanya[1];
+                Kampanya.KampanyaIndirimOrani = (int)kampanya[2];
+                Kampanya.KampanyaBaslangic = (DateTime)kampanya[3];
+                Kampanya.KampanyaBitis = (DateTime)kampanya[4];
+                Kampanya.KampanyaAciklama = (string)kampanya[5];
+                Kampanya.KampanyaAktifMi = (bool)kampanya[6];
+            }
+
+            return Kampanya;
+        }
+
         //Hepsini Getir
         public List<KampanyalarEntity> getKampanyalar()
         {

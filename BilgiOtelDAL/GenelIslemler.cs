@@ -35,7 +35,7 @@ namespace BilgiOtel
             }
         }
 
-        public static Decimal ToDecimal(this object sayi)
+        public static decimal ToDecimal(this object sayi)
         {
             try
             {

@@ -58,6 +58,7 @@
             this.btnKampanyaSec.TabIndex = 21;
             this.btnKampanyaSec.Text = "Kampanya Seç";
             this.btnKampanyaSec.UseVisualStyleBackColor = true;
+            this.btnKampanyaSec.Click += new System.EventHandler(this.btnKampanyaSec_Click);
             // 
             // dtpKampanyaBitis
             // 
