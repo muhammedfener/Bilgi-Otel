@@ -39,6 +39,7 @@ namespace BilgiOtel
             nudOdaKisi.Value = SeciliOda.OdaKisiSayisi;
             nudOdaFiyat.Value = SeciliOda.OdaFiyat;
             rtxOdaAciklama.Text = SeciliOda.OdaAciklama;
+            chkOdaAktifMi.Checked = SeciliOda.OdaDoluMu;
 
             DataTable odaOzellikler = SQLHelper.GetDataTable($"SELECT * FROM odalar_odaOzellik WHERE odaNumara = '{SeciliOda.OdaNumara}'");
             foreach (DataRow dr in odaOzellikler.Rows)
@@ -101,7 +102,7 @@ namespace BilgiOtel
             oda.OdaFiyat = nudOdaFiyat.Value;
             oda.OdaAciklama = rtxOdaAciklama.Text;
             oda.OdaDoluMu = false;
-            oda.OdaAktifMi = true;
+            oda.OdaAktifMi = chkOdaAktifMi.Checked;
 
             odalarDAL.updateOda(oda,SeciliOda.OdaNumara);
 
@@ -156,7 +157,7 @@ namespace BilgiOtel
                 oda.OdaFiyat = nudOdaFiyat.Value;
                 oda.OdaAciklama = rtxOdaAciklama.Text;
                 oda.OdaDoluMu = false;
-                oda.OdaAktifMi = true;
+                oda.OdaAktifMi = chkOdaAktifMi.Checked;
 
                 odalarDAL.insertOda(oda);
 

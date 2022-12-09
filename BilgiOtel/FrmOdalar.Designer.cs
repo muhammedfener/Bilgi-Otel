@@ -54,6 +54,7 @@
             this.nudTekKisilikYatak = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.nudOdaFiyat = new System.Windows.Forms.NumericUpDown();
+            this.chkOdaAktifMi = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNumara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKisi)).BeginInit();
@@ -98,7 +99,7 @@
             // chkKralOdasi
             // 
             this.chkKralOdasi.AutoSize = true;
-            this.chkKralOdasi.Location = new System.Drawing.Point(136, 270);
+            this.chkKralOdasi.Location = new System.Drawing.Point(115, 270);
             this.chkKralOdasi.Name = "chkKralOdasi";
             this.chkKralOdasi.Size = new System.Drawing.Size(74, 17);
             this.chkKralOdasi.TabIndex = 75;
@@ -329,11 +330,22 @@
             this.nudOdaFiyat.Size = new System.Drawing.Size(109, 20);
             this.nudOdaFiyat.TabIndex = 66;
             // 
+            // chkOdaAktifMi
+            // 
+            this.chkOdaAktifMi.AutoSize = true;
+            this.chkOdaAktifMi.Location = new System.Drawing.Point(195, 270);
+            this.chkOdaAktifMi.Name = "chkOdaAktifMi";
+            this.chkOdaAktifMi.Size = new System.Drawing.Size(84, 17);
+            this.chkOdaAktifMi.TabIndex = 77;
+            this.chkOdaAktifMi.Text = "Oda Aktif Mi";
+            this.chkOdaAktifMi.UseVisualStyleBackColor = true;
+            // 
             // FrmOdalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 421);
+            this.Controls.Add(this.chkOdaAktifMi);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOdaTemizle);
             this.Controls.Add(this.nudOdaNumara);
@@ -399,5 +411,6 @@
         private System.Windows.Forms.NumericUpDown nudTekKisilikYatak;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown nudOdaFiyat;
+        private System.Windows.Forms.CheckBox chkOdaAktifMi;
     }
 }

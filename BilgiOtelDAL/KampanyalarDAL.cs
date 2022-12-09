@@ -1,6 +1,8 @@
-﻿using Entity;
+﻿using BilgiOtel;
+using Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,19 +16,19 @@ namespace BilgiOtelDAL
 
         public KampanyalarEntity getKampanya(int id)
         {
-            SqlDataReader kampanya = SQLHelper.ExecuteReader($"SELECT * FROM kampanyalar WHERE kampanyaID = {id}");
+            DataTable kampanya = SQLHelper.GetDataTable($"SELECT * FROM kampanyalar WHERE kampanyaID = {id}");
 
             KampanyalarEntity Kampanya = new KampanyalarEntity();
 
-            while (kampanya.Read())
+            foreach (DataRow row in kampanya.Rows)
             {
-                Kampanya.KampanyaID = (int)kampanya[0];
-                Kampanya.KampanyaAd = (string)kampanya[1];
-                Kampanya.KampanyaIndirimOrani = (int)kampanya[2];
-                Kampanya.KampanyaBaslangic = (DateTime)kampanya[3];
-                Kampanya.KampanyaBitis = (DateTime)kampanya[4];
-                Kampanya.KampanyaAciklama = (string)kampanya[5];
-                Kampanya.KampanyaAktifMi = (bool)kampanya[6];
+                Kampanya.KampanyaID = row[0].ToInt32();
+                Kampanya.KampanyaAd = row[1].ToString();
+                Kampanya.KampanyaIndirimOrani = row[2].ToInt32();
+                Kampanya.KampanyaBaslangic = row[3].ToDateTime();
+                Kampanya.KampanyaBitis = row[4].ToDateTime();
+                Kampanya.KampanyaAciklama = row[5].ToString();
+                Kampanya.KampanyaAktifMi = row[6].ToBoolean();
             }
 
             return Kampanya;
@@ -34,19 +36,19 @@ namespace BilgiOtelDAL
 
         public KampanyalarEntity getKampanya(string kampanyaAd)
         {
-            SqlDataReader kampanya = SQLHelper.ExecuteReader($"SELECT * FROM kampanyalar WHERE kampanyaAd = '{kampanyaAd}'");
+            DataTable kampanya = SQLHelper.GetDataTable($"SELECT * FROM kampanyalar WHERE kampanyaAd = '{kampanyaAd}'");
 
             KampanyalarEntity Kampanya = new KampanyalarEntity();
 
-            while (kampanya.Read())
+            foreach(DataRow row in kampanya.Rows)
             {
-                Kampanya.KampanyaID = (int)kampanya[0];
-                Kampanya.KampanyaAd = (string)kampanya[1];
-                Kampanya.KampanyaIndirimOrani = (int)kampanya[2];
-                Kampanya.KampanyaBaslangic = (DateTime)kampanya[3];
-                Kampanya.KampanyaBitis = (DateTime)kampanya[4];
-                Kampanya.KampanyaAciklama = (string)kampanya[5];
-                Kampanya.KampanyaAktifMi = (bool)kampanya[6];
+                Kampanya.KampanyaID = row[0].ToInt32();
+                Kampanya.KampanyaAd = row[1].ToString();
+                Kampanya.KampanyaIndirimOrani = row[2].ToInt32();
+                Kampanya.KampanyaBaslangic = row[3].ToDateTime();
+                Kampanya.KampanyaBitis = row[4].ToDateTime();
+                Kampanya.KampanyaAciklama = row[5].ToString();
+                Kampanya.KampanyaAktifMi = row[6].ToBoolean();
             }
 
             return Kampanya;
@@ -55,20 +57,20 @@ namespace BilgiOtelDAL
         //Hepsini Getir
         public List<KampanyalarEntity> getKampanyalar()
         {
-            SqlDataReader kampanyalar = SQLHelper.ExecuteReader("SELECT * FROM kampanyalar WHERE kampanyaAktifMi = 1");
+            DataTable kampanyalar = SQLHelper.GetDataTable("SELECT * FROM kampanyalar WHERE kampanyaAktifMi = 1");
 
             List<KampanyalarEntity> Kampanyalar = new List<KampanyalarEntity>();
 
-            while (kampanyalar.Read())
+            foreach (DataRow row in kampanyalar.Rows)
             {
                 KampanyalarEntity kampanya = new KampanyalarEntity();
-                kampanya.KampanyaID = (int)kampanyalar[0];
-                kampanya.KampanyaAd = (string)kampanyalar[1];
-                kampanya.KampanyaIndirimOrani = (int)kampanyalar[2];
-                kampanya.KampanyaBaslangic = (DateTime)kampanyalar[3];
-                kampanya.KampanyaBitis = (DateTime)kampanyalar[4];
-                kampanya.KampanyaAciklama = (string)kampanyalar[5];
-                kampanya.KampanyaAktifMi = (bool)kampanyalar[6];
+                kampanya.KampanyaID = row[0].ToInt32();
+                kampanya.KampanyaAd = row[1].ToString();
+                kampanya.KampanyaIndirimOrani = row[2].ToInt32();
+                kampanya.KampanyaBaslangic = row[3].ToDateTime();
+                kampanya.KampanyaBitis = row[4].ToDateTime();
+                kampanya.KampanyaAciklama = row[5].ToString();
+                kampanya.KampanyaAktifMi = row[6].ToBoolean();
 
                 Kampanyalar.Add(kampanya);
             }

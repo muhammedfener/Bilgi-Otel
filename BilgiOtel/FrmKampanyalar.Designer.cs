@@ -48,6 +48,7 @@
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chkKampanya = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnKampanyaSec
@@ -84,7 +85,7 @@
             // 
             // btnKampanyaTemizle
             // 
-            this.btnKampanyaTemizle.Location = new System.Drawing.Point(85, 221);
+            this.btnKampanyaTemizle.Location = new System.Drawing.Point(85, 244);
             this.btnKampanyaTemizle.Name = "btnKampanyaTemizle";
             this.btnKampanyaTemizle.Size = new System.Drawing.Size(62, 23);
             this.btnKampanyaTemizle.TabIndex = 15;
@@ -93,21 +94,23 @@
             // 
             // btnKampanyaDuzenle
             // 
-            this.btnKampanyaDuzenle.Location = new System.Drawing.Point(153, 221);
+            this.btnKampanyaDuzenle.Location = new System.Drawing.Point(153, 244);
             this.btnKampanyaDuzenle.Name = "btnKampanyaDuzenle";
             this.btnKampanyaDuzenle.Size = new System.Drawing.Size(75, 23);
             this.btnKampanyaDuzenle.TabIndex = 16;
             this.btnKampanyaDuzenle.Text = "Düzenle";
             this.btnKampanyaDuzenle.UseVisualStyleBackColor = true;
+            this.btnKampanyaDuzenle.Click += new System.EventHandler(this.btnKampanyaDuzenle_Click);
             // 
             // btnKampanyaKaydet
             // 
-            this.btnKampanyaKaydet.Location = new System.Drawing.Point(234, 221);
+            this.btnKampanyaKaydet.Location = new System.Drawing.Point(234, 244);
             this.btnKampanyaKaydet.Name = "btnKampanyaKaydet";
             this.btnKampanyaKaydet.Size = new System.Drawing.Size(64, 23);
             this.btnKampanyaKaydet.TabIndex = 17;
             this.btnKampanyaKaydet.Text = "Kaydet";
             this.btnKampanyaKaydet.UseVisualStyleBackColor = true;
+            this.btnKampanyaKaydet.Click += new System.EventHandler(this.btnKampanyaKaydet_Click);
             // 
             // label28
             // 
@@ -185,6 +188,7 @@
             this.lvwKampanyalar.TabIndex = 7;
             this.lvwKampanyalar.UseCompatibleStateImageBehavior = false;
             this.lvwKampanyalar.View = System.Windows.Forms.View.Details;
+            this.lvwKampanyalar.DoubleClick += new System.EventHandler(this.lvwKampanyalar_DoubleClick);
             // 
             // columnHeader11
             // 
@@ -211,11 +215,22 @@
             this.columnHeader15.Text = "Kampanya Açıklama";
             this.columnHeader15.Width = 109;
             // 
+            // chkKampanya
+            // 
+            this.chkKampanya.AutoSize = true;
+            this.chkKampanya.Location = new System.Drawing.Point(184, 221);
+            this.chkKampanya.Name = "chkKampanya";
+            this.chkKampanya.Size = new System.Drawing.Size(114, 17);
+            this.chkKampanya.TabIndex = 22;
+            this.chkKampanya.Text = "Kampanya Aktif Mi";
+            this.chkKampanya.UseVisualStyleBackColor = true;
+            // 
             // FrmKampanyalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 376);
+            this.Controls.Add(this.chkKampanya);
             this.Controls.Add(this.btnKampanyaSec);
             this.Controls.Add(this.dtpKampanyaBitis);
             this.Controls.Add(this.dtpKampanyaBaslangic);
@@ -261,5 +276,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.CheckBox chkKampanya;
     }
 }
