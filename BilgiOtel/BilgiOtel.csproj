@@ -100,6 +100,9 @@
     <EmbeddedResource Include="FrmKampanyalar.resx">
       <DependentUpon>FrmKampanyalar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmKullanicilar.resx">
+      <DependentUpon>FrmKullanicilar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmYonetici.resx">
       <DependentUpon>FrmYonetici.cs</DependentUpon>
     </EmbeddedResource>

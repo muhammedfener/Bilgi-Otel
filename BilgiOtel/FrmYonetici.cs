@@ -121,5 +121,9 @@ namespace BilgiOtel
             }
         }
 
+        private void btnKullaniciEkleDuzenle_Click(object sender, EventArgs e)
+        {
+            OpenForm(new FrmKullanicilar());
+        }
     }
 }

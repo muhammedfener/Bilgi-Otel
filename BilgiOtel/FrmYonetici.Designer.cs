@@ -146,6 +146,7 @@
             this.btnKullaniciEkleDuzenle.Text = "Kullanıcı Ekle&&Düzenle";
             this.btnKullaniciEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKullaniciEkleDuzenle.UseVisualStyleBackColor = false;
+            this.btnKullaniciEkleDuzenle.Click += new System.EventHandler(this.btnKullaniciEkleDuzenle_Click);
             // 
             // btnKampanyaEkleDuzenle
             // 
