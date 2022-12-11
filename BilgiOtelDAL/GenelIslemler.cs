@@ -32,7 +32,7 @@ namespace BilgiOtel
             }
             catch
             {
-                return DateTime.Now;
+                return new DateTime(1753,1,1);
             }
         }
 

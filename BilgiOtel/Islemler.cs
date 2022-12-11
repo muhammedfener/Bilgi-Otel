@@ -17,17 +17,25 @@ namespace BilgiOtel
         public static List<KeyValuePair<string, Dictionary<int, string>>> Listeler = new List<KeyValuePair<string, Dictionary<int, string>>>();
         public static Dictionary<int, string> Meslekler = new Dictionary<int, string>();
         public static DataSet Listviewdata = new DataSet();
-        public static void DataTableDoldur(string sqlkod, string dataTableName, bool Guncelle = false)
+        public static void DataTableDoldur(string sqlkod, string dataTableName, bool storeProcedure = false, bool guncelle = false)
         {
-            if (Listviewdata.Tables.Contains(dataTableName) && !Guncelle)
+            if (Listviewdata.Tables.Contains(dataTableName) && !guncelle)
             {
                 return;
             }
-            if (Guncelle)
+            if (guncelle)
             {
                 Listviewdata.Tables.Remove(dataTableName);
             }
-            DataTable dt = SQLHelper.GetDataTable(sqlkod);
+            DataTable dt;
+            if (storeProcedure)
+            {
+                dt = SQLHelper.GetDataTable(sqlkod,CommandType.StoredProcedure,null);
+            }
+            else
+            {
+                dt = SQLHelper.GetDataTable(sqlkod);
+            }
             dt.TableName = dataTableName;
             Listviewdata.Tables.Add(dt);
         }

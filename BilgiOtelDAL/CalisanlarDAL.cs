@@ -12,7 +12,7 @@ namespace BilgiOtelDAL
     public class CalisanlarDAL
     {
         //ID Getir
-        public CalisanlarEntity getCalisanID(int id)
+        public CalisanlarEntity calisanGetirID(int id)
         {
             DataTable calisan = SQLHelper.GetDataTable($"SELECT * FROM calisanlar WHERE calisanID = {id}");
 
@@ -36,7 +36,7 @@ namespace BilgiOtelDAL
             return Calisan;
         }
 
-        public CalisanlarEntity getCalisanTC(string calisanTC)
+        public CalisanlarEntity calisanGetirTC(string calisanTC)
         {
             DataTable calisan = SQLHelper.GetDataTable($"SELECT * FROM calisanlar WHERE calisanTCKimlik = '{calisanTC}'");
 
@@ -61,7 +61,7 @@ namespace BilgiOtelDAL
         }
 
         //Hepsini Getir
-        public List<CalisanlarEntity> getCalisanlar()
+        public List<CalisanlarEntity> calisanlarGetir()
         {
             DataTable calisanlar = SQLHelper.GetDataTable("SELECT * FROM calisanlar WHERE calisanAktifMi = 1");
 
@@ -90,7 +90,7 @@ namespace BilgiOtelDAL
         }
 
         //Insert
-        public int insertCalisan(CalisanlarEntity calisan)
+        public int calisanEkle(CalisanlarEntity calisan)
         {
             SqlParameter[] parametreler =
             {
@@ -107,14 +107,13 @@ namespace BilgiOtelDAL
                 new SqlParameter { ParameterName = "calisanAktifMi", Value = calisan.CalisanAktifMi}
             };
 
-            int eklenenCalisanSayisi = SQLHelper.ExecuteNonQuery("INSERT INTO calisanlar (calisanAd,calisanSoyad,calisanTelefon,calisanTCKimlik,calisanAdres,calisanIrtibatTelefon,calisanIseBaslamaTarihi,calisanIstenAyrilmaTarihi,calisanMeslekID,calisanSaatlikUcret,calisanAktifMi) VALUES (@calisanAd,@calisanSoyad,@calisanTelefon,@calisanTCKimlik,@calisanAdres,@calisanIrtibatTelefon,@calisanIseBaslamaTarihi,@calisanIstenAyrilmaTarihi,@calisanMeslekID,@calisanSaatlikUcret,@calisanAktifMi)",parametreler);
-
+            int eklenenCalisanSayisi = SQLHelper.ExecuteNonQuery("sp_calisanEkle",CommandType.StoredProcedure,parametreler);
 
             return eklenenCalisanSayisi;
         }
         
         //Update
-        public int updateCalisan(CalisanlarEntity calisan)
+        public int calisanGuncelle(CalisanlarEntity calisan)
         {
             SqlParameter[] parametreler =
             {
@@ -132,13 +131,13 @@ namespace BilgiOtelDAL
                 new SqlParameter { ParameterName = "calisanAktifMi", Value = calisan.CalisanAktifMi}
             };
 
-            int guncellenenCalisanSayisi = SQLHelper.ExecuteNonQuery("UPDATE calisanlar SET calisanAd = @calisanAd, calisanSoyad = @calisanSoyad, calisanTelefon = @calisanTelefon,calisanTCKimlik = @calisanTCKimlik, calisanAdres = @calisanAdres, calisanIrtibatTelefon=@calisanIrtibatTelefon, calisanIseBaslamaTarihi=@calisanIseBaslamaTarihi, calisanIstenAyrilmaTarihi = @calisanIstenAyrilmaTarihi, calisanMeslekID=@calisanMeslekID, calisanSaatlikUcret = @calisanSaatlikUcret, calisanAktifMi=@calisanAktifMi WHERE calisanID = @calisanID", parametreler);
+            int guncellenenCalisanSayisi = SQLHelper.ExecuteNonQuery("sp_calisanGuncelle",CommandType.StoredProcedure, parametreler);
 
             return guncellenenCalisanSayisi;
         }
 
         //DeleteID
-        public int deleteCalisanID(int id)
+        public int calisanSilID(int id)
         {
             int silinenCalisanSayisi = SQLHelper.ExecuteNonQuery($"UPDATE calisanlar SET calisanAktifMi=0 WHERE calisanID = {id}");
 
@@ -146,7 +145,7 @@ namespace BilgiOtelDAL
         }
 
         //DeleteTC
-        public int deleteCalisanTC(string calisanTC)
+        public int calisanSilTC(string calisanTC)
         {
             int silinenCalisanSayisi = SQLHelper.ExecuteNonQuery($"UPDATE calisanlar SET calisanAktifMi=0 WHERE calisanTCKimlik = {calisanTC}");
 

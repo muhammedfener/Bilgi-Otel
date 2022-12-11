@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCalisanSec = new System.Windows.Forms.Button();
             this.lvwCalisanListesi = new System.Windows.Forms.ListView();
             this.calisanAdSoyad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,12 +60,19 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.chkCalisanAktifMi = new System.Windows.Forms.CheckBox();
+            this.chkIseDevam = new System.Windows.Forms.CheckBox();
+            this.cmsSagTik = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.duzenleButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.silButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.yenileButon = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.nudSaatlikUcret)).BeginInit();
+            this.cmsSagTik.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCalisanSec
             // 
-            this.btnCalisanSec.Location = new System.Drawing.Point(661, 351);
+            this.btnCalisanSec.Location = new System.Drawing.Point(668, 368);
             this.btnCalisanSec.Name = "btnCalisanSec";
             this.btnCalisanSec.Size = new System.Drawing.Size(82, 23);
             this.btnCalisanSec.TabIndex = 35;
@@ -81,12 +89,13 @@
             this.calisanMeslek,
             this.calisanAdres,
             this.calisanUcret});
+            this.lvwCalisanListesi.ContextMenuStrip = this.cmsSagTik;
             this.lvwCalisanListesi.FullRowSelect = true;
             this.lvwCalisanListesi.HideSelection = false;
-            this.lvwCalisanListesi.Location = new System.Drawing.Point(269, 12);
+            this.lvwCalisanListesi.Location = new System.Drawing.Point(276, 12);
             this.lvwCalisanListesi.MultiSelect = false;
             this.lvwCalisanListesi.Name = "lvwCalisanListesi";
-            this.lvwCalisanListesi.Size = new System.Drawing.Size(474, 333);
+            this.lvwCalisanListesi.Size = new System.Drawing.Size(474, 350);
             this.lvwCalisanListesi.TabIndex = 34;
             this.lvwCalisanListesi.UseCompatibleStateImageBehavior = false;
             this.lvwCalisanListesi.View = System.Windows.Forms.View.Details;
@@ -123,7 +132,7 @@
             // 
             // btnCalisanTemizle
             // 
-            this.btnCalisanTemizle.Location = new System.Drawing.Point(12, 355);
+            this.btnCalisanTemizle.Location = new System.Drawing.Point(12, 372);
             this.btnCalisanTemizle.Name = "btnCalisanTemizle";
             this.btnCalisanTemizle.Size = new System.Drawing.Size(54, 23);
             this.btnCalisanTemizle.TabIndex = 33;
@@ -133,7 +142,7 @@
             // 
             // btnCalisanDuzenle
             // 
-            this.btnCalisanDuzenle.Location = new System.Drawing.Point(72, 355);
+            this.btnCalisanDuzenle.Location = new System.Drawing.Point(72, 372);
             this.btnCalisanDuzenle.Name = "btnCalisanDuzenle";
             this.btnCalisanDuzenle.Size = new System.Drawing.Size(96, 23);
             this.btnCalisanDuzenle.TabIndex = 32;
@@ -143,7 +152,7 @@
             // 
             // btnCalisanKaydet
             // 
-            this.btnCalisanKaydet.Location = new System.Drawing.Point(174, 355);
+            this.btnCalisanKaydet.Location = new System.Drawing.Point(174, 372);
             this.btnCalisanKaydet.Name = "btnCalisanKaydet";
             this.btnCalisanKaydet.Size = new System.Drawing.Size(75, 23);
             this.btnCalisanKaydet.TabIndex = 31;
@@ -222,7 +231,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(36, 276);
+            this.label16.Location = new System.Drawing.Point(38, 275);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(95, 13);
             this.label16.TabIndex = 20;
@@ -325,11 +334,63 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Ad";
             // 
+            // chkCalisanAktifMi
+            // 
+            this.chkCalisanAktifMi.AutoSize = true;
+            this.chkCalisanAktifMi.Location = new System.Drawing.Point(151, 349);
+            this.chkCalisanAktifMi.Name = "chkCalisanAktifMi";
+            this.chkCalisanAktifMi.Size = new System.Drawing.Size(98, 17);
+            this.chkCalisanAktifMi.TabIndex = 36;
+            this.chkCalisanAktifMi.Text = "Çalışan Aktif Mi";
+            this.chkCalisanAktifMi.UseVisualStyleBackColor = true;
+            // 
+            // chkIseDevam
+            // 
+            this.chkIseDevam.AutoSize = true;
+            this.chkIseDevam.Location = new System.Drawing.Point(255, 275);
+            this.chkIseDevam.Name = "chkIseDevam";
+            this.chkIseDevam.Size = new System.Drawing.Size(15, 14);
+            this.chkIseDevam.TabIndex = 37;
+            this.chkIseDevam.UseVisualStyleBackColor = true;
+            this.chkIseDevam.CheckedChanged += new System.EventHandler(this.chkIseDevam_CheckedChanged);
+            // 
+            // cmsSagTik
+            // 
+            this.cmsSagTik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yenileButon,
+            this.duzenleButon,
+            this.silButon});
+            this.cmsSagTik.Name = "cmsSagTik";
+            this.cmsSagTik.Size = new System.Drawing.Size(181, 92);
+            // 
+            // duzenleButon
+            // 
+            this.duzenleButon.Name = "duzenleButon";
+            this.duzenleButon.Size = new System.Drawing.Size(180, 22);
+            this.duzenleButon.Text = "Düzenle";
+            this.duzenleButon.Click += new System.EventHandler(this.duzenleButon_Click);
+            // 
+            // silButon
+            // 
+            this.silButon.Name = "silButon";
+            this.silButon.Size = new System.Drawing.Size(180, 22);
+            this.silButon.Text = "Sil";
+            this.silButon.Click += new System.EventHandler(this.silButon_Click);
+            // 
+            // yenileButon
+            // 
+            this.yenileButon.Name = "yenileButon";
+            this.yenileButon.Size = new System.Drawing.Size(180, 22);
+            this.yenileButon.Text = "Yenile";
+            this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
+            // 
             // FrmCalisanlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 386);
+            this.ClientSize = new System.Drawing.Size(760, 423);
+            this.Controls.Add(this.chkIseDevam);
+            this.Controls.Add(this.chkCalisanAktifMi);
             this.Controls.Add(this.btnCalisanSec);
             this.Controls.Add(this.lvwCalisanListesi);
             this.Controls.Add(this.btnCalisanTemizle);
@@ -360,6 +421,7 @@
             this.Text = "Çalışanlar";
             this.Load += new System.EventHandler(this.FrmCalisanlar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudSaatlikUcret)).EndInit();
+            this.cmsSagTik.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,5 +460,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox chkCalisanAktifMi;
+        private System.Windows.Forms.CheckBox chkIseDevam;
+        private System.Windows.Forms.ContextMenuStrip cmsSagTik;
+        private System.Windows.Forms.ToolStripMenuItem duzenleButon;
+        private System.Windows.Forms.ToolStripMenuItem silButon;
+        private System.Windows.Forms.ToolStripMenuItem yenileButon;
     }
 }
