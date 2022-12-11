@@ -61,3 +61,15 @@ GO
 CREATE VIEW vw_mesleklerCmb
 AS
 SELECT meslekID,meslekAd FROM meslekler WHERE meslekAktifMi=1;
+
+GO
+
+CREATE VIEW vw_odalarLv
+AS
+SELECT odaNumara, odaKat, odaKisiSayisi, odaFiyat FROM odalar;
+
+GO
+
+CREATE VIEW vw_kampanyalarLv
+AS
+SELECT kampanyaID, kampanyaAd, kampanyaIndirimOrani, kampanyaBaslangic, kampanyaBitis, kampanyaAciklama FROM kampanyalar;

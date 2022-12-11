@@ -12,7 +12,7 @@ namespace BilgiOtelDAL
     public class OdalarDAL
     {
         //odaID'ye Göre Getir
-        public OdalarEntity getOda(int odaid)
+        public OdalarEntity odaGetirID(int odaid)
         {
             DataTable oda = SQLHelper.GetDataTable($"SELECT * FROM odalar WHERE odaNumara = {odaid}");
 
@@ -33,7 +33,7 @@ namespace BilgiOtelDAL
         }
 
         //Hepsini Getir
-        public List<OdalarEntity> getOdalar()
+        public List<OdalarEntity> odalarGetir()
         {
             DataTable odalar = SQLHelper.GetDataTable("SELECT * FROM odalar");
 
@@ -57,7 +57,7 @@ namespace BilgiOtelDAL
         }
 
         //Insert
-        public int insertOda(OdalarEntity oda)
+        public int odaEkle(OdalarEntity oda)
         {
             SqlParameter[] parametreler =
             {
@@ -76,7 +76,7 @@ namespace BilgiOtelDAL
         }
         //Update
 
-        public int updateOda(OdalarEntity oda,int EskiOdaNo)
+        public int odaDuzenle(OdalarEntity oda,int EskiOdaNo)
         {
             SqlParameter[] parametreler =
             {
@@ -96,7 +96,7 @@ namespace BilgiOtelDAL
         }
 
         //Delete
-        public int deleteOda(int id)
+        public int odaSil(int id)
         {
             int silinenOdaSayisi = SQLHelper.ExecuteNonQuery($"UPDATE odalar SET odaAktifMi = 0 WHERE odaNumara = {id}");
 

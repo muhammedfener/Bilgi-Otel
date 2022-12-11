@@ -13,8 +13,7 @@ namespace BilgiOtelDAL
     public class KampanyalarDAL
     {
         //ID Getir
-
-        public KampanyalarEntity getKampanya(int id)
+        public KampanyalarEntity kampanyaGetirID(int id)
         {
             DataTable kampanya = SQLHelper.GetDataTable($"SELECT * FROM kampanyalar WHERE kampanyaID = {id}");
 
@@ -34,7 +33,7 @@ namespace BilgiOtelDAL
             return Kampanya;
         }
 
-        public KampanyalarEntity getKampanya(string kampanyaAd)
+        public KampanyalarEntity kampanyaGetirAD(string kampanyaAd)
         {
             DataTable kampanya = SQLHelper.GetDataTable($"SELECT * FROM kampanyalar WHERE kampanyaAd = '{kampanyaAd}'");
 
@@ -55,7 +54,7 @@ namespace BilgiOtelDAL
         }
 
         //Hepsini Getir
-        public List<KampanyalarEntity> getKampanyalar()
+        public List<KampanyalarEntity> kampanyalarGetir()
         {
             DataTable kampanyalar = SQLHelper.GetDataTable("SELECT * FROM kampanyalar WHERE kampanyaAktifMi = 1");
 
@@ -79,7 +78,7 @@ namespace BilgiOtelDAL
         }
 
         //Insert
-        public int insertKampanya(KampanyalarEntity kampanya)
+        public int kampanyaEkle(KampanyalarEntity kampanya)
         {
             SqlParameter[] parametreler =
             {
@@ -98,7 +97,7 @@ namespace BilgiOtelDAL
         }
         //Update
 
-        public int updateKampanyalar(KampanyalarEntity kampanya)
+        public int kampanyaGuncelle(KampanyalarEntity kampanya)
         {
             SqlParameter[] parametreler =
             {
@@ -117,7 +116,7 @@ namespace BilgiOtelDAL
         }
 
         //Delete
-        public int deleteKampanya(int id)
+        public int kampanyaSil(int id)
         {
             int silinenKampanyaSayisi = SQLHelper.ExecuteNonQuery($"UPDATE kampanyalar SET kampanyaAktifMi = 0 WHERE kampanyaID = {id}");
 

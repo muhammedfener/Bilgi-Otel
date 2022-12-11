@@ -33,7 +33,7 @@ namespace BilgiOtel
                 pnlMenu.Width = 80;
                 lblLogo.Visible = false;
                 btnMenu.Dock = DockStyle.Top;
-                btnMenu.Padding = new Padding(0, 0, 0, 0);
+                btnMenu.Padding = new Padding(0);
                 btnMenu.Height = 80;
                 foreach (Button button in pnlMenu.Controls.OfType<Button>())
                 {

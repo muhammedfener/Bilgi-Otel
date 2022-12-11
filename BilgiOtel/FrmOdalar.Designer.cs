@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOdaTemizle = new System.Windows.Forms.Button();
             this.nudOdaNumara = new System.Windows.Forms.NumericUpDown();
@@ -55,12 +56,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.nudOdaFiyat = new System.Windows.Forms.NumericUpDown();
             this.chkOdaAktifMi = new System.Windows.Forms.CheckBox();
+            this.cmsSagTik = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.yenileButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.duzenleButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.silButon = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNumara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKisi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCiftKisilikYatak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTekKisilikYatak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaFiyat)).BeginInit();
+            this.cmsSagTik.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -162,6 +168,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lvwOdaListesi.ContextMenuStrip = this.cmsSagTik;
             this.lvwOdaListesi.FullRowSelect = true;
             this.lvwOdaListesi.HideSelection = false;
             this.lvwOdaListesi.Location = new System.Drawing.Point(296, 12);
@@ -340,6 +347,36 @@
             this.chkOdaAktifMi.Text = "Oda Aktif Mi";
             this.chkOdaAktifMi.UseVisualStyleBackColor = true;
             // 
+            // cmsSagTik
+            // 
+            this.cmsSagTik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yenileButon,
+            this.duzenleButon,
+            this.silButon});
+            this.cmsSagTik.Name = "cmsSagTik";
+            this.cmsSagTik.Size = new System.Drawing.Size(181, 92);
+            // 
+            // yenileButon
+            // 
+            this.yenileButon.Name = "yenileButon";
+            this.yenileButon.Size = new System.Drawing.Size(180, 22);
+            this.yenileButon.Text = "Yenile";
+            this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
+            // 
+            // duzenleButon
+            // 
+            this.duzenleButon.Name = "duzenleButon";
+            this.duzenleButon.Size = new System.Drawing.Size(180, 22);
+            this.duzenleButon.Text = "Düzenle";
+            this.duzenleButon.Click += new System.EventHandler(this.duzenleButon_Click);
+            // 
+            // silButon
+            // 
+            this.silButon.Name = "silButon";
+            this.silButon.Size = new System.Drawing.Size(180, 22);
+            this.silButon.Text = "Sil";
+            this.silButon.Click += new System.EventHandler(this.silButon_Click);
+            // 
             // FrmOdalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +415,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCiftKisilikYatak)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTekKisilikYatak)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaFiyat)).EndInit();
+            this.cmsSagTik.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,5 +450,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown nudOdaFiyat;
         private System.Windows.Forms.CheckBox chkOdaAktifMi;
+        private System.Windows.Forms.ContextMenuStrip cmsSagTik;
+        private System.Windows.Forms.ToolStripMenuItem yenileButon;
+        private System.Windows.Forms.ToolStripMenuItem duzenleButon;
+        private System.Windows.Forms.ToolStripMenuItem silButon;
     }
 }

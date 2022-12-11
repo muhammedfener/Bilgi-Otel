@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnKampanyaSec = new System.Windows.Forms.Button();
             this.dtpKampanyaBitis = new System.Windows.Forms.DateTimePicker();
             this.dtpKampanyaBaslangic = new System.Windows.Forms.DateTimePicker();
@@ -49,6 +50,12 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chkKampanya = new System.Windows.Forms.CheckBox();
+            this.cmsSagTik = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.yenileButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.duzenleButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.silButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsSagTik.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnKampanyaSec
@@ -174,6 +181,7 @@
             // lvwKampanyalar
             // 
             this.lvwKampanyalar.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
             this.columnHeader11,
             this.columnHeader14,
             this.columnHeader12,
@@ -181,10 +189,10 @@
             this.columnHeader15});
             this.lvwKampanyalar.FullRowSelect = true;
             this.lvwKampanyalar.HideSelection = false;
-            this.lvwKampanyalar.Location = new System.Drawing.Point(342, 12);
+            this.lvwKampanyalar.Location = new System.Drawing.Point(304, 12);
             this.lvwKampanyalar.MultiSelect = false;
             this.lvwKampanyalar.Name = "lvwKampanyalar";
-            this.lvwKampanyalar.Size = new System.Drawing.Size(446, 161);
+            this.lvwKampanyalar.Size = new System.Drawing.Size(484, 161);
             this.lvwKampanyalar.TabIndex = 7;
             this.lvwKampanyalar.UseCompatibleStateImageBehavior = false;
             this.lvwKampanyalar.View = System.Windows.Forms.View.Details;
@@ -225,6 +233,41 @@
             this.chkKampanya.Text = "Kampanya Aktif Mi";
             this.chkKampanya.UseVisualStyleBackColor = true;
             // 
+            // cmsSagTik
+            // 
+            this.cmsSagTik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yenileButon,
+            this.duzenleButon,
+            this.silButon});
+            this.cmsSagTik.Name = "cmsSagTik";
+            this.cmsSagTik.Size = new System.Drawing.Size(117, 70);
+            // 
+            // yenileButon
+            // 
+            this.yenileButon.Name = "yenileButon";
+            this.yenileButon.Size = new System.Drawing.Size(180, 22);
+            this.yenileButon.Text = "Yenile";
+            this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
+            // 
+            // duzenleButon
+            // 
+            this.duzenleButon.Name = "duzenleButon";
+            this.duzenleButon.Size = new System.Drawing.Size(180, 22);
+            this.duzenleButon.Text = "Düzenle";
+            this.duzenleButon.Click += new System.EventHandler(this.duzenleButon_Click);
+            // 
+            // silButon
+            // 
+            this.silButon.Name = "silButon";
+            this.silButon.Size = new System.Drawing.Size(180, 22);
+            this.silButon.Text = "Sil";
+            this.silButon.Click += new System.EventHandler(this.silButon_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 37;
+            // 
             // FrmKampanyalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +292,7 @@
             this.Name = "FrmKampanyalar";
             this.Text = "FrmKampanyalar";
             this.Load += new System.EventHandler(this.FrmKampanyalar_Load);
+            this.cmsSagTik.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +321,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.CheckBox chkKampanya;
+        private System.Windows.Forms.ContextMenuStrip cmsSagTik;
+        private System.Windows.Forms.ToolStripMenuItem yenileButon;
+        private System.Windows.Forms.ToolStripMenuItem duzenleButon;
+        private System.Windows.Forms.ToolStripMenuItem silButon;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

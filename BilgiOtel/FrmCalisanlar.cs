@@ -157,6 +157,7 @@ namespace BilgiOtel
             if (lvwCalisanListesi.SelectedItems.Count != 1)
             {
                 MessageBox.Show("Lütfen Düzenlemek İçin Bir Çalışan Seçin!");
+                return;
             }
 
             btnCalisanSec.PerformClick();
@@ -167,7 +168,9 @@ namespace BilgiOtel
             if (lvwCalisanListesi.SelectedItems.Count != 1)
             {
                 MessageBox.Show("Lütfen Silmek İçin Bir Çalışan Seçin!");
+                return;
             }
+
             try
             {
                 calisanlarDAL.calisanSilTC(lvwCalisanListesi.SelectedItems[0].SubItems[1].Text);
