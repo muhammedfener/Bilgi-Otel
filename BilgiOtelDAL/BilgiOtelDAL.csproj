@@ -47,6 +47,7 @@
     <Compile Include="DataConnections.cs" />
     <Compile Include="GenelIslemler.cs" />
     <Compile Include="KampanyalarDAL.cs" />
+    <Compile Include="KullanicilarDAL.cs" />
     <Compile Include="MedeniHalDAL.cs" />
     <Compile Include="MesailerDAL.cs" />
     <Compile Include="MesleklerDAL.cs" />

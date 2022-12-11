@@ -58,16 +58,13 @@ namespace BilgiOtel
 
         }
 
-        public static void CmbDoldur(ComboBox[] comboboxlar,string listeAdi,string sqlCommand)
+        public static void CmbDoldur(ComboBox combobox,string listeAdi,string sqlCommand)
         {
             MeslekListeDoldur(listeAdi,sqlCommand);
 
-            foreach (ComboBox combobox in comboboxlar)
-            {
-                combobox.DataSource = Listeler.First(x=> x.Key == listeAdi).Value.ToList();
-                combobox.ValueMember = "Key";
-                combobox.DisplayMember = "Value";
-            }
+            combobox.DataSource = Listeler.First(x=> x.Key == listeAdi).Value.ToList();
+            combobox.ValueMember = "Key";
+            combobox.DisplayMember = "Value";
         }
 
         public static void LvDoldur(ListView listView, string dataTableName)

@@ -49,6 +49,7 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chkKullaniciAktifMi = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnKullaniciSec
@@ -63,7 +64,7 @@
             // 
             // btnKullaniciTemizle
             // 
-            this.btnKullaniciTemizle.Location = new System.Drawing.Point(12, 151);
+            this.btnKullaniciTemizle.Location = new System.Drawing.Point(12, 165);
             this.btnKullaniciTemizle.Name = "btnKullaniciTemizle";
             this.btnKullaniciTemizle.Size = new System.Drawing.Size(56, 23);
             this.btnKullaniciTemizle.TabIndex = 20;
@@ -72,7 +73,7 @@
             // 
             // btnKullaniciDuzenle
             // 
-            this.btnKullaniciDuzenle.Location = new System.Drawing.Point(74, 151);
+            this.btnKullaniciDuzenle.Location = new System.Drawing.Point(74, 165);
             this.btnKullaniciDuzenle.Name = "btnKullaniciDuzenle";
             this.btnKullaniciDuzenle.Size = new System.Drawing.Size(101, 23);
             this.btnKullaniciDuzenle.TabIndex = 18;
@@ -81,12 +82,13 @@
             // 
             // btnKullaniciEkle
             // 
-            this.btnKullaniciEkle.Location = new System.Drawing.Point(181, 151);
+            this.btnKullaniciEkle.Location = new System.Drawing.Point(181, 165);
             this.btnKullaniciEkle.Name = "btnKullaniciEkle";
             this.btnKullaniciEkle.Size = new System.Drawing.Size(84, 23);
             this.btnKullaniciEkle.TabIndex = 19;
             this.btnKullaniciEkle.Text = "Kullanıcı Ekle";
             this.btnKullaniciEkle.UseVisualStyleBackColor = true;
+            this.btnKullaniciEkle.Click += new System.EventHandler(this.btnKullaniciEkle_Click);
             // 
             // label24
             // 
@@ -219,11 +221,22 @@
             this.columnHeader10.Text = "Yönetici Ad";
             this.columnHeader10.Width = 81;
             // 
+            // chkKullaniciAktifMi
+            // 
+            this.chkKullaniciAktifMi.AutoSize = true;
+            this.chkKullaniciAktifMi.Location = new System.Drawing.Point(162, 142);
+            this.chkKullaniciAktifMi.Name = "chkKullaniciAktifMi";
+            this.chkKullaniciAktifMi.Size = new System.Drawing.Size(103, 17);
+            this.chkKullaniciAktifMi.TabIndex = 22;
+            this.chkKullaniciAktifMi.Text = "Kullanıcı Aktif Mi";
+            this.chkKullaniciAktifMi.UseVisualStyleBackColor = true;
+            // 
             // FrmKullanicilar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkKullaniciAktifMi);
             this.Controls.Add(this.btnKullaniciSec);
             this.Controls.Add(this.btnKullaniciTemizle);
             this.Controls.Add(this.btnKullaniciDuzenle);
@@ -241,6 +254,7 @@
             this.Controls.Add(this.lvwKullaniciListe);
             this.Name = "FrmKullanicilar";
             this.Text = "FrmKullanicilar";
+            this.Load += new System.EventHandler(this.FrmKullanicilar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,5 +283,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.CheckBox chkKullaniciAktifMi;
     }
 }

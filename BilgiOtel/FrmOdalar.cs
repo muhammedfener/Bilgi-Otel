@@ -159,6 +159,12 @@ namespace BilgiOtel
 
         private void btnOdaEkle_Click(object sender, EventArgs e)
         {
+            if (!chkOdaAktifMi.Checked)
+            {
+                MessageBox.Show("Yeni Ekleyeceğiniz Oda Aktif Olmalı!");
+                return;
+            }
+
             try
             {
                 OdalarEntity oda = new OdalarEntity();

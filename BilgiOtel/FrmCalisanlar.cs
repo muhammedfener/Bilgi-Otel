@@ -24,8 +24,7 @@ namespace BilgiOtel
         private void FrmCalisanlar_Load(object sender, EventArgs e)
         {
             Islemler.DataTableDoldur("SELECT * FROM vw_calisanlarLv", "Calisanlar");
-            ComboBox[] MeslekCmbler = { cmbMeslek };
-            Islemler.CmbDoldur(MeslekCmbler,"Meslekler","SELECT * FROM vw_mesleklerCmb");
+            Islemler.CmbDoldur(cmbMeslek,"Meslekler","SELECT * FROM vw_mesleklerCmb");
             Islemler.LvDoldur(lvwCalisanListesi, "Calisanlar");
         }
 
@@ -108,6 +107,12 @@ namespace BilgiOtel
 
         private void btnCalisanKaydet_Click(object sender, EventArgs e)
         {
+            if (!chkCalisanAktifMi.Checked)
+            {
+                MessageBox.Show("Yeni Ekleyeceğiniz Çalışan Aktif Olmalı!");
+                return;
+            }
+
             CalisanlarEntity YeniCalisan = new CalisanlarEntity();
             YeniCalisan.CalisanAd = txtAd.Text;
             YeniCalisan.CalisanSoyad = txtSoyad.Text;

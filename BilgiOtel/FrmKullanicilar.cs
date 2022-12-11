@@ -16,5 +16,18 @@ namespace BilgiOtel
         {
             InitializeComponent();
         }
+
+        private void FrmKullanicilar_Load(object sender, EventArgs e)
+        {
+            Islemler.CmbDoldur(cmbKullaniciCalisan, "CalisanlarCmb", "Select * from vw_calisanlarCmb");
+            Islemler.CmbDoldur(cmbKullaniciYonetici, "YoneticilerCmb", "Select * from vw_yoneticilerCmb");
+            Islemler.DataTableDoldur("SELECT * FROM vw_kulllanicilarLv", "Kullanicilar");
+            Islemler.LvDoldur(lvwKullaniciListe, "Kullanicilar");
+        }
+
+        private void btnKullaniciEkle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

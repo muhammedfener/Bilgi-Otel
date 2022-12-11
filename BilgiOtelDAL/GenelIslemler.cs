@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BilgiOtel
+namespace BilgiOtelDAL
 {
     public static class GenelIslemler
     {
@@ -54,6 +54,19 @@ namespace BilgiOtel
             try
             {
                 bool x = Convert.ToBoolean(ifade);
+                return x;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool IsDBNull(this object ifade)
+        {
+            try
+            {
+                bool x = Convert.IsDBNull(ifade);
                 return x;
             }
             catch

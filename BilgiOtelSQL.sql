@@ -73,3 +73,15 @@ GO
 CREATE VIEW vw_kampanyalarLv
 AS
 SELECT kampanyaID, kampanyaAd, kampanyaIndirimOrani, kampanyaBaslangic, kampanyaBitis, kampanyaAciklama FROM kampanyalar;
+
+GO
+
+CREATE VIEW vw_calisanlarCmb
+AS
+SELECT calisanID, (calisanAd + ' ' + calisanSoyad) as [Çalýþan Ad Soyad] FROM calisanlar WHERE calisanAktifMi=1;
+
+GO
+
+CREATE VIEW vw_yoneticilerCmb
+AS
+SELECT yoneticiID, (yoneticiAd + ' ' + yoneticiSoyad) as [Yönetici Ad Soyad] FROM yoneticiler WHERE yoneticiAktifMi=1;
