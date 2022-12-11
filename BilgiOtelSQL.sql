@@ -85,3 +85,7 @@ GO
 CREATE VIEW vw_yoneticilerCmb
 AS
 SELECT yoneticiID, (yoneticiAd + ' ' + yoneticiSoyad) as [Yönetici Ad Soyad] FROM yoneticiler WHERE yoneticiAktifMi=1;
+
+CREATE VIEW vw_kulllanicilarLv
+AS
+SELECT kullaniciAdi,kullaniciSifre,kullaniciMail,kullaniciKayitTarihi,(calisanAd + ' ' + calisanSoyad) as [Çalýþan Ad Soyad], (yoneticiAd + ' ' + yoneticiSoyad) as [Yönetici Ad Soyad] FROM kullanicilar FULL JOIN yoneticiler ON kullanicilar.kullaniciYoneticiID = yoneticiler.yoneticiID FULL JOIN calisanlar ON kullanicilar.kullaniciCalisanID = calisanlar.calisanID WHERE kullaniciAktifMi=1;
