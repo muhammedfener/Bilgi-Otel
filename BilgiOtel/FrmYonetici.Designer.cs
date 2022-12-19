@@ -126,6 +126,7 @@
             this.btnCalismaEkleDuzenle.Text = "Çalışma Saati Ekle&&Düzenle";
             this.btnCalismaEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCalismaEkleDuzenle.UseVisualStyleBackColor = false;
+            this.btnCalismaEkleDuzenle.Click += new System.EventHandler(this.btnCalismaEkleDuzenle_Click);
             // 
             // btnKullaniciEkleDuzenle
             // 

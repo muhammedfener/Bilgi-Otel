@@ -40,7 +40,7 @@ namespace BilgiOtel
             Listviewdata.Tables.Add(dt);
         }
 
-        public static void CmbListeDoldur(string listeAdi,string sqlCommand)
+        private static void CmbListeDoldur(string listeAdi,string sqlCommand)
         {
             if(!Listeler.FirstOrDefault(x=> x.Key == listeAdi).Equals(default(KeyValuePair<string, Dictionary<int, string>>)))
             {
@@ -77,6 +77,10 @@ namespace BilgiOtel
                 string[] satir = new string[dr.Table.Columns.Count];
                 for (int i=0;i < dr.Table.Columns.Count; i++)
                 {
+                    /*if (dr[i].GetType() == DateTime)
+                    {
+
+                    }*/
                     satir[i] = dr[i].ToString();
                 }
 

@@ -97,6 +97,9 @@
     <EmbeddedResource Include="FrmCalisanlar.resx">
       <DependentUpon>FrmCalisanlar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCalismaSaatleri.resx">
+      <DependentUpon>FrmCalismaSaatleri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmKampanyalar.resx">
       <DependentUpon>FrmKampanyalar.cs</DependentUpon>
     </EmbeddedResource>

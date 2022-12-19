@@ -125,5 +125,10 @@ namespace BilgiOtel
         {
             OpenForm(new FrmKullanicilar());
         }
+
+        private void btnCalismaEkleDuzenle_Click(object sender, EventArgs e)
+        {
+            OpenForm(new FrmCalismaSaatleri());
+        }
     }
 }
