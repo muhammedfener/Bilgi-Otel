@@ -79,6 +79,7 @@
             this.btnKullaniciDuzenle.TabIndex = 18;
             this.btnKullaniciDuzenle.Text = "Kullanıcı Düzenle";
             this.btnKullaniciDuzenle.UseVisualStyleBackColor = true;
+            this.btnKullaniciDuzenle.Click += new System.EventHandler(this.btnKullaniciDuzenle_Click);
             // 
             // btnKullaniciEkle
             // 

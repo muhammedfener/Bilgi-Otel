@@ -28,7 +28,7 @@ namespace BilgiOtelDAL
                 Kullanici.KullaniciYoneticiID = row[6].ToInt32();
                 Kullanici.KullaniciAktifMi = row[7].ToBoolean();
             }
-
+            
             return Kullanici;
         }
 

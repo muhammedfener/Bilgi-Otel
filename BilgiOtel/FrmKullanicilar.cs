@@ -12,6 +12,8 @@ namespace BilgiOtel
 {
     public partial class FrmKullanicilar : Form
     {
+        
+
         public FrmKullanicilar()
         {
             InitializeComponent();
