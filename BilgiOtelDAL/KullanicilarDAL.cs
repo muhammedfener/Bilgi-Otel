@@ -106,13 +106,12 @@ namespace BilgiOtelDAL
                 new SqlParameter { ParameterName = "kullaniciAdi", Value = kullanici.KullaniciAdi},
                 new SqlParameter { ParameterName = "kullaniciSifre", Value = kullanici.KullaniciSifre},
                 new SqlParameter { ParameterName = "kullaniciMail", Value = kullanici.KullaniciMail},
-                new SqlParameter { ParameterName = "kullaniciKayitTarihi", Value = kullanici.KullaniciKayitTarihi},
                 new SqlParameter { ParameterName = "kullaniciCalisanID", Value = kullanici.KullaniciCalisanID},
                 new SqlParameter { ParameterName = "kullaniciYoneticiID", Value = kullanici.KullaniciYoneticiID},
                 new SqlParameter { ParameterName = "kullaniciAktifMi", Value = kullanici.KullaniciAktifMi}
             };
 
-            int guncellenenKullaniciSayisi = SQLHelper.ExecuteNonQuery("UPDATE kullanicilar SET kullaniciAdi = @kullaniciAdi, kullaniciSifre = @kullaniciSifre, kullaniciMail = @kullaniciMail, kullaniciKayitTarihi = @kullaniciKayitTarihi, kullaniciCalisanID = @kullaniciCalisanID, kullaniciYoneticiID = @kullaniciYoneticiID, kullaniciAktifMi = @kullaniciAktifMi WHERE kullaniciID = @kullaniciID", parametreler);
+            int guncellenenKullaniciSayisi = SQLHelper.ExecuteNonQuery("UPDATE kullanicilar SET kullaniciAdi = @kullaniciAdi, kullaniciSifre = @kullaniciSifre, kullaniciMail = @kullaniciMail, kullaniciCalisanID = @kullaniciCalisanID, kullaniciYoneticiID = @kullaniciYoneticiID, kullaniciAktifMi = @kullaniciAktifMi WHERE kullaniciID = @kullaniciID", parametreler);
 
             return guncellenenKullaniciSayisi;
         }

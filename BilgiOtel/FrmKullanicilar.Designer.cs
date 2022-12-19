@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnKullaniciSec = new System.Windows.Forms.Button();
             this.btnKullaniciTemizle = new System.Windows.Forms.Button();
             this.btnKullaniciDuzenle = new System.Windows.Forms.Button();
@@ -50,6 +51,10 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chkKullaniciAktifMi = new System.Windows.Forms.CheckBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnKullaniciSec
@@ -61,6 +66,7 @@
             this.btnKullaniciSec.TabIndex = 21;
             this.btnKullaniciSec.Text = "Kullanıcı Seç";
             this.btnKullaniciSec.UseVisualStyleBackColor = true;
+            this.btnKullaniciSec.Click += new System.EventHandler(this.btnKullaniciSec_Click);
             // 
             // btnKullaniciTemizle
             // 
@@ -70,6 +76,7 @@
             this.btnKullaniciTemizle.TabIndex = 20;
             this.btnKullaniciTemizle.Text = "Temizle";
             this.btnKullaniciTemizle.UseVisualStyleBackColor = true;
+            this.btnKullaniciTemizle.Click += new System.EventHandler(this.btnKullaniciTemizle_Click);
             // 
             // btnKullaniciDuzenle
             // 
@@ -182,6 +189,7 @@
             this.columnHeader7,
             this.columnHeader9,
             this.columnHeader10});
+            this.lvwKullaniciListe.ContextMenuStrip = this.contextMenuStrip1;
             this.lvwKullaniciListe.FullRowSelect = true;
             this.lvwKullaniciListe.HideSelection = false;
             this.lvwKullaniciListe.Location = new System.Drawing.Point(284, 12);
@@ -191,6 +199,7 @@
             this.lvwKullaniciListe.TabIndex = 7;
             this.lvwKullaniciListe.UseCompatibleStateImageBehavior = false;
             this.lvwKullaniciListe.View = System.Windows.Forms.View.Details;
+            this.lvwKullaniciListe.DoubleClick += new System.EventHandler(this.lvwKullaniciListe_DoubleClick);
             // 
             // columnHeader5
             // 
@@ -215,7 +224,7 @@
             // columnHeader9
             // 
             this.columnHeader9.Text = "Çalışan Ad";
-            this.columnHeader9.Width = 81;
+            this.columnHeader9.Width = 110;
             // 
             // columnHeader10
             // 
@@ -231,6 +240,28 @@
             this.chkKullaniciAktifMi.TabIndex = 22;
             this.chkKullaniciAktifMi.Text = "Kullanıcı Aktif Mi";
             this.chkKullaniciAktifMi.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Düzenle";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "Sil";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // FrmKullanicilar
             // 
@@ -256,6 +287,7 @@
             this.Name = "FrmKullanicilar";
             this.Text = "FrmKullanicilar";
             this.Load += new System.EventHandler(this.FrmKullanicilar_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +317,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.CheckBox chkKullaniciAktifMi;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

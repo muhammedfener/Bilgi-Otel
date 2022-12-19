@@ -40,7 +40,7 @@ namespace BilgiOtel
             Listviewdata.Tables.Add(dt);
         }
 
-        public static void MeslekListeDoldur(string listeAdi,string sqlCommand)
+        public static void CmbListeDoldur(string listeAdi,string sqlCommand)
         {
             if(!Listeler.FirstOrDefault(x=> x.Key == listeAdi).Equals(default(KeyValuePair<string, Dictionary<int, string>>)))
             {
@@ -60,7 +60,7 @@ namespace BilgiOtel
 
         public static void CmbDoldur(ComboBox combobox,string listeAdi,string sqlCommand)
         {
-            MeslekListeDoldur(listeAdi,sqlCommand);
+            CmbListeDoldur(listeAdi,sqlCommand);
 
             combobox.DataSource = Listeler.First(x=> x.Key == listeAdi).Value.ToList();
             combobox.ValueMember = "Key";
