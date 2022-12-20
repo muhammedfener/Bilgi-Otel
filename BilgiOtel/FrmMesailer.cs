@@ -27,5 +27,10 @@ namespace BilgiOtel
                 cmbBitisSaatler.SelectedIndex = 0;
             }
         }
+
+        private void btnMesaiKaydet_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

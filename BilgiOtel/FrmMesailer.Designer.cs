@@ -72,6 +72,7 @@
             this.btnMesaiKaydet.TabIndex = 16;
             this.btnMesaiKaydet.Text = "Kaydet";
             this.btnMesaiKaydet.UseVisualStyleBackColor = true;
+            this.btnMesaiKaydet.Click += new System.EventHandler(this.btnMesaiKaydet_Click);
             // 
             // btnMesaiSec
             // 
