@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnCalismaSaatiTemizle = new System.Windows.Forms.Button();
             this.btnCalismaGuncelle = new System.Windows.Forms.Button();
             this.btnCalismaKaydet = new System.Windows.Forms.Button();
@@ -46,6 +47,10 @@
             this.label33 = new System.Windows.Forms.Label();
             this.cmbVardiyalar = new System.Windows.Forms.ComboBox();
             this.cmbCalisanlar = new System.Windows.Forms.ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCalismaSaatiTemizle
@@ -56,6 +61,7 @@
             this.btnCalismaSaatiTemizle.TabIndex = 16;
             this.btnCalismaSaatiTemizle.Text = "Temizle";
             this.btnCalismaSaatiTemizle.UseVisualStyleBackColor = true;
+            this.btnCalismaSaatiTemizle.Click += new System.EventHandler(this.btnCalismaSaatiTemizle_Click);
             // 
             // btnCalismaGuncelle
             // 
@@ -65,6 +71,7 @@
             this.btnCalismaGuncelle.TabIndex = 17;
             this.btnCalismaGuncelle.Text = "Güncelle";
             this.btnCalismaGuncelle.UseVisualStyleBackColor = true;
+            this.btnCalismaGuncelle.Click += new System.EventHandler(this.btnCalismaGuncelle_Click);
             // 
             // btnCalismaKaydet
             // 
@@ -74,6 +81,7 @@
             this.btnCalismaKaydet.TabIndex = 18;
             this.btnCalismaKaydet.Text = "Kaydet";
             this.btnCalismaKaydet.UseVisualStyleBackColor = true;
+            this.btnCalismaKaydet.Click += new System.EventHandler(this.btnCalismaKaydet_Click);
             // 
             // btnCalismaSaatiSec
             // 
@@ -83,6 +91,7 @@
             this.btnCalismaSaatiSec.TabIndex = 15;
             this.btnCalismaSaatiSec.Text = "Çalışma Saati Seç";
             this.btnCalismaSaatiSec.UseVisualStyleBackColor = true;
+            this.btnCalismaSaatiSec.Click += new System.EventHandler(this.btnCalismaSaatiSec_Click);
             // 
             // lvwCalismaSaatleri
             // 
@@ -193,6 +202,28 @@
             this.cmbCalisanlar.Size = new System.Drawing.Size(161, 21);
             this.cmbCalisanlar.TabIndex = 7;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Düzenle";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "Sil";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
             // FrmCalismaSaatleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +245,7 @@
             this.Name = "FrmCalismaSaatleri";
             this.Text = "FrmCalismaSaatleri";
             this.Load += new System.EventHandler(this.FrmCalismaSaatleri_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,5 +271,8 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ComboBox cmbVardiyalar;
         private System.Windows.Forms.ComboBox cmbCalisanlar;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

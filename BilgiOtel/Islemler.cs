@@ -67,7 +67,7 @@ namespace BilgiOtel
             combobox.DisplayMember = "Value";
         }
 
-        public static void LvDoldur(ListView listView, string dataTableName)
+        public static void LvDoldur(ListView listView, string dataTableName, bool onlyDate = false)
         {
             listView.Items.Clear();
 
@@ -77,10 +77,18 @@ namespace BilgiOtel
                 string[] satir = new string[dr.Table.Columns.Count];
                 for (int i=0;i < dr.Table.Columns.Count; i++)
                 {
-                    /*if (dr[i].GetType() == DateTime)
+                    if (onlyDate)
                     {
-
-                    }*/
+                        if (dr.Table.Columns[i].DataType == typeof(DateTime))
+                        {
+                            satir[i] = dr[i].ToDateTime().ToString("dd.MM.yyyy");
+                        }
+                        else
+                        {
+                            satir[i] = dr[i].ToString();
+                        }
+                        continue;
+                    }
                     satir[i] = dr[i].ToString();
                 }
 

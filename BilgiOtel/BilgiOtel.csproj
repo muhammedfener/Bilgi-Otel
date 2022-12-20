@@ -106,6 +106,9 @@
     <EmbeddedResource Include="FrmKullanicilar.resx">
       <DependentUpon>FrmKullanicilar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMesailer.resx">
+      <DependentUpon>FrmMesailer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmYonetici.resx">
       <DependentUpon>FrmYonetici.cs</DependentUpon>
     </EmbeddedResource>

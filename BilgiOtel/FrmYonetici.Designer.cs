@@ -106,6 +106,7 @@
             this.btnMesaiEkleDuzenle.Text = "Mesai Ekle&&Düzenle";
             this.btnMesaiEkleDuzenle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMesaiEkleDuzenle.UseVisualStyleBackColor = false;
+            this.btnMesaiEkleDuzenle.Click += new System.EventHandler(this.btnMesaiEkleDuzenle_Click);
             // 
             // btnCalismaEkleDuzenle
             // 

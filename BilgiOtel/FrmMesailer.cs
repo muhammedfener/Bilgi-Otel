@@ -16,5 +16,16 @@ namespace BilgiOtel
         {
             InitializeComponent();
         }
+
+        private void FrmMesailer_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 24; i++)
+            {
+                cmbBaslangicSaatler.Items.Add(i.ToString() + ":00");
+                cmbBaslangicSaatler.SelectedIndex = 0;
+                cmbBitisSaatler.Items.Add(i.ToString() + ":00");
+                cmbBitisSaatler.SelectedIndex = 0;
+            }
+        }
     }
 }

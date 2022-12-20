@@ -1,6 +1,7 @@
 ﻿using Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,41 +11,41 @@ namespace BilgiOtelDAL
 {
     public class CalismaSaatleriDAL
     {
-        //ID Getir
 
-        public CalismaSaatleriEntity getCalismaSaati(int id)
+        //ID Getir
+        public CalismaSaatleriEntity calismaSaatiGetir(int id)
         {
-            SqlDataReader calismaSaati = SQLHelper.ExecuteReader($"SELECT * FROM calismaSaatleri WHERE calismaSaatiID = {id}");
+            DataTable calismaSaati = SQLHelper.GetDataTable($"SELECT * FROM calismaSaatleri WHERE calismaSaatleriID = {id}");
 
             CalismaSaatleriEntity CalismaSaati = new CalismaSaatleriEntity();
 
-            while (calismaSaati.Read())
+            foreach(DataRow dr in calismaSaati.Rows)
             {
-                CalismaSaati.CalismaSaatleriID = (int)calismaSaati[0];
-                CalismaSaati.CalisanID = (int)calismaSaati[1];
-                CalismaSaati.VardiyaID = (int)calismaSaati[2];
-                CalismaSaati.CalismaBaslangicTarihi = (DateTime)calismaSaati[3];
-                CalismaSaati.CalismaBitisTarihi = (DateTime)calismaSaati[4];
+                CalismaSaati.CalismaSaatleriID = dr[0].ToInt32();
+                CalismaSaati.CalisanID = dr[1].ToInt32();
+                CalismaSaati.VardiyaID = dr[2].ToInt32();
+                CalismaSaati.CalismaBaslangicTarihi = dr[3].ToDateTime();
+                CalismaSaati.CalismaBitisTarihi = dr[4].ToDateTime();
             }
 
             return CalismaSaati;
         }
 
         //Hepsini Getir
-        public List<CalismaSaatleriEntity> getCalisanlar()
+        public List<CalismaSaatleriEntity> calismaSaatleriGetir()
         {
-            SqlDataReader calismaSaatleri = SQLHelper.ExecuteReader("SELECT * FROM calismaSaatleri");
+            DataTable calismaSaatleri = SQLHelper.GetDataTable("SELECT * FROM calismaSaatleri");
 
             List<CalismaSaatleriEntity> CalismaSaatleri = new List<CalismaSaatleriEntity>();
 
-            while (calismaSaatleri.Read())
+            foreach (DataRow dr in calismaSaatleri.Rows)
             {
                 CalismaSaatleriEntity calismaSaati = new CalismaSaatleriEntity();
-                calismaSaati.CalismaSaatleriID = (int)calismaSaatleri[0];
-                calismaSaati.CalisanID = (int)calismaSaatleri[1];
-                calismaSaati.VardiyaID = (int)calismaSaatleri[2];
-                calismaSaati.CalismaBaslangicTarihi = (DateTime)calismaSaatleri[3];
-                calismaSaati.CalismaBitisTarihi = (DateTime)calismaSaatleri[4];
+                calismaSaati.CalismaSaatleriID = dr[0].ToInt32();
+                calismaSaati.CalisanID = dr[1].ToInt32();
+                calismaSaati.VardiyaID = dr[2].ToInt32();
+                calismaSaati.CalismaBaslangicTarihi = dr[3].ToDateTime();
+                calismaSaati.CalismaBitisTarihi = dr[4].ToDateTime();
 
                 CalismaSaatleri.Add(calismaSaati);
             }
@@ -53,7 +54,7 @@ namespace BilgiOtelDAL
         }
 
         //Insert
-        public int insertCalismaSaati(CalismaSaatleriEntity calismaSaati)
+        public int calismaSaatiEkle(CalismaSaatleriEntity calismaSaati)
         {
             SqlParameter[] parametreler =
             {
@@ -68,9 +69,9 @@ namespace BilgiOtelDAL
 
             return eklenenCalismaSaatiSayisi;
         }
-        //Update
 
-        public int updateCalismaSaati(CalismaSaatleriEntity calismaSaati)
+        //Update
+        public int calismaSaatiGuncelle(CalismaSaatleriEntity calismaSaati)
         {
             SqlParameter[] parametreler =
             {
@@ -87,7 +88,7 @@ namespace BilgiOtelDAL
         }
 
         //Delete
-        public int deleteCalismaSaati(int id)
+        public int calismaSaatiSil(int id)
         {
             int silinenCalismaSaatiSayisi = SQLHelper.ExecuteNonQuery($"DELETE FROM calismaSaatleri WHERE calismaSaatleriID = {id}");
 
