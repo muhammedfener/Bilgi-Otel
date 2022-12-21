@@ -44,6 +44,7 @@
             this.cmbBitisSaatler = new System.Windows.Forms.ComboBox();
             this.cmbBaslangicSaatler = new System.Windows.Forms.ComboBox();
             this.cmbMesaiCalisanlar = new System.Windows.Forms.ComboBox();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnMesaiTemizle
@@ -54,6 +55,7 @@
             this.btnMesaiTemizle.TabIndex = 14;
             this.btnMesaiTemizle.Text = "Temizle";
             this.btnMesaiTemizle.UseVisualStyleBackColor = true;
+            this.btnMesaiTemizle.Click += new System.EventHandler(this.btnMesaiTemizle_Click);
             // 
             // btnMesaiDuzenle
             // 
@@ -82,19 +84,21 @@
             this.btnMesaiSec.TabIndex = 17;
             this.btnMesaiSec.Text = "Mesai Seç";
             this.btnMesaiSec.UseVisualStyleBackColor = true;
+            this.btnMesaiSec.Click += new System.EventHandler(this.btnMesaiSec_Click);
             // 
             // lvwMesaiListe
             // 
             this.lvwMesaiListe.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
             this.columnHeader27,
             this.columnHeader28,
             this.columnHeader29});
             this.lvwMesaiListe.FullRowSelect = true;
             this.lvwMesaiListe.HideSelection = false;
-            this.lvwMesaiListe.Location = new System.Drawing.Point(401, 55);
+            this.lvwMesaiListe.Location = new System.Drawing.Point(347, 55);
             this.lvwMesaiListe.MultiSelect = false;
             this.lvwMesaiListe.Name = "lvwMesaiListe";
-            this.lvwMesaiListe.Size = new System.Drawing.Size(381, 157);
+            this.lvwMesaiListe.Size = new System.Drawing.Size(435, 157);
             this.lvwMesaiListe.TabIndex = 13;
             this.lvwMesaiListe.UseCompatibleStateImageBehavior = false;
             this.lvwMesaiListe.View = System.Windows.Forms.View.Details;
@@ -179,6 +183,10 @@
             this.cmbMesaiCalisanlar.Size = new System.Drawing.Size(175, 21);
             this.cmbMesaiCalisanlar.TabIndex = 7;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            // 
             // FrmMesailer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,5 +231,6 @@
         private System.Windows.Forms.ComboBox cmbBitisSaatler;
         private System.Windows.Forms.ComboBox cmbBaslangicSaatler;
         private System.Windows.Forms.ComboBox cmbMesaiCalisanlar;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }
