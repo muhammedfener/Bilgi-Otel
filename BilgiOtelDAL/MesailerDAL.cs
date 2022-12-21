@@ -1,6 +1,7 @@
 ﻿using Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,16 +15,16 @@ namespace BilgiOtelDAL
 
         public MesailerEntity getMesai(int id)
         {
-            SqlDataReader mesai = SQLHelper.ExecuteReader($"SELECT * FROM mesailer WHERE mesaiID = {id}");
+            DataTable mesai = SQLHelper.GetDataTable($"SELECT * FROM mesailer WHERE mesaiID = {id}");
 
             MesailerEntity Mesai = new MesailerEntity();
 
-            while (mesai.Read())
+            foreach(DataRow dr in mesai.Rows)
             {
-                Mesai.MesaiID = (int)mesai[0];
-                Mesai.CalisanID = (int)mesai[1];
-                Mesai.MesaiBaslangicTarihi = (DateTime)mesai[2];
-                Mesai.MesaiBitisTarihi = (DateTime)mesai[3];
+                Mesai.MesaiID = dr[0].ToInt32();
+                Mesai.CalisanID = dr[1].ToInt32();
+                Mesai.MesaiBaslangicTarihi = dr[2].ToDateTime();
+                Mesai.MesaiBitisTarihi = dr[3].ToDateTime();
             }
 
             return Mesai;
@@ -32,17 +33,17 @@ namespace BilgiOtelDAL
         //Hepsini Getir
         public List<MesailerEntity> getMesailer()
         {
-            SqlDataReader mesailer = SQLHelper.ExecuteReader("SELECT * FROM medenihal WHERE kampanyaAktifMi = 1");
+            DataTable mesailer = SQLHelper.GetDataTable("SELECT * FROM medenihal WHERE kampanyaAktifMi = 1");
 
             List<MesailerEntity> Mesailer = new List<MesailerEntity>();
 
-            while (mesailer.Read())
+            foreach (DataRow dr in mesailer.Rows)
             {
                 MesailerEntity mesai = new MesailerEntity();
-                mesai.MesaiID = (int)mesailer[0];
-                mesai.CalisanID = (int)mesailer[1];
-                mesai.MesaiBaslangicTarihi = (DateTime)mesailer[2];
-                mesai.MesaiBitisTarihi = (DateTime)mesailer[3];
+                mesai.MesaiID = dr[0].ToInt32();
+                mesai.CalisanID = dr[1].ToInt32();
+                mesai.MesaiBaslangicTarihi = dr[2].ToDateTime();
+                mesai.MesaiBitisTarihi = dr[3].ToDateTime();
 
                 Mesailer.Add(mesai);
             }

@@ -33,6 +33,7 @@
             this.btnMesaiKaydet = new System.Windows.Forms.Button();
             this.btnMesaiSec = new System.Windows.Forms.Button();
             this.lvwMesaiListe = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader27 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader29 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -44,7 +45,6 @@
             this.cmbBitisSaatler = new System.Windows.Forms.ComboBox();
             this.cmbBaslangicSaatler = new System.Windows.Forms.ComboBox();
             this.cmbMesaiCalisanlar = new System.Windows.Forms.ComboBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnMesaiTemizle
@@ -65,6 +65,7 @@
             this.btnMesaiDuzenle.TabIndex = 15;
             this.btnMesaiDuzenle.Text = "Güncelle";
             this.btnMesaiDuzenle.UseVisualStyleBackColor = true;
+            this.btnMesaiDuzenle.Click += new System.EventHandler(this.btnMesaiDuzenle_Click);
             // 
             // btnMesaiKaydet
             // 
@@ -102,6 +103,10 @@
             this.lvwMesaiListe.TabIndex = 13;
             this.lvwMesaiListe.UseCompatibleStateImageBehavior = false;
             this.lvwMesaiListe.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
             // 
             // columnHeader27
             // 
@@ -182,10 +187,6 @@
             this.cmbMesaiCalisanlar.Name = "cmbMesaiCalisanlar";
             this.cmbMesaiCalisanlar.Size = new System.Drawing.Size(175, 21);
             this.cmbMesaiCalisanlar.TabIndex = 7;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
             // 
             // FrmMesailer
             // 

@@ -15,7 +15,7 @@ namespace BilgiOtel
     public partial class FrmMesailer : Form
     {
         MesailerDAL mesailerDAL = new MesailerDAL();
-
+        MesailerEntity secilenMesai = new MesailerEntity();
         public FrmMesailer()
         {
             InitializeComponent();
@@ -47,11 +47,24 @@ namespace BilgiOtel
                 return;
             }
 
-            MesailerEntity mesai = new MesailerEntity();
+            try
+            {
+                MesailerEntity mesai = new MesailerEntity();
 
-            mesai.CalisanID = cmbMesaiCalisanlar.SelectedValue.ToInt32();
-            mesai.MesaiBaslangicTarihi = dtpMesaiBaslangic.Value.Date.AddHours(cmbBaslangicSaatler.SelectedText.Split(':')[0].ToInt32());
-            mesai.MesaiBitisTarihi = dtpMesaiBitis.Value.Date.AddHours(cmbBitisSaatler.SelectedText.Split(':')[0].ToInt32());
+                mesai.CalisanID = cmbMesaiCalisanlar.SelectedValue.ToInt32();
+                mesai.MesaiBaslangicTarihi = dtpMesaiBaslangic.Value.Date.AddHours(cmbBaslangicSaatler.Text.Split(':')[0].ToInt32());
+                mesai.MesaiBitisTarihi = dtpMesaiBitis.Value.Date.AddHours(cmbBitisSaatler.Text.Split(':')[0].ToInt32());
+
+                mesailerDAL.insertMesai(mesai);
+                MessageBox.Show("Mesai Başarıyla Eklendi!");
+                Islemler.DataTableDoldur("SELECT mesaiID,(calisanAd + ' ' + calisanSoyad) as CalisanAdSoyad, mesaiBaslangicTarihi, mesaiBitisTarihi FROM mesailer JOIN calisanlar ON calisanlar.calisanID = mesailer.calisanID", "Mesailer", guncelle: true);
+                Islemler.LvDoldur(lvwMesaiListe, "Mesailer");
+                Islemler.FormTemizle(this);
+            }
+            catch
+            {
+                MessageBox.Show("Mesai Eklenirken Hata Oluştu!");
+            }
         }
 
         private void btnMesaiTemizle_Click(object sender, EventArgs e)
@@ -69,11 +82,41 @@ namespace BilgiOtel
 
             MesailerEntity mesai = mesailerDAL.getMesai(lvwMesaiListe.SelectedItems[0].SubItems[0].Text.ToInt32());
 
+            secilenMesai = mesai;
             cmbMesaiCalisanlar.SelectedIndex = mesai.CalisanID - 1;
             dtpMesaiBaslangic.Value = mesai.MesaiBaslangicTarihi.Date;
             dtpMesaiBitis.Value = mesai.MesaiBitisTarihi.Date;
             cmbBaslangicSaatler.SelectedText = mesai.MesaiBaslangicTarihi.TimeOfDay.ToString();
             cmbBitisSaatler.SelectedText = mesai.MesaiBitisTarihi.TimeOfDay.ToString();
+        }
+
+        private void btnMesaiDuzenle_Click(object sender, EventArgs e)
+        {
+            if(secilenMesai.MesaiID == 0)
+            {
+                MessageBox.Show("Düzenlemek İçin Bir Mesai Seçin!");
+                return;
+            }
+            try
+            {
+                MesailerEntity mesai = new MesailerEntity();
+                mesai.MesaiID = secilenMesai.MesaiID;
+                mesai.CalisanID = secilenMesai.CalisanID;
+                mesai.MesaiBaslangicTarihi = dtpMesaiBaslangic.Value.Date.AddHours(cmbBaslangicSaatler.Text.Split(':')[0].ToInt32());
+                mesai.MesaiBitisTarihi = dtpMesaiBitis.Value.Date.AddHours(cmbBitisSaatler.Text.Split(':')[0].ToInt32());
+
+                mesailerDAL.updateMesai(mesai);
+                secilenMesai = null;
+                MessageBox.Show("Mesai Başarıyla Düzenlendi!");
+                Islemler.DataTableDoldur("SELECT mesaiID,(calisanAd + ' ' + calisanSoyad) as CalisanAdSoyad, mesaiBaslangicTarihi, mesaiBitisTarihi FROM mesailer JOIN calisanlar ON calisanlar.calisanID = mesailer.calisanID", "Mesailer",guncelle: true);
+                Islemler.LvDoldur(lvwMesaiListe, "Mesailer");
+                Islemler.FormTemizle(this);
+            }
+            catch
+            {
+                MessageBox.Show("Mesai Düzenlenirken Hata Oluştu!");
+            }
+            
         }
     }
 }
