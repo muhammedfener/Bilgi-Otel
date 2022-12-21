@@ -43,6 +43,10 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsSagTik = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.yenileButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.duzenleButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.silButon = new System.Windows.Forms.ToolStripMenuItem();
             this.nudOdaKat = new System.Windows.Forms.NumericUpDown();
             this.btnOdaDuzenle = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,17 +60,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.nudOdaFiyat = new System.Windows.Forms.NumericUpDown();
             this.chkOdaAktifMi = new System.Windows.Forms.CheckBox();
-            this.cmsSagTik = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.yenileButon = new System.Windows.Forms.ToolStripMenuItem();
-            this.duzenleButon = new System.Windows.Forms.ToolStripMenuItem();
-            this.silButon = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNumara)).BeginInit();
+            this.cmsSagTik.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKisi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCiftKisilikYatak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTekKisilikYatak)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaFiyat)).BeginInit();
-            this.cmsSagTik.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -198,6 +198,36 @@
             // 
             this.columnHeader4.Text = "Oda Fiyat";
             this.columnHeader4.Width = 75;
+            // 
+            // cmsSagTik
+            // 
+            this.cmsSagTik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yenileButon,
+            this.duzenleButon,
+            this.silButon});
+            this.cmsSagTik.Name = "cmsSagTik";
+            this.cmsSagTik.Size = new System.Drawing.Size(117, 70);
+            // 
+            // yenileButon
+            // 
+            this.yenileButon.Name = "yenileButon";
+            this.yenileButon.Size = new System.Drawing.Size(116, 22);
+            this.yenileButon.Text = "Yenile";
+            this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
+            // 
+            // duzenleButon
+            // 
+            this.duzenleButon.Name = "duzenleButon";
+            this.duzenleButon.Size = new System.Drawing.Size(116, 22);
+            this.duzenleButon.Text = "Düzenle";
+            this.duzenleButon.Click += new System.EventHandler(this.duzenleButon_Click);
+            // 
+            // silButon
+            // 
+            this.silButon.Name = "silButon";
+            this.silButon.Size = new System.Drawing.Size(116, 22);
+            this.silButon.Text = "Sil";
+            this.silButon.Click += new System.EventHandler(this.silButon_Click);
             // 
             // nudOdaKat
             // 
@@ -347,36 +377,6 @@
             this.chkOdaAktifMi.Text = "Oda Aktif Mi";
             this.chkOdaAktifMi.UseVisualStyleBackColor = true;
             // 
-            // cmsSagTik
-            // 
-            this.cmsSagTik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yenileButon,
-            this.duzenleButon,
-            this.silButon});
-            this.cmsSagTik.Name = "cmsSagTik";
-            this.cmsSagTik.Size = new System.Drawing.Size(181, 92);
-            // 
-            // yenileButon
-            // 
-            this.yenileButon.Name = "yenileButon";
-            this.yenileButon.Size = new System.Drawing.Size(180, 22);
-            this.yenileButon.Text = "Yenile";
-            this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
-            // 
-            // duzenleButon
-            // 
-            this.duzenleButon.Name = "duzenleButon";
-            this.duzenleButon.Size = new System.Drawing.Size(180, 22);
-            this.duzenleButon.Text = "Düzenle";
-            this.duzenleButon.Click += new System.EventHandler(this.duzenleButon_Click);
-            // 
-            // silButon
-            // 
-            this.silButon.Name = "silButon";
-            this.silButon.Size = new System.Drawing.Size(180, 22);
-            this.silButon.Text = "Sil";
-            this.silButon.Click += new System.EventHandler(this.silButon_Click);
-            // 
             // FrmOdalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,15 +407,15 @@
             this.Controls.Add(this.nudOdaFiyat);
             this.Name = "FrmOdalar";
             this.Tag = "Oda Ekle&&Düzenle";
-            this.Text = "Odalar";
+            this.Text = "Oda Ekle&&Düzenle";
             this.Load += new System.EventHandler(this.FrmOdalar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaNumara)).EndInit();
+            this.cmsSagTik.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaKisi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCiftKisilikYatak)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTekKisilikYatak)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudOdaFiyat)).EndInit();
-            this.cmsSagTik.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

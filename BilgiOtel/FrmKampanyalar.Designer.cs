@@ -44,6 +44,7 @@
             this.txtIndirimOrani = new System.Windows.Forms.TextBox();
             this.txtKampanyaAd = new System.Windows.Forms.TextBox();
             this.lvwKampanyalar = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,7 +55,6 @@
             this.yenileButon = new System.Windows.Forms.ToolStripMenuItem();
             this.duzenleButon = new System.Windows.Forms.ToolStripMenuItem();
             this.silButon = new System.Windows.Forms.ToolStripMenuItem();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmsSagTik.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,6 +198,11 @@
             this.lvwKampanyalar.View = System.Windows.Forms.View.Details;
             this.lvwKampanyalar.DoubleClick += new System.EventHandler(this.lvwKampanyalar_DoubleClick);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 37;
+            // 
             // columnHeader11
             // 
             this.columnHeader11.Text = "Kampanya Adı";
@@ -245,28 +250,23 @@
             // yenileButon
             // 
             this.yenileButon.Name = "yenileButon";
-            this.yenileButon.Size = new System.Drawing.Size(180, 22);
+            this.yenileButon.Size = new System.Drawing.Size(116, 22);
             this.yenileButon.Text = "Yenile";
             this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
             // 
             // duzenleButon
             // 
             this.duzenleButon.Name = "duzenleButon";
-            this.duzenleButon.Size = new System.Drawing.Size(180, 22);
+            this.duzenleButon.Size = new System.Drawing.Size(116, 22);
             this.duzenleButon.Text = "Düzenle";
             this.duzenleButon.Click += new System.EventHandler(this.duzenleButon_Click);
             // 
             // silButon
             // 
             this.silButon.Name = "silButon";
-            this.silButon.Size = new System.Drawing.Size(180, 22);
+            this.silButon.Size = new System.Drawing.Size(116, 22);
             this.silButon.Text = "Sil";
             this.silButon.Click += new System.EventHandler(this.silButon_Click);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 37;
             // 
             // FrmKampanyalar
             // 
@@ -290,7 +290,7 @@
             this.Controls.Add(this.txtKampanyaAd);
             this.Controls.Add(this.lvwKampanyalar);
             this.Name = "FrmKampanyalar";
-            this.Text = "FrmKampanyalar";
+            this.Text = "Kampanya Ekle&&Düzenle";
             this.Load += new System.EventHandler(this.FrmKampanyalar_Load);
             this.cmsSagTik.ResumeLayout(false);
             this.ResumeLayout(false);

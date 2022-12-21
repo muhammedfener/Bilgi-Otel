@@ -73,6 +73,12 @@
     <Compile Include="FrmKullanicilar.Designer.cs">
       <DependentUpon>FrmKullanicilar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMaasBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaasBilgi.Designer.cs">
+      <DependentUpon>FrmMaasBilgi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMesailer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKullanicilar.resx">
       <DependentUpon>FrmKullanicilar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaasBilgi.resx">
+      <DependentUpon>FrmMaasBilgi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMesailer.resx">
       <DependentUpon>FrmMesailer.cs</DependentUpon>
@@ -168,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendar-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-multiple.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

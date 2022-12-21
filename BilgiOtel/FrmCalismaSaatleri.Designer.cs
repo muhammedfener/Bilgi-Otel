@@ -208,19 +208,19 @@
             this.toolStripMenuItem1,
             this.toolStripMenuItem2});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 48);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.toolStripMenuItem1.Text = "Düzenle";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.toolStripMenuItem2.Text = "Sil";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -243,7 +243,7 @@
             this.Controls.Add(this.cmbVardiyalar);
             this.Controls.Add(this.cmbCalisanlar);
             this.Name = "FrmCalismaSaatleri";
-            this.Text = "FrmCalismaSaatleri";
+            this.Text = "Çalışma Saati Ekle&&Düzenle";
             this.Load += new System.EventHandler(this.FrmCalismaSaatleri_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

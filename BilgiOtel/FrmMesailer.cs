@@ -118,5 +118,35 @@ namespace BilgiOtel
             }
             
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if(lvwMesaiListe.SelectedItems.Count != 1)
+            {
+                MessageBox.Show("Düzenlemek İçin Bir Mesai Seçin!");
+                return;
+            }
+
+            btnMesaiSec.PerformClick();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if(lvwMesaiListe.SelectedItems.Count != 1)
+            {
+                MessageBox.Show("Silmek İçin Bir Mesai Seçin!");
+                return;
+            }
+
+            try
+            {
+                mesailerDAL.deleteMesai(lvwMesaiListe.SelectedItems[0].SubItems[0].Text.ToInt32());
+                MessageBox.Show("Mesai Başarıyla Silindi!");
+            }
+            catch
+            {
+                MessageBox.Show("Mesai Silinirken Hata Oluştu!");
+            }
+        }
     }
 }

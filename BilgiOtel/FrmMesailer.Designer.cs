@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnMesaiTemizle = new System.Windows.Forms.Button();
             this.btnMesaiDuzenle = new System.Windows.Forms.Button();
             this.btnMesaiKaydet = new System.Windows.Forms.Button();
@@ -45,11 +46,15 @@
             this.cmbBitisSaatler = new System.Windows.Forms.ComboBox();
             this.cmbBaslangicSaatler = new System.Windows.Forms.ComboBox();
             this.cmbMesaiCalisanlar = new System.Windows.Forms.ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMesaiTemizle
             // 
-            this.btnMesaiTemizle.Location = new System.Drawing.Point(76, 140);
+            this.btnMesaiTemizle.Location = new System.Drawing.Point(76, 139);
             this.btnMesaiTemizle.Name = "btnMesaiTemizle";
             this.btnMesaiTemizle.Size = new System.Drawing.Size(75, 23);
             this.btnMesaiTemizle.TabIndex = 14;
@@ -59,7 +64,7 @@
             // 
             // btnMesaiDuzenle
             // 
-            this.btnMesaiDuzenle.Location = new System.Drawing.Point(157, 140);
+            this.btnMesaiDuzenle.Location = new System.Drawing.Point(157, 139);
             this.btnMesaiDuzenle.Name = "btnMesaiDuzenle";
             this.btnMesaiDuzenle.Size = new System.Drawing.Size(75, 23);
             this.btnMesaiDuzenle.TabIndex = 15;
@@ -69,7 +74,7 @@
             // 
             // btnMesaiKaydet
             // 
-            this.btnMesaiKaydet.Location = new System.Drawing.Point(238, 140);
+            this.btnMesaiKaydet.Location = new System.Drawing.Point(238, 139);
             this.btnMesaiKaydet.Name = "btnMesaiKaydet";
             this.btnMesaiKaydet.Size = new System.Drawing.Size(75, 23);
             this.btnMesaiKaydet.TabIndex = 16;
@@ -79,7 +84,7 @@
             // 
             // btnMesaiSec
             // 
-            this.btnMesaiSec.Location = new System.Drawing.Point(707, 218);
+            this.btnMesaiSec.Location = new System.Drawing.Point(707, 331);
             this.btnMesaiSec.Name = "btnMesaiSec";
             this.btnMesaiSec.Size = new System.Drawing.Size(75, 23);
             this.btnMesaiSec.TabIndex = 17;
@@ -96,10 +101,10 @@
             this.columnHeader29});
             this.lvwMesaiListe.FullRowSelect = true;
             this.lvwMesaiListe.HideSelection = false;
-            this.lvwMesaiListe.Location = new System.Drawing.Point(347, 55);
+            this.lvwMesaiListe.Location = new System.Drawing.Point(347, 54);
             this.lvwMesaiListe.MultiSelect = false;
             this.lvwMesaiListe.Name = "lvwMesaiListe";
-            this.lvwMesaiListe.Size = new System.Drawing.Size(435, 157);
+            this.lvwMesaiListe.Size = new System.Drawing.Size(435, 271);
             this.lvwMesaiListe.TabIndex = 13;
             this.lvwMesaiListe.UseCompatibleStateImageBehavior = false;
             this.lvwMesaiListe.View = System.Windows.Forms.View.Details;
@@ -125,14 +130,14 @@
             // 
             // dtpMesaiBitis
             // 
-            this.dtpMesaiBitis.Location = new System.Drawing.Point(138, 109);
+            this.dtpMesaiBitis.Location = new System.Drawing.Point(138, 108);
             this.dtpMesaiBitis.Name = "dtpMesaiBitis";
             this.dtpMesaiBitis.Size = new System.Drawing.Size(104, 20);
             this.dtpMesaiBitis.TabIndex = 11;
             // 
             // dtpMesaiBaslangic
             // 
-            this.dtpMesaiBaslangic.Location = new System.Drawing.Point(138, 84);
+            this.dtpMesaiBaslangic.Location = new System.Drawing.Point(138, 83);
             this.dtpMesaiBaslangic.Name = "dtpMesaiBaslangic";
             this.dtpMesaiBaslangic.Size = new System.Drawing.Size(104, 20);
             this.dtpMesaiBaslangic.TabIndex = 12;
@@ -140,7 +145,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(46, 113);
+            this.label39.Location = new System.Drawing.Point(46, 112);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(86, 13);
             this.label39.TabIndex = 8;
@@ -149,7 +154,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(19, 88);
+            this.label38.Location = new System.Drawing.Point(19, 87);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(113, 13);
             this.label38.TabIndex = 9;
@@ -158,7 +163,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(42, 59);
+            this.label37.Location = new System.Drawing.Point(42, 58);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(90, 13);
             this.label37.TabIndex = 10;
@@ -167,7 +172,7 @@
             // cmbBitisSaatler
             // 
             this.cmbBitisSaatler.FormattingEnabled = true;
-            this.cmbBitisSaatler.Location = new System.Drawing.Point(248, 109);
+            this.cmbBitisSaatler.Location = new System.Drawing.Point(248, 108);
             this.cmbBitisSaatler.Name = "cmbBitisSaatler";
             this.cmbBitisSaatler.Size = new System.Drawing.Size(65, 21);
             this.cmbBitisSaatler.TabIndex = 5;
@@ -175,7 +180,7 @@
             // cmbBaslangicSaatler
             // 
             this.cmbBaslangicSaatler.FormattingEnabled = true;
-            this.cmbBaslangicSaatler.Location = new System.Drawing.Point(248, 82);
+            this.cmbBaslangicSaatler.Location = new System.Drawing.Point(248, 81);
             this.cmbBaslangicSaatler.Name = "cmbBaslangicSaatler";
             this.cmbBaslangicSaatler.Size = new System.Drawing.Size(65, 21);
             this.cmbBaslangicSaatler.TabIndex = 6;
@@ -183,16 +188,38 @@
             // cmbMesaiCalisanlar
             // 
             this.cmbMesaiCalisanlar.FormattingEnabled = true;
-            this.cmbMesaiCalisanlar.Location = new System.Drawing.Point(138, 55);
+            this.cmbMesaiCalisanlar.Location = new System.Drawing.Point(138, 54);
             this.cmbMesaiCalisanlar.Name = "cmbMesaiCalisanlar";
             this.cmbMesaiCalisanlar.Size = new System.Drawing.Size(175, 21);
             this.cmbMesaiCalisanlar.TabIndex = 7;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 48);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.toolStripMenuItem1.Text = "Düzenle";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
+            this.toolStripMenuItem2.Text = "Sil";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // FrmMesailer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 297);
+            this.ClientSize = new System.Drawing.Size(800, 409);
             this.Controls.Add(this.btnMesaiTemizle);
             this.Controls.Add(this.btnMesaiDuzenle);
             this.Controls.Add(this.btnMesaiKaydet);
@@ -207,8 +234,9 @@
             this.Controls.Add(this.cmbBaslangicSaatler);
             this.Controls.Add(this.cmbMesaiCalisanlar);
             this.Name = "FrmMesailer";
-            this.Text = "FrmMesailer";
+            this.Text = "Mesai Ekle&&Düzenle";
             this.Load += new System.EventHandler(this.FrmMesailer_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +261,8 @@
         private System.Windows.Forms.ComboBox cmbBaslangicSaatler;
         private System.Windows.Forms.ComboBox cmbMesaiCalisanlar;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }

@@ -71,7 +71,7 @@ namespace BilgiOtel
             this.Height = form.Height + pnlHeader.Height+35;
             form.BringToFront();
             form.Show();
-            lblHeader.Text = (string)form.Tag;
+            lblHeader.Text = form.Text;
         }
 
         private void btnOdaEkleDuzenle_Click(object sender, EventArgs e)
@@ -134,6 +134,11 @@ namespace BilgiOtel
         private void btnMesaiEkleDuzenle_Click(object sender, EventArgs e)
         {
             OpenForm(new FrmMesailer());
+        }
+
+        private void btnMaasBilgi_Click(object sender, EventArgs e)
+        {
+            OpenForm(new FrmMaasBilgi());
         }
     }
 }

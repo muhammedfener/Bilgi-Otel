@@ -37,6 +37,10 @@
             this.calisanMeslek = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.calisanAdres = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.calisanUcret = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsSagTik = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.yenileButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.duzenleButon = new System.Windows.Forms.ToolStripMenuItem();
+            this.silButon = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCalisanTemizle = new System.Windows.Forms.Button();
             this.btnCalisanDuzenle = new System.Windows.Forms.Button();
             this.btnCalisanKaydet = new System.Windows.Forms.Button();
@@ -62,12 +66,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.chkCalisanAktifMi = new System.Windows.Forms.CheckBox();
             this.chkIseDevam = new System.Windows.Forms.CheckBox();
-            this.cmsSagTik = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.duzenleButon = new System.Windows.Forms.ToolStripMenuItem();
-            this.silButon = new System.Windows.Forms.ToolStripMenuItem();
-            this.yenileButon = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSaatlikUcret)).BeginInit();
             this.cmsSagTik.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSaatlikUcret)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCalisanSec
@@ -129,6 +129,36 @@
             // 
             this.calisanUcret.Text = "Ücret";
             this.calisanUcret.Width = 67;
+            // 
+            // cmsSagTik
+            // 
+            this.cmsSagTik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yenileButon,
+            this.duzenleButon,
+            this.silButon});
+            this.cmsSagTik.Name = "cmsSagTik";
+            this.cmsSagTik.Size = new System.Drawing.Size(117, 70);
+            // 
+            // yenileButon
+            // 
+            this.yenileButon.Name = "yenileButon";
+            this.yenileButon.Size = new System.Drawing.Size(116, 22);
+            this.yenileButon.Text = "Yenile";
+            this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
+            // 
+            // duzenleButon
+            // 
+            this.duzenleButon.Name = "duzenleButon";
+            this.duzenleButon.Size = new System.Drawing.Size(116, 22);
+            this.duzenleButon.Text = "Düzenle";
+            this.duzenleButon.Click += new System.EventHandler(this.duzenleButon_Click);
+            // 
+            // silButon
+            // 
+            this.silButon.Name = "silButon";
+            this.silButon.Size = new System.Drawing.Size(116, 22);
+            this.silButon.Text = "Sil";
+            this.silButon.Click += new System.EventHandler(this.silButon_Click);
             // 
             // btnCalisanTemizle
             // 
@@ -354,36 +384,6 @@
             this.chkIseDevam.UseVisualStyleBackColor = true;
             this.chkIseDevam.CheckedChanged += new System.EventHandler(this.chkIseDevam_CheckedChanged);
             // 
-            // cmsSagTik
-            // 
-            this.cmsSagTik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yenileButon,
-            this.duzenleButon,
-            this.silButon});
-            this.cmsSagTik.Name = "cmsSagTik";
-            this.cmsSagTik.Size = new System.Drawing.Size(181, 92);
-            // 
-            // duzenleButon
-            // 
-            this.duzenleButon.Name = "duzenleButon";
-            this.duzenleButon.Size = new System.Drawing.Size(180, 22);
-            this.duzenleButon.Text = "Düzenle";
-            this.duzenleButon.Click += new System.EventHandler(this.duzenleButon_Click);
-            // 
-            // silButon
-            // 
-            this.silButon.Name = "silButon";
-            this.silButon.Size = new System.Drawing.Size(180, 22);
-            this.silButon.Text = "Sil";
-            this.silButon.Click += new System.EventHandler(this.silButon_Click);
-            // 
-            // yenileButon
-            // 
-            this.yenileButon.Name = "yenileButon";
-            this.yenileButon.Size = new System.Drawing.Size(180, 22);
-            this.yenileButon.Text = "Yenile";
-            this.yenileButon.Click += new System.EventHandler(this.yenileButon_Click);
-            // 
             // FrmCalisanlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,10 +418,10 @@
             this.Controls.Add(this.label9);
             this.Name = "FrmCalisanlar";
             this.Tag = "Çalışan Ekle&&Düzenle";
-            this.Text = "Çalışanlar";
+            this.Text = "Çalışan Ekle&&Düzenle";
             this.Load += new System.EventHandler(this.FrmCalisanlar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudSaatlikUcret)).EndInit();
             this.cmsSagTik.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudSaatlikUcret)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
