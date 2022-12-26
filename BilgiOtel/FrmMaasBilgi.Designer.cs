@@ -30,12 +30,15 @@
         {
             this.lvwMaasBilgi = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblAy = new System.Windows.Forms.Label();
+            this.btnAra = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lvwMaasBilgi
@@ -63,6 +66,16 @@
             this.columnHeader1.Text = "Ad Soyad";
             this.columnHeader1.Width = 137;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "TC Kimlik";
+            this.columnHeader6.Width = 83;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Meslek";
+            this.columnHeader7.Width = 99;
+            // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Aylık Çalışma Günü Sayısı";
@@ -83,26 +96,46 @@
             this.columnHeader5.Text = "Aylık Maaş";
             this.columnHeader5.Width = 101;
             // 
-            // columnHeader6
+            // textBox1
             // 
-            this.columnHeader6.Text = "TC Kimlik";
-            this.columnHeader6.Width = 83;
+            this.textBox1.Location = new System.Drawing.Point(38, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
             // 
-            // columnHeader7
+            // lblAy
             // 
-            this.columnHeader7.Text = "Meslek";
-            this.columnHeader7.Width = 99;
+            this.lblAy.AutoSize = true;
+            this.lblAy.Location = new System.Drawing.Point(13, 13);
+            this.lblAy.Name = "lblAy";
+            this.lblAy.Size = new System.Drawing.Size(25, 13);
+            this.lblAy.TabIndex = 2;
+            this.lblAy.Text = "Ay: ";
+            // 
+            // btnAra
+            // 
+            this.btnAra.Location = new System.Drawing.Point(144, 8);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(56, 23);
+            this.btnAra.TabIndex = 3;
+            this.btnAra.Text = "Ara";
+            this.btnAra.UseVisualStyleBackColor = true;
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // FrmMaasBilgi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAra);
+            this.Controls.Add(this.lblAy);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lvwMaasBilgi);
             this.Name = "FrmMaasBilgi";
             this.Text = "Maaş Bilgi";
             this.Load += new System.EventHandler(this.FrmMaasBilgi_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -116,5 +149,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblAy;
+        private System.Windows.Forms.Button btnAra;
     }
 }

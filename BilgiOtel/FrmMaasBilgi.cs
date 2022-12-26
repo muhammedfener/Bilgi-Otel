@@ -20,7 +20,7 @@ namespace BilgiOtel
 
         private void FrmMaasBilgi_Load(object sender, EventArgs e)
         {
-            YoneticiMaasGetir();
+            
         }
 
         private void YoneticiMaasGetir()
@@ -101,6 +101,11 @@ namespace BilgiOtel
                     }
                 }
             }
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            YoneticiMaasGetir();
         }
     }
 }
