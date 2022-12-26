@@ -39,7 +39,7 @@ namespace BilgiOtel
         {
             DataTable calisanIDs = SQLHelper.GetDataTable("SELECT calisanID, (calisanAd + ' ' + calisanSoyad) as calisanAdSoyad,calisanTCKimlik, meslekAd, calisanSaatlikUcret FROM calisanlar JOIN meslekler ON meslekler.meslekID = calisanlar.calisanMeslekID WHERE calisanAktifMi=1");
 
-            DataTable CalismaSaatleri = SQLHelper.GetDataTable($"SELECT calisanID, calismaBaslangicTarihi, calismaBitisTarihi, calismaSuresi FROM calismaSaatleri JOIN calisanlar ON calisanlar.calisanID = calismaSaatleri.calisanID WHERE DATEPART(month,calismaBitisTarihi) = {Ay} OR DATEPART(month,calismaBaslangicTarihi) = {Ay}");
+            DataTable CalismaSaatleri = SQLHelper.GetDataTable($"SELECT calisanID, vardiyaAralik, calismaBaslangicTarihi, calismaBitisTarihi, calismaSuresi FROM calismaSaatleri JOIN calisanlar ON calisanlar.calisanID = calismaSaatleri.calisanID JOIN vardiyalar ON vardiyalar.vardiyaID = calismaSaatleri.vardiyaID WHERE DATEPART(month,calismaBitisTarihi) = {Ay} OR DATEPART(month,calismaBaslangicTarihi) = {Ay}");
 
             DataTable VardiyaSaatleri = SQLHelper.GetDataTable($"SELECT calisanID, mesaiBaslangicTarihi, mesaiBitisTarihi, mesaiSuresi FROM mesailer WHERE DATEPART(month,mesaiBitisTarihi) = {Ay} OR DATEPART(month,mesaiBaslangicTarihi) = {Ay}");
 
@@ -81,25 +81,28 @@ namespace BilgiOtel
                 {
                     if (vardiyaSaat["calismaBaslangicTarihi"].ToDateTime().Date.Month == Ay && vardiyaSaat["calismaBitisTarihi"].ToDateTime().Date.Month == Ay)
                     {
-                        calismaGunSayisi += vardiyaSaat["calismaSuresi"].ToInt32();
+                        mesaiSaatSayisi += vardiyaSaat["calismaSuresi"].ToInt32();
                     }
                     else if (vardiyaSaat["calismaBaslangicTarihi"].ToDateTime().Date.Month != Ay && vardiyaSaat["calismaBitisTarihi"].ToDateTime().Date.Month == Ay)
                     {
                         DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
                         int fark = vardiyaSaat["calismaBitisTarihi"].ToDateTime().Subtract(date).TotalDays.ToInt32();
-                        calismaGunSayisi += fark;
+                        mesaiSaatSayisi += fark;
                     }
                     else if (vardiyaSaat["calismaBaslangicTarihi"].ToDateTime().Date.Month == Ay && vardiyaSaat["calismaBitisTarihi"].ToDateTime().Date.Month != Ay)
                     {
                         DateTime date = new DateTime(DateTime.Now.Year, Ay, DateTime.DaysInMonth(DateTime.Now.Year, Ay));
                         int fark = date.Subtract(vardiyaSaat["calismaBaslangicTarihi"].ToDateTime()).TotalDays.ToInt32();
-                        calismaGunSayisi += fark;
+                        mesaiSaatSayisi += fark;
                     }
                     else
                     {
                         continue;
                     }
                 }
+
+                aylikMesaiUcreti = saatlikUcret * mesaiSaatSayisi * 1,5;
+                aylikToplamUcret = 
             }
         }
 
