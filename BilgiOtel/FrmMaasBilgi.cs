@@ -29,7 +29,7 @@ namespace BilgiOtel
 
             foreach (DataRow dr in dt.Rows)
             {
-                string[] satir = { dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), "", "", "", dr[3].IsDBNull() ? "" : dr[3].ToString() + " TL" };
+                string[] satir = { dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), "X", "X", "X", dr[3].IsDBNull() ? "X" : dr[3].ToString() + " TL" };
                 ListViewItem item = new ListViewItem(satir);
                 lvwMaasBilgi.Items.Add(item);
             }
@@ -37,9 +37,9 @@ namespace BilgiOtel
 
         private void CalisanMaasGetir(int Ay)
         {
-            DataTable calisanIDs = SQLHelper.GetDataTable("SELECT calisanID, (calisanAd + ' ' + calisanSoyad) as calisanAdSoyad,calisanTCKimlik, meslekAd, calisanSaatlikUcret FROM calisanlar JOIN meslekler ON meslekler.meslekID = calisanlar.calisanMeslekID WHERE calisanAktifMi=1");
+            DataTable calisanIDs = SQLHelper.GetDataTable("SELECT calisanlar.calisanID, (calisanAd + ' ' + calisanSoyad) as calisanAdSoyad,calisanTCKimlik, meslekAd, calisanSaatlikUcret FROM calisanlar JOIN meslekler ON meslekler.meslekID = calisanlar.calisanMeslekID WHERE calisanAktifMi=1");
 
-            DataTable CalismaSaatleri = SQLHelper.GetDataTable($"SELECT calisanID, vardiyaAralik, calismaBaslangicTarihi, calismaBitisTarihi, calismaSuresi FROM calismaSaatleri JOIN calisanlar ON calisanlar.calisanID = calismaSaatleri.calisanID JOIN vardiyalar ON vardiyalar.vardiyaID = calismaSaatleri.vardiyaID WHERE DATEPART(month,calismaBitisTarihi) = {Ay} OR DATEPART(month,calismaBaslangicTarihi) = {Ay}");
+            DataTable CalismaSaatleri = SQLHelper.GetDataTable($"SELECT calismaSaatleri.calisanID, vardiyaSuresi, calismaBaslangicTarihi, calismaBitisTarihi, calismaSuresi FROM calismaSaatleri JOIN calisanlar ON calisanlar.calisanID = calismaSaatleri.calisanID JOIN vardiyalar ON vardiyalar.vardiyaID = calismaSaatleri.vardiyaID WHERE DATEPART(month,calismaBitisTarihi) = {Ay} OR DATEPART(month,calismaBaslangicTarihi) = {Ay}");
 
             DataTable VardiyaSaatleri = SQLHelper.GetDataTable($"SELECT calisanID, mesaiBaslangicTarihi, mesaiBitisTarihi, mesaiSuresi FROM mesailer WHERE DATEPART(month,mesaiBitisTarihi) = {Ay} OR DATEPART(month,mesaiBaslangicTarihi) = {Ay}");
 
@@ -49,7 +49,7 @@ namespace BilgiOtel
                 DataRow[] calisanSaatler = CalismaSaatleri.Select(sorgu);
 
                 string calisanAdSoyad = calisan["calisanAdSoyad"].ToString(), tckimlik = calisan["calisanTCKimlik"].ToString(), meslekAd = calisan["meslekAd"].ToString();
-                decimal saatlikUcret = calisan["calisanSaatlikUcret"].ToDecimal(), aylikMesaiUcreti = 0, aylikToplamUcret = 0;
+                decimal saatlikUcret = calisan["calisanSaatlikUcret"].ToDecimal(), aylikMesaiUcreti = 0, aylikToplamUcret = 0, calismaSaatiUcret = 0;
                 int calismaGunSayisi = 0, mesaiSaatSayisi = 0;
 
                 foreach (DataRow calismaSaati in calisanSaatler)
@@ -57,18 +57,21 @@ namespace BilgiOtel
                     if (calismaSaati["calismaBaslangicTarihi"].ToDateTime().Date.Month == Ay && calismaSaati["calismaBitisTarihi"].ToDateTime().Date.Month == Ay)
                     {
                         calismaGunSayisi += calismaSaati["calismaSuresi"].ToInt32();
+                        calismaSaatiUcret += calismaSaati["calismaSuresi"].ToInt32() * calismaSaati["vardiyaSuresi"].ToInt32() * saatlikUcret;
                     }
                     else if(calismaSaati["calismaBaslangicTarihi"].ToDateTime().Date.Month != Ay && calismaSaati["calismaBitisTarihi"].ToDateTime().Date.Month == Ay)
                     {
                         DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
                         int fark = calismaSaati["calismaBitisTarihi"].ToDateTime().Subtract(date).TotalDays.ToInt32();
                         calismaGunSayisi += fark;
+                        calismaSaatiUcret += fark * calismaSaati["vardiyaSuresi"].ToInt32() * saatlikUcret;
                     }
                     else if(calismaSaati["calismaBaslangicTarihi"].ToDateTime().Date.Month == Ay && calismaSaati["calismaBitisTarihi"].ToDateTime().Date.Month != Ay)
                     {
                         DateTime date = new DateTime(DateTime.Now.Year, Ay, DateTime.DaysInMonth(DateTime.Now.Year, Ay));
                         int fark = date.Subtract(calismaSaati["calismaBaslangicTarihi"].ToDateTime()).TotalDays.ToInt32();
                         calismaGunSayisi += fark;
+                        calismaSaatiUcret += fark * calismaSaati["vardiyaSuresi"].ToInt32() * saatlikUcret;
                     }
                     else
                     {
@@ -79,21 +82,21 @@ namespace BilgiOtel
                 DataRow[] vardiyaSaatler = VardiyaSaatleri.Select(sorgu);
                 foreach(DataRow vardiyaSaat in vardiyaSaatler)
                 {
-                    if (vardiyaSaat["calismaBaslangicTarihi"].ToDateTime().Date.Month == Ay && vardiyaSaat["calismaBitisTarihi"].ToDateTime().Date.Month == Ay)
+                    if (vardiyaSaat["mesaiBaslangicTarihi"].ToDateTime().Date.Month == Ay && vardiyaSaat["mesaiBitisTarihi"].ToDateTime().Date.Month == Ay)
                     {
-                        mesaiSaatSayisi += vardiyaSaat["calismaSuresi"].ToInt32();
+                        mesaiSaatSayisi += vardiyaSaat["mesaiSuresi"].ToInt32();
                     }
-                    else if (vardiyaSaat["calismaBaslangicTarihi"].ToDateTime().Date.Month != Ay && vardiyaSaat["calismaBitisTarihi"].ToDateTime().Date.Month == Ay)
+                    else if (vardiyaSaat["mesaiBaslangicTarihi"].ToDateTime().Date.Month != Ay && vardiyaSaat["mesaiBitisTarihi"].ToDateTime().Date.Month == Ay)
                     {
-                        DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-                        int fark = vardiyaSaat["calismaBitisTarihi"].ToDateTime().Subtract(date).TotalDays.ToInt32();
-                        mesaiSaatSayisi += fark;
+                        /*DateTime date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                        int fark = vardiyaSaat["calismaBitisTarihi"].ToDateTime().Subtract(date).TotalHours.ToInt32() * 24;*/
+                        mesaiSaatSayisi += vardiyaSaat["mesaiSuresi"].ToInt32();
                     }
-                    else if (vardiyaSaat["calismaBaslangicTarihi"].ToDateTime().Date.Month == Ay && vardiyaSaat["calismaBitisTarihi"].ToDateTime().Date.Month != Ay)
+                    else if (vardiyaSaat["mesaiBaslangicTarihi"].ToDateTime().Date.Month == Ay && vardiyaSaat["mesaiBitisTarihi"].ToDateTime().Date.Month != Ay)
                     {
-                        DateTime date = new DateTime(DateTime.Now.Year, Ay, DateTime.DaysInMonth(DateTime.Now.Year, Ay));
-                        int fark = date.Subtract(vardiyaSaat["calismaBaslangicTarihi"].ToDateTime()).TotalDays.ToInt32();
-                        mesaiSaatSayisi += fark;
+                        /*DateTime date = new DateTime(DateTime.Now.Year, Ay, DateTime.DaysInMonth(DateTime.Now.Year, Ay));
+                        int fark = date.Subtract(vardiyaSaat["calismaBaslangicTarihi"].ToDateTime()).TotalHours.ToInt32() * 24;*/
+                        mesaiSaatSayisi += vardiyaSaat["mesaiSuresi"].ToInt32();
                     }
                     else
                     {
@@ -101,14 +104,19 @@ namespace BilgiOtel
                     }
                 }
 
-                aylikMesaiUcreti = saatlikUcret * mesaiSaatSayisi * 1,5;
-                aylikToplamUcret = 
+                aylikMesaiUcreti = saatlikUcret * mesaiSaatSayisi * 1.5.ToDecimal();
+                aylikToplamUcret = calismaSaatiUcret + aylikMesaiUcreti;
+
+                string[] satir = { calisanAdSoyad, tckimlik, meslekAd, calismaGunSayisi.ToString(), mesaiSaatSayisi.ToString(), aylikMesaiUcreti.ToString("0.00 TL"), aylikToplamUcret.ToString("0.00 TL") };
+                ListViewItem item = new ListViewItem(satir);
+                lvwMaasBilgi.Items.Add(item);
             }
         }
 
         private void btnAra_Click(object sender, EventArgs e)
         {
             YoneticiMaasGetir();
+            CalisanMaasGetir(textBox1.Text.ToInt32());
         }
     }
 }
